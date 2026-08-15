@@ -1,11 +1,13 @@
 # khartes handoff - 10 scrolls needing a manual umbilicus
 
-Two starting curves ship per scroll. Load whichever is closer and correct it:
+Two automatic curves ship per scroll as visual guides:
 
   seeds/<scroll>_umbilicus_seed.json        body centroid, 289-382 voxels on the references
   seeds/<scroll>_umbilicus_estimated.json   lasagna normals, 152-409 voxels - better on 2 of 3
 
-Neither is a finished umbilicus. The estimate beats the seed on PHerc0125 (-48%) and
+Neither is a finished umbilicus and neither should supply the output controls by default. Draw the
+publishable curve on a blank fragment while using the guides only for orientation. The estimate
+beats the seed on PHerc0125 (-48%) and
 PHerc0211 (-30%) but is worse on PHerc0826 (+7%), so check both before starting a scroll.
 Points with score=0 are QC-flagged (the centroid jumped) - place those from scratch.
 
@@ -33,7 +35,8 @@ curves are self-consistent to 32-63 voxels median, which is the bar.
 | 9 | PHerc1447 | 0 - 24288 | 4/32 | 486, 1238, 1990, 23802 |
 | 10 | PHerc1545 | 1088 - 20960 | 1/32 | 1485 |
 
-Start with PHerc1203 (0 flagged). Leave PHerc0268 (11 flagged) for last.
+PHerc1203 is complete and locally approved (1/10). Continue with PHerc0191; leave PHerc0268
+(11 flagged) for last.
 
 Exact public streams for the later queue are:
 
@@ -51,6 +54,11 @@ Exact public streams for the later queue are:
 | PHerc1545 | `https://vesuvius-challenge-open-data.s3.amazonaws.com/PHerc1545/volumes/20250821151648-9.362um-1.2m-113keV-masked.zarr` |
 
 ## First operator pass: PHerc1203
+
+Completed on 2026-08-15 as a 40-control blank-fragment redraw spanning z=1500-17775. The exact
+fresh-project reimport had zero mismatches, all eight declared evidence views passed validation,
+and the candidate passed the real Villa loader. Later inspected slices show the compact core
+exiting through damage, so no extrapolation beyond z=17775 is claimed.
 
 The isolated operator environment is installed at `_tools/khartes-exp/.venv`.
 On 2026-08-12 it passed all 5 canonical-control/import/export tests, a headless main-window
@@ -74,18 +82,19 @@ Then perform this exact pass:
    `PHerc1203`, leave `Data is from vc_layers` unchecked, and click `Connect`:
 
    `https://vesuvius-challenge-open-data.s3.amazonaws.com/PHerc1203/volumes/20250820131727-9.362um-1.2m-113keV-masked.zarr`
-3. Import both candidate JSON files as separate umbilicus fragments using
+3. Import both automatic JSON files as separate visual-guide fragments using
    `File > Import Umbilicus files...` and canonical `X,Y,Z`:
    `D:\Competition\Vesuvius progress prizes\umbilicus13\seeds\PHerc1203_umbilicus_seed.json`
    and
    `D:\Competition\Vesuvius progress prizes\umbilicus13\seeds\PHerc1203_umbilicus_estimated.json`.
-4. Compare them through z, retain the closer starting fragment, and deactivate the other.
-   In the `Fragments` tab make only the retained curve active and visible. Work in normal mode:
+4. Compare them through z, then deactivate both and create a blank output fragment. Keep only the
+   blank output active while editing; show a guide temporarily only when orientation is useful.
+   Work in normal mode:
    hover a red control until it turns cyan, then drag it in a Data Slice; arrow keys provide
    fine adjustment. `Shift`+left-click adds a control, `Delete`/`Backspace` removes the cyan
    control, and `Ctrl+Z` restores the last edit on this repaired branch. Correct the
    **canonical controls**, not the interpolated display samples. Use 24-32 controls with unique
-   z coordinates (or keep all 40 if the lasagna estimate is the better base). Inspect the whole
+   z coordinates (40 is also acceptable when the anatomy needs denser coverage). Inspect the whole
    useful body range inside the coarse `960-18976` bracket and avoid relying on unchecked endpoint
    extrapolation. Save frequently with `Ctrl+S` (Khartes has no automatic backups). PHerc1203 has
    no score-0 seed points.
@@ -103,7 +112,7 @@ Then perform this exact pass:
 7. Save at least start/middle/end screenshots under
    `umbilicus13/manual/screenshots/PHerc1203/`, with `PHerc1203` in every filename. Also retain each
    ambiguous transition. Keep the role and displayed z as filename tokens (for example
-   `PHerc1203_start_z0960.png`); the three required views must be distinct and ordered in z, and
+   `PHerc1203_start_z1500.png`); the three required views must be distinct and ordered in z, and
    evidence must be a real PNG/JPEG at least 256x256. CT-derived screenshots stay local or in an organizer-approved channel;
    do not commit them publicly without written redistribution permission.
 8. Only after the fresh-project/full-z check, run `approve_manual_curve.py`. It rejects an exact
@@ -118,16 +127,17 @@ Then perform this exact pass:
      --reviewer '<CONFIRMED LEGAL NAME>' --qc-time '<ISO-8601 WITH TIMEZONE>' `
      --ct-url 'https://vesuvius-challenge-open-data.s3.amazonaws.com/PHerc1203/volumes/20250820131727-9.362um-1.2m-113keV-masked.zarr' `
      --data-license '<CC-BY-4.0|CC-BY-NC-4.0|CC0-1.0>' `
-     --screenshot '.\manual\screenshots\PHerc1203\PHerc1203_start_z0960.png' `
-     --screenshot '.\manual\screenshots\PHerc1203\PHerc1203_middle_z9968.png' `
-     --screenshot '.\manual\screenshots\PHerc1203\PHerc1203_end_z18976.png' --qc-checked
+     --screenshot '.\manual\screenshots\PHerc1203\PHerc1203_start_z1500.png' `
+     --screenshot '.\manual\screenshots\PHerc1203\PHerc1203_middle_z10130.png' `
+     --screenshot '.\manual\screenshots\PHerc1203\PHerc1203_end_z17775.png' --qc-checked
    ```
 
    Successful approval writes `manual/PHerc1203_umbilicus.json` and
    `manual/manifests/PHerc1203_qc.json`. A curve without its matching manifest is not releasable.
 
-Neither automatic input may be published as a finished umbilicus. Repeat this workflow through
-the eligible queue only after PHerc1203 passes the reopen/visual check; leave PHerc0268 for last.
+Neither automatic input may be published as a finished umbilicus. PHerc1203 has passed the
+reopen/visual check; repeat this workflow through the remaining eligible queue and leave PHerc0268
+for last.
 Record each completed curve and screenshot set against `../PUBLICATION_CHECKLIST.md`.
 
 After all ten curves pass, run `python .\verify_manual_release.py` from `umbilicus13`. It must

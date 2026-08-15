@@ -1,7 +1,8 @@
 # Manual umbilicus publication checklist
 
-Status: not publishable yet. PHerc1203 is approved locally (1/10); nine
-human-corrected outputs and the aggregate release manifest are still missing.
+Status: not publishable yet. PHerc1203 is approved locally after a blank-fragment
+redraw (1/10); nine human-curated outputs and the aggregate release manifest are
+still missing.
 
 ## Coherent deliverable
 
@@ -32,8 +33,8 @@ Its files are not covered by any licence selected for this project's code or new
 The manual release has exactly one promotion path:
 
 1. Khartes exports `manual/candidates/<scroll>_umbilicus.candidate.json`.
-2. A human reimports it in a fresh project on the exact CT stream, performs the full-z/transition
-   review, and stores the required local QC screenshots.
+2. A human reimports it in a fresh project on the exact CT stream, reviews the useful body range,
+   termination, and ambiguous transitions, and stores the required local QC screenshots.
 3. `approve_manual_curve.py` validates the candidate and creates the final JSON plus hash-bound
    manifest without overwriting either.
 4. After all ten curves pass individually, `verify_manual_release.py` rehashes every candidate,
@@ -56,14 +57,17 @@ curve.
   exact untouched automatic seed/estimate and refuses overwrite. A curve without its matching
   manifest is not approved.
 - Canonical integer `X,Y,Z` Villa `control_points`, unique z values, normally 24-32 controls;
-  a fully corrected 40-control lasagna starting curve is acceptable.
+  a fully corrected 40-control lasagna starting curve is acceptable. PHerc1203 instead used 40
+  controls drawn on a blank fragment.
 - Every X/Y/Z control lies inside the exact CT volume, and the curve spans at least the central
   80% of the useful manual bracket.
-- Useful body range inspected without unchecked endpoint extrapolation.
+- Useful body range and physical termination inspected without unchecked endpoint extrapolation.
+  For PHerc1203, the last supported control is z=17775; later inspected slices show the compact
+  core exiting through damage, and the curve makes no claim beyond that point.
 - Fresh-project reimport against the same public CT stream preserves every canonical control and
   the displayed interpolation.
-- Full-z visual review, including start, middle, end, every ambiguous transition, and every
-  original score-0 seed location.
+- Visual review across the useful body range, including start, middle, physical termination,
+  every ambiguous transition, and every original score-0 seed location.
 - Representative screenshots retained locally with scroll ID, CT version, z coordinate, and
   whether the view is routine or ambiguous. The source-data terms prohibit redistribution without
   written approval, so do not commit CT-derived screenshots publicly; use an organizer-approved
@@ -109,7 +113,8 @@ curve.
 ## Submission wording boundary
 
 Lead with: human-curated curves completing the previously missing coverage, a clear 13-scroll
-index, standard Villa JSON, fresh-project reimport checks, full-z screenshots, and immediate Spiral
+index, standard Villa JSON, fresh-project reimport checks, useful-range endpoint/transition
+evidence, and immediate Spiral
 fit usability. Call it a complete downloadable 13-curve set only if all 13 newly drawn curves are
 bundled, or the three external rows have durable public links/authorized copies. Say that
 maintainers publicly identified the task as high-value. Do not call any cash amount guaranteed:

@@ -14,7 +14,8 @@ ten-scroll release and not an upstream Villa feature PR.
 
 This checkpoints the first of ten missing human-curated prize-scroll umbilici:
 PHerc1203. The curve uses Villa's existing `control_points` JSON contract and
-was corrected manually in Khartes from an automatic starting curve.
+was redrawn manually in Khartes on a blank fragment. Neither automatic
+initializer supplied its control set.
 
 The proposed public diff includes the approved curve and its hash-bound QC
 manifest. The byte-identical working candidate and reproducible QC tooling are
@@ -24,21 +25,26 @@ screenshots, caches, Khartes projects, and third-party reference files.
 ### PHerc1203 result
 
 - 40 canonical integer `X,Y,Z` controls, strictly increasing from z=1500 to
-  z=18435.
+  z=17775.
 - Exact CT stream:
   `PHerc1203/volumes/20250820131727-9.362um-1.2m-113keV-masked.zarr`, level 0,
   9.362 micrometre voxels.
 - Human reviewer: Abd Elilah.
 - Curve-data licence: CC-BY-4.0.
 - Approved curve SHA-256:
-  `8c2ba6379a8605c84daf58eda6eb6c7245a666b9987178c170d4dfce57862490`.
+  `e58d635e5d4830788e6685f19d0ada10e4ff2f8a9f608dbfa47070473ea1bc27`.
 
 ### Validation
 
-- Fresh Khartes project reimport: 40/40 controls match exactly.
-- Dense full-z review: 362/362 samples checked at 47-48-slice spacing.
-- Ambiguous z=17610-17993 transition rechecked in three orthogonal views.
-- Seven local evidence views decode correctly and are hash-bound by the QC
+- Fresh Khartes project reimport: 40/40 controls match exactly, with zero
+  mismatches.
+- All 40 controls were placed and reviewed in the editing project; selected
+  transitions and both endpoints were rechecked after the fresh reimport.
+- Endpoint review found the compact core exiting through a damaged notch near
+  z=17800. Later inspected slices at z=17900, 17998, and 18435 contain no
+  discrete whorl, so the curve intentionally ends at the last supported control
+  at z=17775 and makes no claim beyond it.
+- Eight local evidence views decode correctly and are hash-bound by the QC
   manifest; the images are not redistributed.
 - Official Villa `json_umbilicus_z_to_yx` loader: pass.
 - Single-scroll release-contract validation: pass.
@@ -57,8 +63,8 @@ The manifest publishes hashes and QC metadata only.
 
 ### Completion checklist
 
-- [x] PHerc1203 human correction and fresh-project reimport
-- [x] PHerc1203 dense review, approval manifest, and Villa-loader check
+- [x] PHerc1203 blank-fragment redraw and exact fresh-project reimport
+- [x] PHerc1203 useful-range/endpoint review, approval manifest, and Villa-loader check
 - [x] Private CT-derived artifacts excluded from the proposed public diff
 - [ ] Remaining nine manual curves approved
 - [ ] Ten-scroll aggregate verifier and release manifest pass

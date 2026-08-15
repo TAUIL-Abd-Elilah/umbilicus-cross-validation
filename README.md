@@ -18,14 +18,17 @@ and is not independent human ground truth.
 | PHerc0125 | public, hand-drawn | Sean Johnson (@Bruniss), khartes, 2026-08-08 |
 | PHerc0211 | public, hand-drawn | Sean Johnson (@Bruniss), khartes, 2026-08-08 |
 | PHerc0826 | public, hand-drawn | Sean Johnson (@Bruniss), khartes, 2026-08-08 |
-| PHerc1203 | **human-corrected; approved locally (1/10)** | Abd Elilah, Khartes, 2026-08-15; 40 controls; CC-BY-4.0 |
-| PHerc0191, PHerc0257, PHerc0268, PHerc0358, PHerc0800, PHerc0813, PHerc1218, PHerc1447, PHerc1545 | manual correction pending (9/10) | two automatic starting curves per scroll; neither is a finished umbilicus |
+| PHerc1203 | **hand-drawn from blank; approved locally (1/10)** | Abd Elilah, Khartes, 2026-08-15; 40 controls; CC-BY-4.0 |
+| PHerc0191, PHerc0257, PHerc0268, PHerc0358, PHerc0800, PHerc0813, PHerc1218, PHerc1447, PHerc1545 | manual redraw pending (9/10) | two automatic visual guides per scroll; neither supplies publishable controls |
 
 PHerc1203 passed the candidate-first approval contract: exact fresh-project
-40/40 reimport, 362 full-z checks spaced 47-48 slices apart, seven hash-bound
-local evidence views, and Villa loader validation. The complete ten-scroll
-release remains intentionally unavailable until the remaining nine curves pass
-the same gates.
+40/40 reimport with zero mismatches, eight hash-bound local evidence views, and
+Villa loader validation. Its controls span z=1500-17775. The last two controls
+sample the final visible compact core; later slices inspected at z=17800, 17900,
+17998, and 18435 show the core exiting through damage without a discrete whorl.
+The curve was drawn on a blank fragment rather than promoted from either
+automatic initializer. The complete ten-scroll release remains intentionally
+unavailable until the remaining nine curves pass the same gates.
 
 PHerc1218 has a public curve in `IyanDopico/vesuvius-sheet-tools`, but its
 generator takes the slice centroid and running-medians it — a *seed* by the
@@ -287,8 +290,9 @@ python make_montage.py PHerc0800 --n 16    # a labelled picking montage
 python qc_seeds.py                          # flag implausible centroid jumps
 ```
 
-Do not run reference scoring or imagery tools on the protected validation target. The current
-manual queue begins with PHerc1203 on the repaired Khartes branch documented in the handoff.
+Do not run reference scoring or imagery tools on the protected validation target. PHerc1203 is
+complete; the manual queue continues with the remaining nine scrolls on the repaired Khartes
+branch documented in the handoff.
 
 Only `numpy`, `scipy`, `Pillow` and either `opencv-python` or `scikit-image` are
 needed. No GPU, no local data copy.

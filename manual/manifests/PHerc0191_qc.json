@@ -1,0 +1,130 @@
+{
+  "approval_tool_sha256": "55faf116ecd28aeebfcef603a76905e4c476d0191af6d14ea87e3a1afe735b31",
+  "approved_at_utc": "2026-08-15T20:57:21.426704+00:00",
+  "approved_curve": {
+    "bytes": 2919,
+    "control_count": 30,
+    "path": "manual/PHerc0191_umbilicus.json",
+    "sha256": "8355fb0d6f092a7f56e7ecb4dc2f0d48506cece79e846d64158ebf92478a8d0d",
+    "volume_shape_zyx": [
+      18977,
+      8387,
+      8387
+    ],
+    "x_max": 5350,
+    "x_min": 3425,
+    "y_max": 5320,
+    "y_min": 3600,
+    "z_max": 18001,
+    "z_min": 2700
+  },
+  "automatic_initializers": [
+    {
+      "exact_coordinate_match": false,
+      "kind": "seed",
+      "path": "seeds/PHerc0191_umbilicus_seed.json",
+      "sha256": "ec4e3346547bd4b291fe26e93168964e3c1b31f75499097523c6644c65f2616d"
+    },
+    {
+      "exact_coordinate_match": false,
+      "kind": "estimated",
+      "path": "seeds/PHerc0191_umbilicus_estimated.json",
+      "sha256": "96e96276efe4a4d331e4ded18d7d334229c5bb7791e22bb4d1bb93f22dc0c47e"
+    }
+  ],
+  "candidate": {
+    "bytes": 2919,
+    "path": "manual/candidates/PHerc0191_umbilicus.candidate.json",
+    "sha256": "8355fb0d6f092a7f56e7ecb4dc2f0d48506cece79e846d64158ebf92478a8d0d"
+  },
+  "claim_boundary": "Human-reviewed fit-ready approximation; not exact ground truth, Kaggle hidden-test evidence, or a letter-reading result.",
+  "ct_url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHerc0191/volumes/20250821151635-9.362um-1.2m-113keV-masked.zarr",
+  "data_license": "CC-BY-4.0",
+  "format": "villa-manual-umbilicus-qc-v2",
+  "qc_checked": true,
+  "qc_completed_at_utc": "2026-08-15T20:57:21.311713+00:00",
+  "reviewer": "Abd Elilah",
+  "screenshots": [
+    {
+      "bytes": 780668,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0191/PHerc0191_start_z2700.png",
+      "role": "start",
+      "sha256": "901cb125ea7f0b4756b9c382a3ca1125b811518b5f86b9bcd4572bdec72aa656",
+      "width": 1920,
+      "z": 2700
+    },
+    {
+      "bytes": 546931,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0191/PHerc0191_middle_z10805.png",
+      "role": "middle",
+      "sha256": "59e21ba7e1a5319deb7f547fa392bfc4352481b9256e4d1833ef014e9fd54011",
+      "width": 1920,
+      "z": 10805
+    },
+    {
+      "bytes": 933992,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0191/PHerc0191_end_z18001.png",
+      "role": "end",
+      "sha256": "d2b6800d09f6b63c29e3b4936feba112768226945200941b361d8c76b30f0625",
+      "width": 1920,
+      "z": 18001
+    },
+    {
+      "bytes": 551203,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0191/PHerc0191_transition_z8294.png",
+      "role": "additional",
+      "sha256": "f13b34cb21066ffbe55c17bf227a737c4cdba90169ba477c08dc758b2f4a8148",
+      "width": 1920,
+      "z": 8294
+    },
+    {
+      "bytes": 982652,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0191/PHerc0191_transition_z9131.png",
+      "role": "additional",
+      "sha256": "3128dd44b55f8fad0769e6ac26d1435acb5d92b96d26ad8754e9033576cd39cf",
+      "width": 1920,
+      "z": 9131
+    },
+    {
+      "bytes": 1000487,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0191/PHerc0191_transition_z14152.png",
+      "role": "additional",
+      "sha256": "d35fc3d0b3f7a1e1e52eefe9d8d34bebdcde43f7d6698e43897414a172975fe1",
+      "width": 1920,
+      "z": 14152
+    },
+    {
+      "bytes": 892056,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0191/PHerc0191_beyond_end_z18200.png",
+      "role": "end",
+      "sha256": "4722262bc4d5ae6e24b9e50f8dbc0e3e8e067d7e17767048c0550d127e3dbb8e",
+      "width": 1920,
+      "z": 18200
+    },
+    {
+      "bytes": 659806,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0191/PHerc0191_excluded_z18616.png",
+      "role": "additional",
+      "sha256": "0b5a54609d16bd70e4feff5110ed10359a947e04674c1a3b2c94411e9c6fce1d",
+      "width": 1920,
+      "z": 18616
+    }
+  ],
+  "scroll": "PHerc0191"
+}

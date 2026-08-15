@@ -1,7 +1,7 @@
 # Manual umbilicus publication checklist
 
-Status: not publishable yet. PHerc1203 is approved locally after a blank-fragment
-redraw (1/10); nine human-curated outputs and the aggregate release manifest are
+Status: not publishable yet. PHerc1203 and PHerc0191 are approved locally after blank-fragment
+redraws (2/10); eight human-curated outputs and the aggregate release manifest are
 still missing.
 
 ## Coherent deliverable

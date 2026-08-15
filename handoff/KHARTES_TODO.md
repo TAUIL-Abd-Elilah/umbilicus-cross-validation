@@ -35,7 +35,7 @@ curves are self-consistent to 32-63 voxels median, which is the bar.
 | 9 | PHerc1447 | 0 - 24288 | 4/32 | 486, 1238, 1990, 23802 |
 | 10 | PHerc1545 | 1088 - 20960 | 1/32 | 1485 |
 
-PHerc1203 is complete and locally approved (1/10). Continue with PHerc0191; leave PHerc0268
+PHerc1203 and PHerc0191 are complete and locally approved (2/10). Continue with PHerc0257; leave PHerc0268
 (11 flagged) for last.
 
 Exact public streams for the later queue are:
@@ -73,46 +73,68 @@ Set-Location 'D:\Competition\Vesuvius progress prizes\_tools\khartes-exp'
 & '.\.venv\Scripts\python.exe' '.\khartes.py'
 ```
 
-Then perform this exact pass:
+## Standing pass for the remaining eight
 
-1. `File > New Project...`; create a fresh project named `PHerc1203-manual` outside the source
-   tree, for example under
-   `D:\Competition\Vesuvius progress prizes\_operator_projects\PHerc1203-manual`.
-2. `File > Attach OME/Zarr data stream...`; paste this verified public URL, set volume name
-   `PHerc1203`, leave `Data is from vc_layers` unchecked, and click `Connect`:
+Steps 1-3 below are pure setup and are now pre-built. `make_operator_project.py` writes the
+Khartes project directly — stream attached, both guides imported and switched off, blank output
+fragment active, view parked on the first guide control — so the session starts on the drawing.
 
-   `https://vesuvius-challenge-open-data.s3.amazonaws.com/PHerc1203/volumes/20250820131727-9.362um-1.2m-113keV-masked.zarr`
-3. Import both automatic JSON files as separate visual-guide fragments using
-   `File > Import Umbilicus files...` and canonical `X,Y,Z`:
-   `D:\Competition\Vesuvius progress prizes\umbilicus13\seeds\PHerc1203_umbilicus_seed.json`
-   and
-   `D:\Competition\Vesuvius progress prizes\umbilicus13\seeds\PHerc1203_umbilicus_estimated.json`.
-4. Compare them through z, then deactivate both and create a blank output fragment. Keep only the
-   blank output active while editing; show a guide temporarily only when orientation is useful.
+All projects for the original nine-scroll queue already exist in `_operator_projects\<scroll>-manual.khprj` and were each
+loaded through Khartes' own `ProjectView.open` against the live stream on 2026-08-15: every one
+reports a valid 6-level volume at the shape recorded in `scrolls.py`, both guides parsed, and a
+0-control active output fragment. To rebuild one (for example after a discarded attempt):
+
+```powershell
+Set-Location 'D:\Competition\Vesuvius progress prizes\umbilicus13'
+python .\make_operator_project.py PHerc0257 --force
+```
+
+Then perform this exact pass, using PHerc0257 as the live example:
+
+1. `File > Open Project...` on
+   `D:\Competition\Vesuvius progress prizes\_operator_projects\PHerc0257-manual.khprj`.
+   Do not use `File > New Project...` unless a project must be rebuilt from scratch.
+2. Confirm the attached stream is the expected one for the scroll (the table above), and that the
+   volume loads. Nothing needs to be pasted or connected by hand.
+3. The two automatic guides are already imported as `<scroll>_guide_seed` and
+   `<scroll>_guide_estimated`, both hidden and inactive, and `<scroll>_manual` is the active blank
+   output fragment. Neither guide can reach the export unless it is deliberately activated.
+4. Show each guide briefly to compare them through z, then hide them again and draw on the blank
+   output fragment. Keep only the blank output active while editing; show a guide temporarily only
+   when orientation is useful.
    Work in normal mode:
    hover a red control until it turns cyan, then drag it in a Data Slice; arrow keys provide
    fine adjustment. `Shift`+left-click adds a control, `Delete`/`Backspace` removes the cyan
    control, and `Ctrl+Z` restores the last edit on this repaired branch. Correct the
    **canonical controls**, not the interpolated display samples. Use 24-32 controls with unique
    z coordinates (40 is also acceptable when the anatomy needs denser coverage). Inspect the whole
-   useful body range inside the coarse `960-18976` bracket and avoid relying on unchecked endpoint
-   extrapolation. Save frequently with `Ctrl+S` (Khartes has no automatic backups). PHerc1203 has
-   no score-0 seed points.
-5. Make only the finished fragment active. The repaired branch now refuses to continue if any
-   second fragment is active. Use `File > Export segment as mesh...`; Khartes
-   recognizes an umbilicus and opens its dedicated exporter. Choose the default
+   useful body range inside that scroll's coarse bracket from the table above (PHerc0257:
+   `960-18368`) and avoid relying on unchecked endpoint extrapolation. Save frequently with
+   `Ctrl+S` (Khartes has no automatic backups). Place the scroll's flagged score-0 z values from
+   scratch rather than nudging a guide (PHerc0257: `1308`, `1847`, `2386`, `18020`).
+5. Make only the finished fragment active — hide and deactivate both guides. The repaired branch
+   refuses to continue if any second fragment is active. Use `File > Export segment as mesh...`;
+   Khartes recognizes an umbilicus and opens its dedicated exporter. Choose the default
    `.json (Villa control_points)` and `X,Y,Z`, exporting the working candidate to
-   `D:\Competition\Vesuvius progress prizes\umbilicus13\manual\candidates\PHerc1203_umbilicus.candidate.json`.
+   `D:\Competition\Vesuvius progress prizes\umbilicus13\manual\candidates\PHerc0257_umbilicus.candidate.json`.
    This is deliberately not the final release filename. The exporter refuses to overwrite.
-6. Create a second fresh project, attach the same public stream, and reimport the exported JSON
-   with `X,Y,Z`. Confirm all canonical controls and the interpolated track are unchanged, and
+6. Build the reimport QC project from that candidate and open it. It attaches the same public
+   stream and loads the candidate as a single inactive fragment, so the check cannot silently
+   become an edit:
+
+   ```powershell
+   Set-Location 'D:\Competition\Vesuvius progress prizes\umbilicus13'
+   python .\make_operator_project.py PHerc0257 --candidate .\manual\candidates\PHerc0257_umbilicus.candidate.json
+   ```
+
+   Confirm all canonical controls and the interpolated track are unchanged, and
    inspect at least the start, middle, end, and every ambiguous transition. If it fails, move the
    rejected candidate aside under `manual/candidates/rejected/`, return to the editing project,
    and export a new candidate at the exact path above. Never promote a failed candidate.
 7. Save at least start/middle/end screenshots under
-   `umbilicus13/manual/screenshots/PHerc1203/`, with `PHerc1203` in every filename. Also retain each
+   `umbilicus13/manual/screenshots/PHerc0257/`, with `PHerc0257` in every filename. Also retain each
    ambiguous transition. Keep the role and displayed z as filename tokens (for example
-   `PHerc1203_start_z1500.png`); the three required views must be distinct and ordered in z, and
+   `PHerc0257_start_z<Z>.png`); the three required views must be distinct and ordered in z, and
    evidence must be a real PNG/JPEG at least 256x256. CT-derived screenshots stay local or in an organizer-approved channel;
    do not commit them publicly without written redistribution permission.
 8. Only after the fresh-project/full-z check, run `approve_manual_curve.py`. It rejects an exact
@@ -123,19 +145,21 @@ Then perform this exact pass:
 
    ```powershell
    Set-Location 'D:\Competition\Vesuvius progress prizes\umbilicus13'
-   python .\approve_manual_curve.py --scroll PHerc1203 `
+   python .\approve_manual_curve.py --scroll PHerc0257 `
      --reviewer '<CONFIRMED LEGAL NAME>' --qc-time '<ISO-8601 WITH TIMEZONE>' `
-     --ct-url 'https://vesuvius-challenge-open-data.s3.amazonaws.com/PHerc1203/volumes/20250820131727-9.362um-1.2m-113keV-masked.zarr' `
-     --data-license '<CC-BY-4.0|CC-BY-NC-4.0|CC0-1.0>' `
-     --screenshot '.\manual\screenshots\PHerc1203\PHerc1203_start_z1500.png' `
-     --screenshot '.\manual\screenshots\PHerc1203\PHerc1203_middle_z10130.png' `
-     --screenshot '.\manual\screenshots\PHerc1203\PHerc1203_end_z17775.png' --qc-checked
+     --ct-url 'https://vesuvius-challenge-open-data.s3.amazonaws.com/PHerc0257/volumes/20250821151750-9.362um-1.2m-113keV-masked.zarr' `
+     --data-license 'CC-BY-4.0' `
+     --screenshot '.\manual\screenshots\PHerc0257\PHerc0257_start_z<Z>.png' `
+     --screenshot '.\manual\screenshots\PHerc0257\PHerc0257_middle_z<Z>.png' `
+     --screenshot '.\manual\screenshots\PHerc0257\PHerc0257_end_z<Z>.png' --qc-checked
    ```
 
-   Successful approval writes `manual/PHerc1203_umbilicus.json` and
-   `manual/manifests/PHerc1203_qc.json`. A curve without its matching manifest is not releasable.
+   PHerc1203 and PHerc0191 were approved as CC-BY-4.0; keep every curve on that same licence so the release has
+   one coherent data licence, which `verify_manual_release.py` requires. Successful approval writes
+   `manual/PHerc0257_umbilicus.json` and `manual/manifests/PHerc0257_qc.json`. A curve without its
+   matching manifest is not releasable.
 
-Neither automatic input may be published as a finished umbilicus. PHerc1203 has passed the
+Neither automatic input may be published as a finished umbilicus. PHerc1203 and PHerc0191 have passed the
 reopen/visual check; repeat this workflow through the remaining eligible queue and leave PHerc0268
 for last.
 Record each completed curve and screenshot set against `../PUBLICATION_CHECKLIST.md`.

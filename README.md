@@ -19,7 +19,8 @@ and is not independent human ground truth.
 | PHerc0211 | public, hand-drawn | Sean Johnson (@Bruniss), khartes, 2026-08-08 |
 | PHerc0826 | public, hand-drawn | Sean Johnson (@Bruniss), khartes, 2026-08-08 |
 | PHerc1203 | **hand-drawn from blank; approved locally (1/10)** | Abd Elilah, Khartes, 2026-08-15; 40 controls; CC-BY-4.0 |
-| PHerc0191, PHerc0257, PHerc0268, PHerc0358, PHerc0800, PHerc0813, PHerc1218, PHerc1447, PHerc1545 | manual redraw pending (9/10) | two automatic visual guides per scroll; neither supplies publishable controls |
+| PHerc0191 | **hand-drawn from blank; approved locally (2/10)** | Abd Elilah, Khartes, 2026-08-15; 30 controls; CC-BY-4.0 |
+| PHerc0257, PHerc0268, PHerc0358, PHerc0800, PHerc0813, PHerc1218, PHerc1447, PHerc1545 | manual redraw pending (8/10); ready-to-draw Khartes projects generated and stream-verified | two automatic visual guides per scroll; neither supplies publishable controls |
 
 PHerc1203 passed the candidate-first approval contract: exact fresh-project
 40/40 reimport with zero mismatches, eight hash-bound local evidence views, and
@@ -27,8 +28,10 @@ Villa loader validation. Its controls span z=1500-17775. The last two controls
 sample the final visible compact core; later slices inspected at z=17800, 17900,
 17998, and 18435 show the core exiting through damage without a discrete whorl.
 The curve was drawn on a blank fragment rather than promoted from either
-automatic initializer. The complete ten-scroll release remains intentionally
-unavailable until the remaining nine curves pass the same gates.
+automatic initializer. PHerc0191 then passed the same contract with 30 controls
+over z=2700-18001, eight evidence views, and exact Villa-loader interpolation at
+every canonical control. The complete ten-scroll release remains intentionally
+unavailable until the remaining eight curves pass the same gates.
 
 PHerc1218 has a public curve in `IyanDopico/vesuvius-sheet-tools`, but its
 generator takes the slice centroid and running-medians it — a *seed* by the
@@ -43,6 +46,10 @@ needing one. See "A reference that wasn't" below.
 - `coarse_center.py`, `seed_curve.py` — automatic seed curves.
 - `montage.py`, `make_montage.py`, `overlay.py` — labelled picking montages and
   verification overlays.
+- `make_operator_project.py` — writes a ready-to-draw Khartes project for a
+  scroll (stream attached, both guides imported and switched off, blank output
+  fragment active), and the step-6 reimport QC project from an exported
+  candidate.
 - `evaluate.py` — accuracy harness against a public reference curve.
 - `umbilicus_estimator.py` — the rejected automatic estimator, kept so the
   negative result is checkable.
@@ -146,8 +153,15 @@ accuracy, so they cannot even be filtered. See PROTOCOL.md Amendment 07.
 
 The finished curves must therefore be hand-drawn by a human in an interactive viewer. What
 this repository currently contributes is the data access, two starting curves, a tested
-Khartes control/export workflow, and the first approved manual output (PHerc1203). See
+Khartes control/export workflow, and the first two approved manual outputs. See
 `handoff/KHARTES_TODO.md` for the protected operator path.
+
+Since the human pass is the deliverable, the setup around it is scripted rather than repeated by
+hand. `make_operator_project.py` writes the Khartes project for a scroll directly — the exact
+public stream attached, both automatic guides imported but hidden and inactive, a blank output
+fragment active, and the view parked on the first guide control — and builds the separate reimport
+QC project from an exported candidate. Projects for the original nine-scroll queue were generated
+and each verified by loading it through Khartes' own `ProjectView.open` against the live stream.
 
 ### Manual export is candidate-first and fail-closed
 
@@ -288,10 +302,11 @@ manual attention.
 python make_seeds.py                       # seed curves for all 13 scrolls
 python make_montage.py PHerc0800 --n 16    # a labelled picking montage
 python qc_seeds.py                          # flag implausible centroid jumps
+python make_operator_project.py PHerc0191  # ready-to-draw Khartes project
 ```
 
-Do not run reference scoring or imagery tools on the protected validation target. PHerc1203 is
-complete; the manual queue continues with the remaining nine scrolls on the repaired Khartes
+Do not run reference scoring or imagery tools on the protected validation target. PHerc1203 and
+PHerc0191 are complete; the manual queue continues with the remaining eight scrolls on the repaired Khartes
 branch documented in the handoff.
 
 Only `numpy`, `scipy`, `Pillow` and either `opencv-python` or `scikit-image` are

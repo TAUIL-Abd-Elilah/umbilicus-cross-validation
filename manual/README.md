@@ -22,6 +22,6 @@ licence, and loads every curve through Villa's real Spiral consumer. Only its co
 create `release_manifest.json` with `--write-manifest`. CT-derived screenshots are local QC evidence unless Vesuvius Challenge gives
 written redistribution permission; do not broadly archive this tree.
 
-PHerc1203 is approved locally (1/10). Continue the remaining nine through the
+PHerc1203 and PHerc0191 are approved locally (2/10). Continue the remaining eight through the
 same candidate-first contract. The protected PHerc0826 target is not part of
 the current agent/operator pass.

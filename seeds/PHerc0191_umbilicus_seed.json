@@ -1,0 +1,206 @@
+{
+ "control_points": [
+  {
+   "x": 897,
+   "y": 929,
+   "z": 1320,
+   "score": 0
+  },
+  {
+   "x": 5601,
+   "y": 5279,
+   "z": 1878,
+   "score": 50
+  },
+  {
+   "x": 5054,
+   "y": 5194,
+   "z": 2436,
+   "score": 50
+  },
+  {
+   "x": 4484,
+   "y": 5155,
+   "z": 2994,
+   "score": 50
+  },
+  {
+   "x": 4250,
+   "y": 5162,
+   "z": 3552,
+   "score": 50
+  },
+  {
+   "x": 4241,
+   "y": 5164,
+   "z": 4110,
+   "score": 50
+  },
+  {
+   "x": 4314,
+   "y": 5129,
+   "z": 4668,
+   "score": 50
+  },
+  {
+   "x": 4345,
+   "y": 4978,
+   "z": 5226,
+   "score": 50
+  },
+  {
+   "x": 4371,
+   "y": 4854,
+   "z": 5784,
+   "score": 50
+  },
+  {
+   "x": 4248,
+   "y": 4698,
+   "z": 6342,
+   "score": 50
+  },
+  {
+   "x": 4157,
+   "y": 4600,
+   "z": 6899,
+   "score": 50
+  },
+  {
+   "x": 4116,
+   "y": 4437,
+   "z": 7457,
+   "score": 50
+  },
+  {
+   "x": 4153,
+   "y": 4289,
+   "z": 8015,
+   "score": 50
+  },
+  {
+   "x": 4170,
+   "y": 4175,
+   "z": 8573,
+   "score": 50
+  },
+  {
+   "x": 4199,
+   "y": 4100,
+   "z": 9131,
+   "score": 50
+  },
+  {
+   "x": 4186,
+   "y": 4020,
+   "z": 9689,
+   "score": 50
+  },
+  {
+   "x": 4063,
+   "y": 3951,
+   "z": 10247,
+   "score": 50
+  },
+  {
+   "x": 3980,
+   "y": 3868,
+   "z": 10805,
+   "score": 50
+  },
+  {
+   "x": 4021,
+   "y": 3772,
+   "z": 11363,
+   "score": 50
+  },
+  {
+   "x": 4051,
+   "y": 3866,
+   "z": 11921,
+   "score": 50
+  },
+  {
+   "x": 4034,
+   "y": 3993,
+   "z": 12479,
+   "score": 50
+  },
+  {
+   "x": 4068,
+   "y": 4208,
+   "z": 13037,
+   "score": 50
+  },
+  {
+   "x": 4167,
+   "y": 4463,
+   "z": 13594,
+   "score": 50
+  },
+  {
+   "x": 4250,
+   "y": 4673,
+   "z": 14152,
+   "score": 50
+  },
+  {
+   "x": 4379,
+   "y": 4692,
+   "z": 14710,
+   "score": 50
+  },
+  {
+   "x": 4379,
+   "y": 4664,
+   "z": 15268,
+   "score": 50
+  },
+  {
+   "x": 4367,
+   "y": 4647,
+   "z": 15826,
+   "score": 50
+  },
+  {
+   "x": 4387,
+   "y": 4700,
+   "z": 16384,
+   "score": 50
+  },
+  {
+   "x": 4302,
+   "y": 4607,
+   "z": 16942,
+   "score": 50
+  },
+  {
+   "x": 4118,
+   "y": 4544,
+   "z": 17500,
+   "score": 50
+  },
+  {
+   "x": 3804,
+   "y": 4294,
+   "z": 18058,
+   "score": 50
+  },
+  {
+   "x": 3438,
+   "y": 3850,
+   "z": 18616,
+   "score": 0
+  }
+ ],
+ "metadata": {
+  "z_grid_spacing": 0,
+  "min_score_threshold": 0.75,
+  "high_score_threshold": 0.75,
+  "total_points": 32,
+  "timestamp": "2026-08-12T08:30:51Z",
+  "note": "AUTOMATIC SEED, NOT A FINISHED UMBILICUS. Body-centroid initialisation; measured median error against public reference curves is ~300 voxels. Intended as a starting curve for manual correction in khartes.",
+  "flagged_points": 2,
+  "flagged_note": "score=0 marks a control point where the body-centroid heuristic jumped; place these manually rather than nudging them."
+ }
+}

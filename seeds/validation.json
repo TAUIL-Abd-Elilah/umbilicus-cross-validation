@@ -1,0 +1,74 @@
+{
+ "PHerc0125": {
+  "reference": "Sean Johnson (@Bruniss), khartes",
+  "independent": true,
+  "reference_points": 83,
+  "seed_points": 32,
+  "seed_vs_reference": {
+   "median": 289.4361730336543,
+   "p90": 645.1366433364623,
+   "max": 739.8896011551731,
+   "mean": 319.0151281269488
+  },
+  "reference_self_consistency": {
+   "median": 39.223609898155665,
+   "p90": 89.05815735779045,
+   "max": 154.01048981570347
+  },
+  "scored_points": 83
+ },
+ "PHerc0211": {
+  "reference": "Sean Johnson (@Bruniss), khartes",
+  "independent": true,
+  "reference_points": 87,
+  "seed_points": 32,
+  "seed_vs_reference": {
+   "median": 299.6105652213702,
+   "p90": 1028.4008180198327,
+   "max": 1262.4650940671436,
+   "mean": 440.3305555427416
+  },
+  "reference_self_consistency": {
+   "median": 31.612923297209015,
+   "p90": 114.40133524101238,
+   "max": 1724.0255290653802
+  },
+  "scored_points": 85
+ },
+ "PHerc0826": {
+  "reference": "Sean Johnson (@Bruniss), khartes",
+  "independent": true,
+  "reference_points": 49,
+  "seed_points": 32,
+  "seed_vs_reference": {
+   "median": 381.70195574987457,
+   "p90": 778.9193960545923,
+   "max": 1126.9867922306282,
+   "mean": 410.66630365121716
+  },
+  "reference_self_consistency": {
+   "median": 63.39017864886422,
+   "p90": 182.85997080253563,
+   "max": 342.8600541701997
+  },
+  "scored_points": 49
+ },
+ "PHerc1218": {
+  "reference": "IyanDopico/vesuvius-sheet-tools (centroid+running-median: SAME METHOD as the seed)",
+  "independent": false,
+  "reference_points": 365,
+  "seed_points": 32,
+  "seed_vs_reference": {
+   "median": 46.49794841068564,
+   "p90": 117.05111262220625,
+   "max": 1730.405652065133,
+   "mean": 102.8336229999632
+  },
+  "reference_self_consistency": {
+   "median": 10.058672359212858,
+   "p90": 49.31355980968936,
+   "max": 938.1731681277968
+  },
+  "scored_points": 349
+ }
+}

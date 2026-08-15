@@ -1,0 +1,18 @@
+# Never include local third-party validation material or generated inspection data
+# in a broad initial commit/archive. Public releases must use the explicit manual
+# allowlist in PUBLICATION_CHECKLIST.md.
+/reference/
+/cache/
+/picking/
+/picks/
+/__pycache__/
+/.pytest_cache/
+
+# Working candidates are not approved release curves.
+/manual/candidates/*
+!/manual/candidates/README.md
+
+# CT-derived QC screenshots stay local or in an organizer-approved channel
+# unless Vesuvius Challenge gives written redistribution permission.
+/manual/screenshots/*
+!/manual/screenshots/README.md

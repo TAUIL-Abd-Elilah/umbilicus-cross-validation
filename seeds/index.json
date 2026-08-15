@@ -1,0 +1,132 @@
+{
+ "PHerc0125": {
+  "ct": "20250821151825-9.362um-1.2m-113keV-masked.zarr",
+  "z_span": [
+   1056,
+   20832
+  ],
+  "n_points": 32,
+  "method": "body centroid at level 5, unsmoothed",
+  "seconds": 38.9
+ },
+ "PHerc0191": {
+  "ct": "20250821151635-9.362um-1.2m-113keV-masked.zarr",
+  "z_span": [
+   960,
+   18976
+  ],
+  "n_points": 32,
+  "method": "body centroid at level 5, unsmoothed",
+  "seconds": 40.6
+ },
+ "PHerc0211": {
+  "ct": "20250821151803-9.362um-1.2m-113keV-masked.zarr",
+  "z_span": [
+   1504,
+   19392
+  ],
+  "n_points": 32,
+  "method": "body centroid at level 5, unsmoothed",
+  "seconds": 11.8
+ },
+ "PHerc0257": {
+  "ct": "20250821151750-9.362um-1.2m-113keV-masked.zarr",
+  "z_span": [
+   960,
+   18368
+  ],
+  "n_points": 32,
+  "method": "body centroid at level 5, unsmoothed",
+  "seconds": 40.2
+ },
+ "PHerc0268": {
+  "ct": "20251110183117-8.640um-1.2m-116keV-masked.zarr",
+  "z_span": [
+   384,
+   14816
+  ],
+  "n_points": 32,
+  "method": "body centroid at level 5, unsmoothed",
+  "seconds": 40.4
+ },
+ "PHerc0358": {
+  "ct": "20250821151737-9.362um-1.2m-113keV-masked.zarr",
+  "z_span": [
+   384,
+   14720
+  ],
+  "n_points": 31,
+  "method": "body centroid at level 5, unsmoothed",
+  "seconds": 35.8
+ },
+ "PHerc0800": {
+  "ct": "20250521135224-8.640um-1.2m-116keV-masked.zarr",
+  "z_span": [
+   0,
+   24288
+  ],
+  "n_points": 32,
+  "method": "body centroid at level 5, unsmoothed",
+  "seconds": 39.1
+ },
+ "PHerc0813": {
+  "ct": "20250821151723-9.362um-1.2m-113keV-masked.zarr",
+  "z_span": [
+   1728,
+   16992
+  ],
+  "n_points": 32,
+  "method": "body centroid at level 5, unsmoothed",
+  "seconds": 37.4
+ },
+ "PHerc0826": {
+  "ct": "20250821151701-9.362um-1.2m-113keV-masked.zarr",
+  "z_span": [
+   0,
+   16896
+  ],
+  "n_points": 32,
+  "method": "body centroid at level 5, unsmoothed",
+  "seconds": 33.6
+ },
+ "PHerc1203": {
+  "ct": "20250820131727-9.362um-1.2m-113keV-masked.zarr",
+  "z_span": [
+   960,
+   18976
+  ],
+  "n_points": 32,
+  "method": "body centroid at level 5, unsmoothed",
+  "seconds": 37.8
+ },
+ "PHerc1218": {
+  "ct": "20250521120456-8.640um-1.2m-116keV-masked.zarr",
+  "z_span": [
+   0,
+   23232
+  ],
+  "n_points": 32,
+  "method": "body centroid at level 5, unsmoothed",
+  "seconds": 36.9
+ },
+ "PHerc1447": {
+  "ct": "20250521151220-8.640um-1.2m-116keV-masked.zarr",
+  "z_span": [
+   0,
+   24288
+  ],
+  "n_points": 32,
+  "method": "body centroid at level 5, unsmoothed",
+  "seconds": 54.6
+ },
+ "PHerc1545": {
+  "ct": "20250821151648-9.362um-1.2m-113keV-masked.zarr",
+  "z_span": [
+   1088,
+   20960
+  ],
+  "n_points": 32,
+  "method": "body centroid at level 5, unsmoothed",
+  "seconds": 24.4
+ }
+}

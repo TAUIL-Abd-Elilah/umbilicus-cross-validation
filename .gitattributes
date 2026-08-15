@@ -1,0 +1,10 @@
+# Hash-bound JSON must have identical bytes on every platform.
+* text=auto eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+
+# Approval manifests hash exact bytes; never normalize approved artifacts.
+manual/*.json -text -diff
+manual/candidates/*.json -text -diff
+manual/manifests/*.json -text -diff

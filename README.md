@@ -3,6 +3,9 @@
 Six independently hand-drawn umbilicus curves for Herculaneum scrolls, plus a
 reproducible comparison with [Aleksei Drobkov's public set](https://github.com/AlexeyDrobkovStrikesBack/herculaneum-umbilici).
 
+The complete August 2026 Progress Prize technical dossier is in
+[`AUGUST_2026_PROGRESS_PRIZE_SUBMISSION.md`](AUGUST_2026_PROGRESS_PRIZE_SUBMISSION.md).
+
 The original ten-scroll drawing pass stopped at 6/10 when Aleksei's complete set
 was published. The six finished curves are still useful as independent second
 annotations: they reveal where two reviewers followed different folds and where

@@ -1,0 +1,160 @@
+{
+  "approval_tool_sha256": "55faf116ecd28aeebfcef603a76905e4c476d0191af6d14ea87e3a1afe735b31",
+  "approved_at_utc": "2026-08-16T00:35:25.070449+00:00",
+  "approved_curve": {
+    "bytes": 3007,
+    "control_count": 31,
+    "path": "manual/PHerc0257_umbilicus.json",
+    "sha256": "4703b2846e7a1d4cc45840d0311fbce310e6ecdef5c2de2944ffbf1653a0337f",
+    "volume_shape_zyx": [
+      18872,
+      8388,
+      8388
+    ],
+    "x_max": 5000,
+    "x_min": 3600,
+    "y_max": 5550,
+    "y_min": 2900,
+    "z_max": 17481,
+    "z_min": 2700
+  },
+  "automatic_initializers": [
+    {
+      "exact_coordinate_match": false,
+      "kind": "seed",
+      "path": "seeds/PHerc0257_umbilicus_seed.json",
+      "sha256": "67911456bf86f6e80f18ad4a7c5d63182d195e53127601e09dd0656d189696a4"
+    },
+    {
+      "exact_coordinate_match": false,
+      "kind": "estimated",
+      "path": "seeds/PHerc0257_umbilicus_estimated.json",
+      "sha256": "d72ead907e6877cfdcb2b58b17231c460bcaafafe93c0a76ad079fb7d2a67e0c"
+    }
+  ],
+  "candidate": {
+    "bytes": 3007,
+    "path": "manual/candidates/PHerc0257_umbilicus.candidate.json",
+    "sha256": "4703b2846e7a1d4cc45840d0311fbce310e6ecdef5c2de2944ffbf1653a0337f"
+  },
+  "claim_boundary": "Human-reviewed fit-ready approximation; not exact ground truth, Kaggle hidden-test evidence, or a letter-reading result.",
+  "ct_url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHerc0257/volumes/20250821151750-9.362um-1.2m-113keV-masked.zarr",
+  "data_license": "CC-BY-4.0",
+  "format": "villa-manual-umbilicus-qc-v2",
+  "qc_checked": true,
+  "qc_completed_at_utc": "2026-08-16T00:35:24.877517+00:00",
+  "reviewer": "Abd Elilah",
+  "screenshots": [
+    {
+      "bytes": 865666,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0257/PHerc0257_end_z17481.png",
+      "role": "end",
+      "sha256": "7f4cfce5a52fd69b8f92769442c56cc457f1be5b57e9b3cc29f0a3804a2d71f4",
+      "width": 1920,
+      "z": 17481
+    },
+    {
+      "bytes": 722618,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0257/PHerc0257_excluded_early_z2321.png",
+      "role": "additional",
+      "sha256": "1af8d3b656b2a39fb168c7eaf20248c1ea637c7a8da276a8339fc906e9f41aaf",
+      "width": 1920,
+      "z": 2321
+    },
+    {
+      "bytes": 845554,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0257/PHerc0257_excluded_z17600.png",
+      "role": "additional",
+      "sha256": "c66cf19a9942236a002c7750bb25c05c08d92c4c52541ea476d1ac1c815f4cce",
+      "width": 1920,
+      "z": 17600
+    },
+    {
+      "bytes": 662147,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0257/PHerc0257_excluded_z18020.png",
+      "role": "additional",
+      "sha256": "e55159d8ddda1ca2c100c6d9d784326476a6e9c6255491424b6e243783809b8b",
+      "width": 1920,
+      "z": 18020
+    },
+    {
+      "bytes": 913468,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0257/PHerc0257_interpolated_z17200.png",
+      "role": "additional",
+      "sha256": "49d72c3e078f452dc0069d642dbaaabc1ca9bb5f2391450f66b065fbdc265489",
+      "width": 1920,
+      "z": 17200
+    },
+    {
+      "bytes": 1002232,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0257/PHerc0257_middle_z10473.png",
+      "role": "middle",
+      "sha256": "da49aca4c16f71c096eafb6d19de34efc9800dac1029d6953c945be99c90c16e",
+      "width": 1920,
+      "z": 10473
+    },
+    {
+      "bytes": 899520,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0257/PHerc0257_start_z2700.png",
+      "role": "start",
+      "sha256": "75dca0f2ba79846ec14356f11010cac037b3286a309db787f574697e637d2e7e",
+      "width": 1920,
+      "z": 2700
+    },
+    {
+      "bytes": 1003481,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0257/PHerc0257_transition_z16403.png",
+      "role": "additional",
+      "sha256": "647b950bee7c23fa993ff559737dad6b72cc2ff61d84f0a8064a7bd3b2eddb56",
+      "width": 1920,
+      "z": 16403
+    },
+    {
+      "bytes": 948451,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0257/PHerc0257_transition_z16942.png",
+      "role": "additional",
+      "sha256": "4bbbbef93c13f8be79c49fba7f038c93f6766ff83759e46c95d1c03f6f68f26e",
+      "width": 1920,
+      "z": 16942
+    },
+    {
+      "bytes": 1022211,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0257/PHerc0257_transition_z6160.png",
+      "role": "additional",
+      "sha256": "41f6b732219d3c50d8882108a557d82b54f8d81155facf102ab15cf42a13f4ae",
+      "width": 1920,
+      "z": 6160
+    },
+    {
+      "bytes": 1024319,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0257/PHerc0257_transition_z6300.png",
+      "role": "additional",
+      "sha256": "cd2f0e8f42bed80c8b1ca0a05a3a1e31224d1558177d9abff87e9315ab82df54",
+      "width": 1920,
+      "z": 6300
+    }
+  ],
+  "scroll": "PHerc0257"
+}

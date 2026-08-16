@@ -1,0 +1,110 @@
+{
+  "approval_tool_sha256": "55faf116ecd28aeebfcef603a76905e4c476d0191af6d14ea87e3a1afe735b31",
+  "approved_at_utc": "2026-08-16T08:31:40.927139+00:00",
+  "approved_curve": {
+    "bytes": 3009,
+    "control_count": 31,
+    "path": "manual/PHerc0813_umbilicus.json",
+    "sha256": "0e0d519820dd0538fa6625bce18793edf5b5080567d1664e7b52d2d7f20f96bd",
+    "volume_shape_zyx": [
+      16993,
+      7947,
+      7947
+    ],
+    "x_max": 4800,
+    "x_min": 1750,
+    "y_max": 4520,
+    "y_min": 3350,
+    "z_max": 16200,
+    "z_min": 2200
+  },
+  "automatic_initializers": [
+    {
+      "exact_coordinate_match": false,
+      "kind": "seed",
+      "path": "seeds/PHerc0813_umbilicus_seed.json",
+      "sha256": "2d36602964630c1164424f57ca2edad88b11f94cfca4817b69786c43be005859"
+    },
+    {
+      "exact_coordinate_match": false,
+      "kind": "estimated",
+      "path": "seeds/PHerc0813_umbilicus_estimated.json",
+      "sha256": "078dd3957f5bbbb84f68dad3a0b79758038054550a144b5b06157e04c884702f"
+    }
+  ],
+  "candidate": {
+    "bytes": 3009,
+    "path": "manual/candidates/PHerc0813_umbilicus.candidate.json",
+    "sha256": "0e0d519820dd0538fa6625bce18793edf5b5080567d1664e7b52d2d7f20f96bd"
+  },
+  "claim_boundary": "Human-reviewed fit-ready approximation; not exact ground truth, Kaggle hidden-test evidence, or a letter-reading result.",
+  "ct_url": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHerc0813/volumes/20250821151723-9.362um-1.2m-113keV-masked.zarr",
+  "data_license": "CC-BY-4.0",
+  "format": "villa-manual-umbilicus-qc-v2",
+  "qc_checked": true,
+  "qc_completed_at_utc": "2026-08-16T08:31:40.813787+00:00",
+  "reviewer": "Abd Elilah",
+  "screenshots": [
+    {
+      "bytes": 793255,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0813/PHerc0813_start_z2200.png",
+      "role": "start",
+      "sha256": "e2ff8308a2b2f1f9889dd7d5f56c3c60cfc804721c89d9d72833bb5c98d22e3a",
+      "width": 1920,
+      "z": 2200
+    },
+    {
+      "bytes": 1008627,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0813/PHerc0813_transition_z9750.png",
+      "role": "additional",
+      "sha256": "5e3060e09dcff28dad1e18db5b5f1acee896cd9800d95b87d3e17a3b13764f58",
+      "width": 1920,
+      "z": 9750
+    },
+    {
+      "bytes": 1009088,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0813/PHerc0813_middle_z11500.png",
+      "role": "middle",
+      "sha256": "f601805de48ac3d9ead77c27b873e16f64ec3b6891f94a559113a48e87ce9371",
+      "width": 1920,
+      "z": 11500
+    },
+    {
+      "bytes": 844155,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0813/PHerc0813_terminal_z15900.png",
+      "role": "additional",
+      "sha256": "8c6cf8185394d1b8fe782e971a35d71b7fbf10f61780aaaba6387028c6c3a9ee",
+      "width": 1920,
+      "z": 15900
+    },
+    {
+      "bytes": 776612,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0813/PHerc0813_end_z16200.png",
+      "role": "end",
+      "sha256": "f11887aac9f19b5f89544583c892c1c545cee6cde2235930f1ccf8f72c1cfdef",
+      "width": 1920,
+      "z": 16200
+    },
+    {
+      "bytes": 682401,
+      "format": "PNG",
+      "height": 1080,
+      "path": "manual/screenshots/PHerc0813/PHerc0813_excluded_z16300.png",
+      "role": "additional",
+      "sha256": "7bed27364356a7476f3eff863a28c01815f0d7762f58b28b0923aaad84a9aa1d",
+      "width": 1920,
+      "z": 16300
+    }
+  ],
+  "scroll": "PHerc0813"
+}

@@ -29,5 +29,10 @@ __pycache__/
 # validated results_*.json receipts remain tracked.
 /audit/downstream/reproduced_*.json
 
+# GPU fits, copied public inputs, caches, and CT review renders are generated
+# locally by the downstream axis A/B harness. Only preregistration, code, and
+# compact result receipts belong in git.
+/downstream/spiral_axis_ab/work/
+
 # Superseded before segment-keyed escalation receipts were introduced.
 /audit/midpoint_density/*_level*_escalation.json

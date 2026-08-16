@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "frozen_before_production_runs": true,
+  "question": "Does changing only the PHerc1218 umbilicus materially improve a production Spiral fit?",
+  "window_full_resolution_z": [5220, 6020],
+  "arms": {
+    "baseline": {
+      "source": "IyanDopico/vesuvius-sheet-tools:data/spiral_input_pherc1218/umbilicus.json",
+      "commit": "7116a75521e4f5791a4d077311efb5558bf3e20e"
+    },
+    "manual": {
+      "source": "AlexeyDrobkovStrikesBack/herculaneum-umbilici:PHerc1218_umbilicus.json",
+      "commit": "57e09a3d6f25773a2e0cad9d21eb97296cef50c8"
+    }
+  },
+  "held_constant": {
+    "villa_commit": "465cab06084e5587f7aea989440d495318bfb1eb",
+    "constraint_pack_commit": "7116a75521e4f5791a4d077311efb5558bf3e20e",
+    "optimizer_random_seed": 1,
+    "optimizer_num_training_steps": 30000,
+    "window_slices": 800,
+    "spiral_outward_sense": "CW",
+    "voxel_size_um": 8.64,
+    "expected_intersecting_patch_ids": [
+      "seed-z2464-pherc1218",
+      "seed-z2688-pherc1218",
+      "seed-z2912-pherc1218"
+    ]
+  },
+  "admission_gates": {
+    "both_exit_zero": true,
+    "intersecting_patch_count": 3,
+    "non_axis_inputs_byte_identical": true,
+    "relative_winding_satisfaction_min_percent": 94.0,
+    "same_winding_satisfaction_min_percent": 91.0,
+    "median_dr_l1_voxels_range": [9.6, 10.6]
+  },
+  "evidence_order": [
+    "blind_same_plane_exact_CT_surface_overlays",
+    "official_flattening_or_volume_render",
+    "independent_surface_geometry_metrics",
+    "constraint_satisfaction_as_secondary_run_health"
+  ],
+  "claim_rule": "Call one arm better only when volume evidence and at least one independent geometry metric agree; otherwise report neutral or inconclusive.",
+  "known_circularity": "The pack PCLs, synthesized seed patches, and baseline axis share a stitched-instance-label source, so their satisfaction scores are not independent ground truth.",
+  "smoke_runs_are_scientific_evidence": false
+}

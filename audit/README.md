@@ -29,18 +29,42 @@ bands, not as a ground-truth accuracy threshold.
   `(4748, 5784)` and z=9296 `(5710, 3978)` lie on different external branches in
   candidate-following orthogonal views. The independently drawn curve follows a
   continuous inner turning seam at approximately `(4270, 4514, 6616)` and
-  `(4711, 3782, 9296)`. Confidence is high that the two published controls need
-  review, but only moderate to medium-high in the exact replacement coordinates
-  because both regions are crushed. These are review candidates, not silently
-  applied edits.
-- **PHerc0191:** the largest disagreement at z=15480 was reviewed against exact
-  CT. The independent curve near `(4884, 3966)` stays in the persistent nested
-  turning seam; the public curve near `(3491, 5338)` lies in a compressed laminar
-  field with no local whorl. Confidence is high for branch choice and medium-high
-  for the exact coordinate (estimated uncertainty ±150–200 voxels). This remains
-  a review candidate until peer review.
-- **Other four scrolls:** exact-CT adjudication is in progress. No correction is
+  `(4711, 3782, 9296)`. Local radial-anisotropy scores improve at both locations,
+  but the public curve scores better over the full 30-slice PHerc0813 screen.
+  These are unresolved local review candidates, not silently applied edits.
+- **PHerc0191:** visual exact-CT inspection at the maximum disagreement z=15480
+  favors the independent point near `(4884, 3966)` over the public point near
+  `(3491, 5338)`. However, the neutral traced-arc winding-order fixture strongly
+  favors the public curve across its z=14520–16440 stack. The evidence conflicts;
+  no correction is claimed.
+- **PHerc0257:** unresolved at z=9552. The independent curve follows an upper
+  turning pocket and the public curve follows a lower persistent folded column.
+  Both branches persist across nearby slices, so neither can be rejected from the
+  current evidence.
+- **Other three scrolls:** exact-CT adjudication is in progress. No correction is
   claimed from distance alone.
+
+## Exploratory downstream comparison
+
+These are proxy measurements, not ground truth, and they do **not** establish that
+the six independent curves are globally better. The public implementation was
+reproduced to numerical precision before substituting either curve set.
+
+| Scroll | Neutral winding-order fixture | Radial-anisotropy mean (ours − public) | ours wins |
+|---|---:|---:|---:|
+| PHerc0191 | public 0.912, ours 0.821 | +0.03345 | 4/6 |
+| PHerc0257 | not available | +0.00187 | 4/6 |
+| PHerc0358 | public 0.899, ours 0.899 | −0.00624 | 3/6 |
+| PHerc0800 | not available | −0.03408 | 2/6 |
+| PHerc0813 | not available | −0.06137 | 1/6 |
+| PHerc1203 | public 0.897, ours 0.897 | −0.04227 | 3/6 |
+
+The six-slice radial screen is descriptive: slices are clustered, so no p-value
+is attached. Pooled, ours wins 17/36 slices and has mean difference −0.01811.
+On the full fixed 30-slice PHerc0813 screen, public mean q is 0.17433 versus
+0.14910 for ours. At the two acknowledged suspect controls, ours improves locally
+(z6616: 0.11390 vs 0.08451; z9296: 0.08695 vs 0.05990), demonstrating why local
+adjudication and whole-curve performance must be reported separately.
 
 CT-derived panels are not committed because source CT terms are handled
 separately. The numerical report binds both inputs by SHA-256, allowing reviewers

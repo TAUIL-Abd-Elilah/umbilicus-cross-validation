@@ -1,0 +1,707 @@
+{
+  "claim_boundary": "Same-z lateral disagreement between independent polylines. Distance alone does not identify the correct annotation; every proposed correction requires exact-CT review.",
+  "coordinate_convention": "Villa control_points x/y/z at level 0; linear interpolation in z",
+  "format": "independent-umbilicus-comparison-v1",
+  "ours_revision": "3a1d8aa1811f6f1428e76513feeabb50535e56d2",
+  "reference_revision": "57e09a3d6f25773a2e0cad9d21eb97296cef50c8",
+  "reference_url": "https://github.com/AlexeyDrobkovStrikesBack/herculaneum-umbilici",
+  "scroll_count": 6,
+  "scrolls": [
+    {
+      "ct_review_candidates": [
+        {
+          "distance_mm": 18.31124056762642,
+          "distance_voxels": 1955.911190731299,
+          "ours_xy": [
+            4884.4982078853045,
+            3965.5017921146955
+          ],
+          "reference_xy": [
+            3491.0,
+            5338.0
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 15480
+        },
+        {
+          "distance_mm": 13.318377921457312,
+          "distance_voxels": 1422.5996498031736,
+          "ours_xy": [
+            4417.025089605735,
+            4143.727598566308
+          ],
+          "reference_xy": [
+            3370.75,
+            5107.625
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 14730
+        },
+        {
+          "distance_mm": 11.250352325139236,
+          "distance_voxels": 1201.7039441507409,
+          "ours_xy": [
+            4519.89247311828,
+            4004.3010752688174
+          ],
+          "reference_xy": [
+            3791.625,
+            4960.1875
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 16230
+        }
+      ],
+      "distance": {
+        "max_mm": 18.31124056762642,
+        "max_voxels": 1955.911190731299,
+        "max_z": 15480,
+        "mean_mm": 5.131397623598094,
+        "mean_voxels": 548.1091245031076,
+        "median_mm": 4.376923168424046,
+        "median_voxels": 467.52009916941313,
+        "p90_mm": 12.720707995378934,
+        "p90_voxels": 1358.7596662442782,
+        "p95_mm": 16.738316578432393,
+        "p95_voxels": 1787.8996558889542
+      },
+      "ours": {
+        "control_count": 30,
+        "file": "PHerc0191_umbilicus.json",
+        "sha256": "8355fb0d6f092a7f56e7ecb4dc2f0d48506cece79e846d64158ebf92478a8d0d",
+        "z_range": [
+          2700.0,
+          18001.0
+        ]
+      },
+      "reference": {
+        "control_count": 22,
+        "file": "PHerc0191_umbilicus.json",
+        "sha256": "e50ff8cc087f8b65fa5fb597e8effbe857d1883fb21ee64bc2a97d79875bc097",
+        "z_range": [
+          3496.0,
+          17880.0
+        ]
+      },
+      "reporting_threshold": {
+        "bands": [
+          {
+            "peak_distance_mm": 18.31124056762642,
+            "peak_z": 15480,
+            "z_end": 17747,
+            "z_start": 11887
+          },
+          {
+            "peak_distance_mm": 7.736139455860824,
+            "peak_z": 9131,
+            "z_end": 11463,
+            "z_start": 7757
+          },
+          {
+            "peak_distance_mm": 5.916571480899984,
+            "peak_z": 5896,
+            "z_end": 6347,
+            "z_start": 5567
+          }
+        ],
+        "fraction_at_or_above": 0.7194299617657282,
+        "mm": 1.81,
+        "purpose": "candidate reporting only; not an accuracy or correctness threshold"
+      },
+      "sample_count": 14385,
+      "sample_step_z": 1,
+      "scroll": "PHerc0191",
+      "shared_z_range": [
+        3496,
+        17880
+      ],
+      "voxel_size_um": 9.362
+    },
+    {
+      "ct_review_candidates": [
+        {
+          "distance_mm": 7.547727974833611,
+          "distance_voxels": 806.2089270277303,
+          "ours_xy": [
+            3735.3703703703704,
+            2970.740740740741
+          ],
+          "reference_xy": [
+            4033.0,
+            3720.0
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 9552
+        },
+        {
+          "distance_mm": 6.7042325496908095,
+          "distance_voxels": 716.1111460895972,
+          "ours_xy": [
+            3900.0,
+            3700.0
+          ],
+          "reference_xy": [
+            4400.158898305085,
+            4212.5
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 7777
+        },
+        {
+          "distance_mm": 5.255163430549599,
+          "distance_voxels": 561.3291423359965,
+          "ours_xy": [
+            4166.851851851852,
+            3933.7037037037035
+          ],
+          "reference_xy": [
+            4348.0,
+            4465.0
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 16224
+        }
+      ],
+      "distance": {
+        "max_mm": 7.547727974833611,
+        "max_voxels": 806.2089270277303,
+        "max_z": 9552,
+        "mean_mm": 3.023800428663426,
+        "mean_voxels": 322.9865871249119,
+        "median_mm": 2.944570001095869,
+        "median_voxels": 314.5236061841347,
+        "p90_mm": 5.953605682428292,
+        "p90_voxels": 635.9331000243849,
+        "p95_mm": 6.70209002892196,
+        "p95_voxels": 715.8822931982439
+      },
+      "ours": {
+        "control_count": 31,
+        "file": "PHerc0257_umbilicus.json",
+        "sha256": "4703b2846e7a1d4cc45840d0311fbce310e6ecdef5c2de2944ffbf1653a0337f",
+        "z_range": [
+          2700.0,
+          17481.0
+        ]
+      },
+      "reference": {
+        "control_count": 29,
+        "file": "PHerc0257_umbilicus.json",
+        "sha256": "3d8edbaf0802d9880166eaa369235f06a3f16edd424cd6a46f7b8eeb88c33fae",
+        "z_range": [
+          2888.0,
+          17176.0
+        ]
+      },
+      "reporting_threshold": {
+        "bands": [
+          {
+            "peak_distance_mm": 7.547727974833611,
+            "peak_z": 9552,
+            "z_end": 13159,
+            "z_start": 7382
+          },
+          {
+            "peak_distance_mm": 5.255163430549599,
+            "peak_z": 16224,
+            "z_end": 17176,
+            "z_start": 14648
+          },
+          {
+            "peak_distance_mm": 5.176708481826187,
+            "peak_z": 6300,
+            "z_end": 6802,
+            "z_start": 5900
+          },
+          {
+            "peak_distance_mm": 4.537973188415636,
+            "peak_z": 4312,
+            "z_end": 4525,
+            "z_start": 3942
+          },
+          {
+            "peak_distance_mm": 2.125006213978151,
+            "peak_z": 7168,
+            "z_end": 7190,
+            "z_start": 7137
+          }
+        ],
+        "fraction_at_or_above": 0.6892014836587584,
+        "mm": 1.81,
+        "purpose": "candidate reporting only; not an accuracy or correctness threshold"
+      },
+      "sample_count": 14289,
+      "sample_step_z": 1,
+      "scroll": "PHerc0257",
+      "shared_z_range": [
+        2888,
+        17176
+      ],
+      "voxel_size_um": 9.362
+    },
+    {
+      "ct_review_candidates": [
+        {
+          "distance_mm": 10.913065363946595,
+          "distance_voxels": 1165.6767105262331,
+          "ours_xy": [
+            2891.093117408907,
+            3989.8785425101214
+          ],
+          "reference_xy": [
+            4010.0,
+            3663.0
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 9944
+        },
+        {
+          "distance_mm": 9.308856916512426,
+          "distance_voxels": 994.3235330605028,
+          "ours_xy": [
+            4500.0,
+            4650.0
+          ],
+          "reference_xy": [
+            4268.141304347826,
+            3683.086956521739
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 5500
+        },
+        {
+          "distance_mm": 6.929024852702147,
+          "distance_voxels": 740.1222871931368,
+          "ours_xy": [
+            3804.0,
+            3360.0
+          ],
+          "reference_xy": [
+            4445.0,
+            3730.0
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 6600
+        }
+      ],
+      "distance": {
+        "max_mm": 10.913065363946595,
+        "max_voxels": 1165.6767105262331,
+        "max_z": 9944,
+        "mean_mm": 3.08707275887946,
+        "mean_voxels": 329.7450073573446,
+        "median_mm": 1.7581883569975274,
+        "median_voxels": 187.8005081176594,
+        "p90_mm": 6.477926249401835,
+        "p90_voxels": 691.938287695133,
+        "p95_mm": 7.670178291814422,
+        "p95_voxels": 819.2884310846424
+      },
+      "ours": {
+        "control_count": 31,
+        "file": "PHerc0358_umbilicus.json",
+        "sha256": "c5d2d4f3bb5257d88cd1a9956be4426d26dd374e2df88288e9d8c690a7369a18",
+        "z_range": [
+          1300.0,
+          13700.0
+        ]
+      },
+      "reference": {
+        "control_count": 31,
+        "file": "PHerc0358_umbilicus.json",
+        "sha256": "788c0832a6e11ca26354f13ef1702459fbd920ff50ec7ec7dd7cde74b2ad6e93",
+        "z_range": [
+          1768.0,
+          12920.0
+        ]
+      },
+      "reporting_threshold": {
+        "bands": [
+          {
+            "peak_distance_mm": 10.913065363946595,
+            "peak_z": 9944,
+            "z_end": 10613,
+            "z_start": 6218
+          },
+          {
+            "peak_distance_mm": 9.308856916512426,
+            "peak_z": 5500,
+            "z_end": 5944,
+            "z_start": 5163
+          },
+          {
+            "peak_distance_mm": 3.622629698856523,
+            "peak_z": 12920,
+            "z_end": 12920,
+            "z_start": 12744
+          },
+          {
+            "peak_distance_mm": 2.2032948006193296,
+            "peak_z": 11800,
+            "z_end": 11893,
+            "z_start": 11721
+          }
+        ],
+        "fraction_at_or_above": 0.49565139424370125,
+        "mm": 1.81,
+        "purpose": "candidate reporting only; not an accuracy or correctness threshold"
+      },
+      "sample_count": 11153,
+      "sample_step_z": 1,
+      "scroll": "PHerc0358",
+      "shared_z_range": [
+        1768,
+        12920
+      ],
+      "voxel_size_um": 9.362
+    },
+    {
+      "ct_review_candidates": [
+        {
+          "distance_mm": 11.350312509570184,
+          "distance_voxels": 1313.6935774965489,
+          "ours_xy": [
+            4712.367021276596,
+            5200.0
+          ],
+          "reference_xy": [
+            3564.0,
+            5838.0
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 17816
+        },
+        {
+          "distance_mm": 10.108478844721212,
+          "distance_voxels": 1169.9628292501402,
+          "ours_xy": [
+            4365.359042553191,
+            5247.80585106383
+          ],
+          "reference_xy": [
+            3330.7328767123286,
+            5794.030821917808
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 17066
+        },
+        {
+          "distance_mm": 9.55501455530697,
+          "distance_voxels": 1105.9044624197882,
+          "ours_xy": [
+            5515.2,
+            4115.2
+          ],
+          "reference_xy": [
+            6621.0,
+            4100.0
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 4848
+        }
+      ],
+      "distance": {
+        "max_mm": 11.350312509570184,
+        "max_voxels": 1313.6935774965489,
+        "max_z": 17816,
+        "mean_mm": 4.347789411013896,
+        "mean_voxels": 503.21636701549716,
+        "median_mm": 3.7002596932321192,
+        "median_voxels": 428.27079782779157,
+        "p90_mm": 9.211268028601092,
+        "p90_voxels": 1066.118984791793,
+        "p95_mm": 10.06762132256851,
+        "p95_voxels": 1165.2339493713553
+      },
+      "ours": {
+        "control_count": 31,
+        "file": "PHerc0800_umbilicus.json",
+        "sha256": "fa15ff7252efa871a8f03502d11dea33b1905332f5828499cc4480e8e51d7c18",
+        "z_range": [
+          2200.0,
+          23050.0
+        ]
+      },
+      "reference": {
+        "control_count": 28,
+        "file": "PHerc0800_umbilicus.json",
+        "sha256": "ae66d8a3aa5ebc11aad857609481a13ece1304fcd2279ff5ebe29b8ed632a793",
+        "z_range": [
+          4256.0,
+          20760.0
+        ]
+      },
+      "reporting_threshold": {
+        "bands": [
+          {
+            "peak_distance_mm": 11.350312509570184,
+            "peak_z": 17816,
+            "z_end": 20417,
+            "z_start": 13293
+          },
+          {
+            "peak_distance_mm": 9.55501455530697,
+            "peak_z": 4848,
+            "z_end": 7673,
+            "z_start": 4256
+          },
+          {
+            "peak_distance_mm": 3.48043741005634,
+            "peak_z": 10152,
+            "z_end": 10678,
+            "z_start": 9293
+          }
+        ],
+        "fraction_at_or_above": 0.7227506816116328,
+        "mm": 1.81,
+        "purpose": "candidate reporting only; not an accuracy or correctness threshold"
+      },
+      "sample_count": 16505,
+      "sample_step_z": 1,
+      "scroll": "PHerc0800",
+      "shared_z_range": [
+        4256,
+        20760
+      ],
+      "voxel_size_um": 8.64
+    },
+    {
+      "ct_review_candidates": [
+        {
+          "distance_mm": 12.706196349932123,
+          "distance_voxels": 1357.2096079824955,
+          "ours_xy": [
+            4270.4,
+            4513.6
+          ],
+          "reference_xy": [
+            4748.0,
+            5784.0
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 6616
+        },
+        {
+          "distance_mm": 10.984582544188079,
+          "distance_voxels": 1173.3158026263702,
+          "ours_xy": [
+            4499.08,
+            4432.16
+          ],
+          "reference_xy": [
+            5341.723214285715,
+            5248.629464285715
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 7366
+        },
+        {
+          "distance_mm": 9.938421405047615,
+          "distance_voxels": 1061.5703273923964,
+          "ours_xy": [
+            4126.4,
+            4392.0
+          ],
+          "reference_xy": [
+            4028.0,
+            5449.0
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 5728
+        }
+      ],
+      "distance": {
+        "max_mm": 12.706196349932123,
+        "max_voxels": 1357.2096079824955,
+        "max_z": 6616,
+        "mean_mm": 5.365437226495983,
+        "mean_voxels": 573.1080139389002,
+        "median_mm": 4.809353928257614,
+        "median_voxels": 513.7100970153401,
+        "p90_mm": 10.014231332794097,
+        "p90_voxels": 1069.6679483864662,
+        "p95_mm": 11.39103497962762,
+        "p95_voxels": 1216.7309313851335
+      },
+      "ours": {
+        "control_count": 31,
+        "file": "PHerc0813_umbilicus.json",
+        "sha256": "0e0d519820dd0538fa6625bce18793edf5b5080567d1664e7b52d2d7f20f96bd",
+        "z_range": [
+          2200.0,
+          16200.0
+        ]
+      },
+      "reference": {
+        "control_count": 29,
+        "file": "PHerc0813_umbilicus.json",
+        "sha256": "aea1b972c217e2d4c991d5b66bde3f0d6c9862645f90ba7de99e8ff7408eb8c8",
+        "z_range": [
+          2600.0,
+          15992.0
+        ]
+      },
+      "reporting_threshold": {
+        "bands": [
+          {
+            "peak_distance_mm": 12.706196349932123,
+            "peak_z": 6616,
+            "z_end": 11038,
+            "z_start": 2600
+          },
+          {
+            "peak_distance_mm": 7.552009380954707,
+            "peak_z": 15500,
+            "z_end": 15992,
+            "z_start": 14034
+          },
+          {
+            "peak_distance_mm": 1.8705060457216607,
+            "peak_z": 11528,
+            "z_end": 11590,
+            "z_start": 11513
+          }
+        ],
+        "fraction_at_or_above": 0.782199656536997,
+        "mm": 1.81,
+        "purpose": "candidate reporting only; not an accuracy or correctness threshold"
+      },
+      "sample_count": 13393,
+      "sample_step_z": 1,
+      "scroll": "PHerc0813",
+      "shared_z_range": [
+        2600,
+        15992
+      ],
+      "voxel_size_um": 9.362
+    },
+    {
+      "ct_review_candidates": [
+        {
+          "distance_mm": 12.001088506686653,
+          "distance_voxels": 1281.8936665975916,
+          "ours_xy": [
+            4536.0,
+            3984.0
+          ],
+          "reference_xy": [
+            3347.8596153846156,
+            3502.778846153846
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 6197
+        },
+        {
+          "distance_mm": 11.065255678639224,
+          "distance_voxels": 1181.93288599009,
+          "ours_xy": [
+            4032.0,
+            3176.0
+          ],
+          "reference_xy": [
+            2933.296875,
+            3611.6796875
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 7508
+        },
+        {
+          "distance_mm": 10.266309858288748,
+          "distance_voxels": 1096.59366142798,
+          "ours_xy": [
+            3440.0,
+            3560.0
+          ],
+          "reference_xy": [
+            3906.0,
+            4552.653846153846
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 15812
+        }
+      ],
+      "distance": {
+        "max_mm": 12.001088506686653,
+        "max_voxels": 1281.8936665975916,
+        "max_z": 6197,
+        "mean_mm": 3.989532870844433,
+        "mean_voxels": 426.1410885328384,
+        "median_mm": 2.1843403097463616,
+        "median_voxels": 233.31983654628942,
+        "p90_mm": 9.59158414353714,
+        "p90_voxels": 1024.5229805102695,
+        "p95_mm": 10.528286635366056,
+        "p95_voxels": 1124.5766540660177
+      },
+      "ours": {
+        "control_count": 40,
+        "file": "PHerc1203_umbilicus.json",
+        "sha256": "e58d635e5d4830788e6685f19d0ada10e4ff2f8a9f608dbfa47070473ea1bc27",
+        "z_range": [
+          1500.0,
+          17775.0
+        ]
+      },
+      "reference": {
+        "control_count": 31,
+        "file": "PHerc1203_umbilicus.json",
+        "sha256": "3118f16acfb033a470cf657713cbd9598b528e74e0212a341c9914eed17bcf33",
+        "z_range": [
+          2320.0,
+          17840.0
+        ]
+      },
+      "reporting_threshold": {
+        "bands": [
+          {
+            "peak_distance_mm": 12.001088506686653,
+            "peak_z": 6197,
+            "z_end": 8379,
+            "z_start": 5120
+          },
+          {
+            "peak_distance_mm": 10.266309858288748,
+            "peak_z": 15812,
+            "z_end": 17228,
+            "z_start": 15192
+          },
+          {
+            "peak_distance_mm": 9.464760270476543,
+            "peak_z": 9560,
+            "z_end": 10547,
+            "z_start": 8408
+          },
+          {
+            "peak_distance_mm": 3.735168158173337,
+            "peak_z": 3352,
+            "z_end": 3814,
+            "z_start": 3009
+          },
+          {
+            "peak_distance_mm": 2.094966501820047,
+            "peak_z": 17775,
+            "z_end": 17775,
+            "z_start": 17760
+          },
+          {
+            "peak_distance_mm": 1.9037023665707058,
+            "peak_z": 14064,
+            "z_end": 14113,
+            "z_start": 14022
+          }
+        ],
+        "fraction_at_or_above": 0.5403079710144928,
+        "mm": 1.81,
+        "purpose": "candidate reporting only; not an accuracy or correctness threshold"
+      },
+      "sample_count": 15456,
+      "sample_step_z": 1,
+      "scroll": "PHerc1203",
+      "shared_z_range": [
+        2320,
+        17775
+      ],
+      "voxel_size_um": 9.362
+    }
+  ]
+}

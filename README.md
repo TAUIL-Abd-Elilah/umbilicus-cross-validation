@@ -1,42 +1,56 @@
-# umbilicus-13
+# Independent Herculaneum umbilicus cross-validation
 
-Tooling and automatic *starting curves* for the 13 Grand-Prize-eligible Herculaneum
-scrolls, in the `umbilicus.json` schema the Villa Spiral fitter already consumes.
-The 10-scroll manual completion set is still in progress; the automatic curves are
-not finished umbilici and must not be published as such.
+Six independently hand-drawn Villa-compatible umbilicus curves, their hash-bound
+quality-control manifests, and reproducible tooling for comparing them with
+[Aleksei Drobkov's ten-scroll release](https://github.com/AlexeyDrobkovStrikesBack/herculaneum-umbilici).
+
+The original goal was to draw ten missing curves. It was paused at 6/10 when the
+independently produced ten-scroll set became public. This repository now treats the
+six curves as a second-annotator dataset: it measures disagreement, identifies
+locations for exact-CT review, and records only evidence-backed findings. Distance
+between curves is **not** evidence that either curve is correct.
 
 An umbilicus is the curve through the centre of a rolled scroll. `fit_spiral`
 requires one per scroll (`volume-cartographer/scripts/spiral/umbilicus.py`,
 `json_umbilicus_z_to_yx`), so a missing umbilicus blocks a spiral fit outright.
-Public hand-drawn curves exist for 3 of the 13. A fourth public curve is automatic
-and is not independent human ground truth.
 
-## Status
+## Current release
 
-| Scroll | Umbilicus | Source |
-|---|---|---|
-| PHerc0125 | public, hand-drawn | Sean Johnson (@Bruniss), khartes, 2026-08-08 |
-| PHerc0211 | public, hand-drawn | Sean Johnson (@Bruniss), khartes, 2026-08-08 |
-| PHerc0826 | public, hand-drawn | Sean Johnson (@Bruniss), khartes, 2026-08-08 |
-| PHerc1203 | **hand-drawn from blank; approved locally (1/10)** | Abd Elilah, Khartes, 2026-08-15; 40 controls; CC-BY-4.0 |
-| PHerc0191 | **hand-drawn from blank; approved locally (2/10)** | Abd Elilah, Khartes, 2026-08-15; 30 controls; CC-BY-4.0 |
-| PHerc0257, PHerc0268, PHerc0358, PHerc0800, PHerc0813, PHerc1218, PHerc1447, PHerc1545 | manual redraw pending (8/10); ready-to-draw Khartes projects generated and stream-verified | two automatic visual guides per scroll; neither supplies publishable controls |
+| Scroll | Independent controls | Median disagreement | Maximum disagreement |
+|---|---:|---:|---:|
+| PHerc0191 | 30 | 4.377 mm | 18.311 mm at z=15480 |
+| PHerc0257 | 31 | 2.945 mm | 7.548 mm at z=9552 |
+| PHerc0358 | 31 | 1.758 mm | 10.913 mm at z=9944 |
+| PHerc0800 | 31 | 3.700 mm | 11.350 mm at z=17816 |
+| PHerc0813 | 31 | 4.809 mm | 12.706 mm at z=6616 |
+| PHerc1203 | 40 | 2.184 mm | 12.001 mm at z=6197 |
 
-PHerc1203 passed the candidate-first approval contract: exact fresh-project
-40/40 reimport with zero mismatches, eight hash-bound local evidence views, and
-Villa loader validation. Its controls span z=1500-17775. The last two controls
-sample the final visible compact core; later slices inspected at z=17800, 17900,
-17998, and 18435 show the core exiting through damage without a discrete whorl.
-The curve was drawn on a blank fragment rather than promoted from either
-automatic initializer. PHerc0191 then passed the same contract with 30 controls
-over z=2700-18001, eight evidence views, and exact Villa-loader interpolation at
-every canonical control. The complete ten-scroll release remains intentionally
-unavailable until the remaining eight curves pass the same gates.
+The curves are in [`manual/`](manual/), licensed CC BY 4.0. Each has a v2
+manifest in [`manual/manifests/`](manual/manifests/) binding its hash, reviewer,
+exact CT stream, control count, fresh-project reimport, and local evidence hashes.
+CT-derived screenshots are intentionally excluded from GitHub.
 
-PHerc1218 has a public curve in `IyanDopico/vesuvius-sheet-tools`, but its
-generator takes the slice centroid and running-medians it — a *seed* by the
-definition used here, not a hand-drawn umbilicus — so it is listed as still
-needing one. See "A reference that wasn't" below.
+The pinned metrics are in [`audit/comparison_summary.json`](audit/comparison_summary.json),
+with interpretation and exact commands in [`audit/README.md`](audit/README.md).
+The comparison uses level-0 Villa `x/y/z`, linear interpolation over only the
+shared z range, and the physical voxel size of each source CT.
+
+![Coordinate-only comparison of all six independent curve pairs](audit/comparison_overview.png)
+
+## Reproduce the cross-annotation comparison
+
+```bash
+git clone https://github.com/AlexeyDrobkovStrikesBack/herculaneum-umbilici external
+python compare_independent_curves.py \
+  --reference-dir external \
+  --reference-url https://github.com/AlexeyDrobkovStrikesBack/herculaneum-umbilici \
+  --reference-revision 57e09a3d6f25773a2e0cad9d21eb97296cef50c8
+python plot_independent_comparison.py --reference-dir external
+python -m unittest -v test_compare_independent_curves.py
+```
+
+The comparison requires NumPy; the optional figure also needs Matplotlib. No CT
+download is required for the coordinate-only comparison.
 
 ## What is in here
 
@@ -51,6 +65,8 @@ needing one. See "A reference that wasn't" below.
   fragment active), and the step-6 reimport QC project from an exported
   candidate.
 - `evaluate.py` — accuracy harness against a public reference curve.
+- `compare_independent_curves.py` — pinned same-z disagreement metrics and CT-review candidates.
+- `plot_independent_comparison.py` — coordinate-only overview figure; no CT pixels.
 - `umbilicus_estimator.py` — the rejected automatic estimator, kept so the
   negative result is checkable.
 - `PROTOCOL.md` — the frozen protocol and its amendments, in order.

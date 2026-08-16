@@ -88,6 +88,12 @@ new dense/min-spacing/shell terms on current Villa main. This preserves the
 published PCL-only experiment semantics instead of accidentally requesting the
 phase bundle's unavailable normal and surface-distance stores.
 
+The independent evaluation workflow is documented in
+[`EVALUATION.md`](EVALUATION.md); its planes and decision rule were frozen in
+[`EVALUATION_PLAN.md`](EVALUATION_PLAN.md) before any production result was
+available. Do not open the generated `private/blind_key.json` until all seven
+plane reviews have been recorded.
+
 ## Credit and scope
 
 This wrapper reuses the merged Villa fitter, the public PHerc1218 constraint

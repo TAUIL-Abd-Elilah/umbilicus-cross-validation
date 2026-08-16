@@ -39,3 +39,12 @@ Call an arm better only if the blinded CT review and at least one independent
 geometry measure agree without a material admission-gate failure. Otherwise
 report neutral or inconclusive. A technically successful fit is not by itself
 an accuracy claim.
+
+## Pre-result rendering audit
+
+Before any production result existed, a 300-step plumbing run exposed a
+rendering-only issue: an odd level-0 crop origin could be stretched onto a
+coarser pyramid array. The production evaluator therefore expands crops to
+exact pyramid-pixel boundaries, uses pixel-centre-correct plot extents, and
+writes near-native-resolution panels. This changes no plane, metric, gate, arm,
+or decision rule above; the smoke images are not scientific evidence.

@@ -450,7 +450,9 @@ def run_one(
     }
     write_json(receipt_path, receipt)
 
-    with log_path.open("w", encoding="utf-8") as log:
+    # Line buffering is intentional: an interrupted multi-hour fit must leave a
+    # useful audit log instead of an empty file held only in Python's buffer.
+    with log_path.open("w", encoding="utf-8", buffering=1) as log:
         process = subprocess.Popen(
             command,
             cwd=spiral_dir,
@@ -460,11 +462,33 @@ def run_one(
             text=True,
             errors="replace",
         )
+        receipt["process_id"] = process.pid
+        write_json(receipt_path, receipt)
         assert process.stdout is not None
-        for line in process.stdout:
-            print(f"[{arm}] {line}", end="", flush=True)
-            log.write(line)
-        return_code = process.wait()
+        try:
+            for line in process.stdout:
+                print(f"[{arm}] {line}", end="", flush=True)
+                log.write(line)
+            return_code = process.wait()
+        except KeyboardInterrupt:
+            if process.poll() is None:
+                process.terminate()
+                try:
+                    process.wait(timeout=15)
+                except subprocess.TimeoutExpired:
+                    process.kill()
+                    process.wait()
+            log.write("\nHARNESS INTERRUPTED: child process stopped after Ctrl+C.\n")
+            receipt.update(
+                {
+                    "finished_utc": utc_now(),
+                    "elapsed_seconds": time.monotonic() - started_clock,
+                    "return_code": process.returncode,
+                    "status": "interrupted",
+                }
+            )
+            write_json(receipt_path, receipt)
+            raise
 
     log_text = log_path.read_text(encoding="utf-8", errors="replace")
     patch_matches = re.findall(r"fitting\s+(\d+)\s+patches", log_text)

@@ -68,6 +68,33 @@ class IndependentCurveComparisonTests(unittest.TestCase):
         with self.assertRaisesRegex(comparison.ComparisonError, "no shared z"):
             comparison.compare_one("PHerc0191", self.ours, self.reference)
 
+    def test_cli_single_curve_overrides_bind_actual_inputs(self):
+        write_curve(self.ours, [(0, 0, 0), (10, 0, 10)])
+        write_curve(self.reference, [(0, 1, 0), (10, 1, 10)])
+        output = self.root / "result.json"
+        code = comparison.main(
+            [
+                "--reference-dir",
+                str(self.root),
+                "--scroll",
+                "PHerc0191",
+                "--ours-path",
+                str(self.ours),
+                "--reference-path",
+                str(self.reference),
+                "--output",
+                str(output),
+            ]
+        )
+        self.assertEqual(code, 0)
+        result = json.loads(output.read_text(encoding="utf-8"))
+        self.assertEqual(result["scroll_count"], 1)
+        self.assertEqual(result["scrolls"][0]["ours"]["sha256"], comparison.sha256(self.ours))
+        self.assertEqual(
+            result["scrolls"][0]["reference"]["sha256"],
+            comparison.sha256(self.reference),
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -25,6 +25,10 @@ bands, not as a ground-truth accuracy threshold.
 
 ## Exact-CT adjudication status
 
+The findings below are conservative internal, AI-assisted triage from exact-volume
+overlays. They remain pending experienced-user review and are not anatomical
+ground truth.
+
 - **PHerc0813:** two regions reviewed. The public controls at z=6616
   `(4748, 5784)` and z=9296 `(5710, 3978)` lie on different external branches in
   candidate-following orthogonal views. The independently drawn curve follows a
@@ -41,8 +45,37 @@ bands, not as a ground-truth accuracy threshold.
   turning pocket and the public curve follows a lower persistent folded column.
   Both branches persist across nearby slices, so neither can be rejected from the
   current evidence.
-- **Other three scrolls:** exact-CT adjudication is in progress. No correction is
-  claimed from distance alone.
+- **PHerc0358:** the public curve is strongly favored at z=5500; the independent
+  point is an isolated outer-cusp excursion. A preregistered candidate replaces
+  only that point using interpolation between its independent neighbors. At
+  z=9948, the independent branch is provisionally favored but remains ambiguous.
+- **PHerc0800:** the public curve is provisionally favored at both z=4856 and
+  z=17816. No correction has been promoted.
+- **PHerc1203:** exact CT strongly favors the public branch in four separated
+  regimes (near z=6198, 7508, 9560, and 15812). The independent PHerc1203 curve
+  is withdrawn from recommended use and would require a full redraw; four local
+  nudges would not address a curve-wide branch-selection problem.
+
+## Adaptive midpoint-density status
+
+The audit now checks the exact linear midpoint of every adjacent control pair,
+because fixed 30-control spacing can miss sharply bent regions. All 149 intervals
+across the five viable curves were screened axially; suspect intervals were
+rerendered at level 2 and then in candidate-following XZ/YZ sections.
+
+| Curve | Intervals | Keep linear | Add control | Unresolved |
+|---|---:|---:|---:|---:|
+| PHerc0191 | 29 | 25 | 2 | 2 |
+| PHerc0257 | 30 | 29 | 1 | 0 |
+| PHerc0358 v2 candidate | 30 | 30 | 0 | 0 |
+| PHerc0800 | 30 | 20 | 7 | 3 |
+| PHerc0813 | 30 | 27 | 0 | 3 |
+| **Total** | **149** | **131** | **10** | **8** |
+
+This is AI-assisted visual triage, not experienced-user acceptance or anatomical
+ground truth. No replacement coordinates were inferred from another annotation,
+and no source curve was modified. Exact decisions and curve-bound receipt metadata are in
+[`midpoint_density/`](midpoint_density/).
 
 ## Exploratory downstream comparison
 
@@ -50,7 +83,7 @@ These are proxy measurements, not ground truth, and they do **not** establish th
 the six independent curves are globally better. The public implementation was
 reproduced to numerical precision before substituting either curve set.
 
-| Scroll | Neutral winding-order fixture | Radial-anisotropy mean (ours − public) | ours wins |
+| Scroll | Pairwise public/ours winding-order fixture | Radial-anisotropy mean (ours − public) | ours wins |
 |---|---:|---:|---:|
 | PHerc0191 | public 0.912, ours 0.821 | +0.03345 | 4/6 |
 | PHerc0257 | not available | +0.00187 | 4/6 |

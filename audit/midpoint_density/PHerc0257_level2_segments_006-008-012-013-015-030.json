@@ -1,0 +1,212 @@
+{
+  "format": "umbilicus-midpoint-density-audit-v1",
+  "claim_boundary": "Risk ranks prioritize human review only. A midpoint is acceptable only after exact-CT classification; this manifest contains no automatic correctness verdict.",
+  "scroll": "PHerc0257",
+  "curve": {
+    "path": "manual/PHerc0257_umbilicus.json",
+    "sha256": "4703b2846e7a1d4cc45840d0311fbce310e6ecdef5c2de2944ffbf1653a0337f",
+    "control_count": 31
+  },
+  "source_stream": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHerc0257/volumes/20250821151750-9.362um-1.2m-113keV-masked.zarr",
+  "render": {
+    "level": 2,
+    "scale": 4,
+    "radius_full_voxels": 1600,
+    "panel_size": 620,
+    "clahe_clip_limit": 2.0,
+    "pages_local": [
+      "audit/ct_review_local/midpoints/PHerc0257/level2_segments_006-008-012-013-015-030/PHerc0257_midpoints_page_01.png",
+      "audit/ct_review_local/midpoints/PHerc0257/level2_segments_006-008-012-013-015-030/PHerc0257_midpoints_page_02.png"
+    ]
+  },
+  "review_contract": {
+    "allowed_classifications": [
+      "PASS",
+      "ADD_CONTROL",
+      "AMBIGUOUS"
+    ],
+    "add_control_rule": "Place a new independent Khartes control at the reviewed CT core; never copy another curve.",
+    "completion": "Every segment must be classified; all ADD_CONTROL segments must be re-rendered after editing."
+  },
+  "selected_segment_numbers": [
+    6,
+    8,
+    12,
+    13,
+    15,
+    30
+  ],
+  "segments": [
+    {
+      "segment_index": 5,
+      "start_xyz": [
+        4970.0,
+        4850.0,
+        5082.0
+      ],
+      "end_xyz": [
+        5000.0,
+        4450.0,
+        5621.0
+      ],
+      "requested_mid_z": 5351.5,
+      "exact_mid_xyz": [
+        4985.027829313543,
+        4649.628942486085,
+        5352.0
+      ],
+      "delta_z": 539.0,
+      "delta_xy_voxels": 401.1234224026316,
+      "xy_speed_per_z": 0.7441992994482961,
+      "left_turn_degrees": 21.61735467069538,
+      "right_turn_degrees": 101.88379669741046,
+      "risk_score": 5.183130265829818,
+      "classification": "UNREVIEWED",
+      "review_note": "",
+      "risk_rank": 9
+    },
+    {
+      "segment_index": 7,
+      "start_xyz": [
+        4700.0,
+        4490.0,
+        6160.0
+      ],
+      "end_xyz": [
+        4400.0,
+        4380.0,
+        6300.0
+      ],
+      "requested_mid_z": 6230.0,
+      "exact_mid_xyz": [
+        4545.714285714285,
+        4433.428571428572,
+        6232.0
+      ],
+      "delta_z": 140.0,
+      "delta_xy_voxels": 319.53090617340916,
+      "xy_speed_per_z": 2.282363615524351,
+      "left_turn_degrees": 27.730946796839582,
+      "right_turn_degrees": 6.4287477488298475,
+      "risk_score": 2.4046762870101066,
+      "classification": "UNREVIEWED",
+      "review_note": "",
+      "risk_rank": 26
+    },
+    {
+      "segment_index": 11,
+      "start_xyz": [
+        4050.0,
+        4050.0,
+        7238.0
+      ],
+      "end_xyz": [
+        3900.0,
+        3700.0,
+        7777.0
+      ],
+      "requested_mid_z": 7507.5,
+      "exact_mid_xyz": [
+        3974.860853432282,
+        3874.6753246753246,
+        7508.0
+      ],
+      "delta_z": 539.0,
+      "delta_xy_voxels": 380.7886552931954,
+      "xy_speed_per_z": 0.7064724587999914,
+      "left_turn_degrees": 21.80140948635181,
+      "right_turn_degrees": 23.198590513648185,
+      "risk_score": 3.337284980841954,
+      "classification": "UNREVIEWED",
+      "review_note": "",
+      "risk_rank": 19
+    },
+    {
+      "segment_index": 12,
+      "start_xyz": [
+        3900.0,
+        3700.0,
+        7777.0
+      ],
+      "end_xyz": [
+        3900.0,
+        3500.0,
+        8316.0
+      ],
+      "requested_mid_z": 8046.5,
+      "exact_mid_xyz": [
+        3900.0,
+        3599.443413729128,
+        8048.0
+      ],
+      "delta_z": 539.0,
+      "delta_xy_voxels": 200.0,
+      "xy_speed_per_z": 0.37105751391465674,
+      "left_turn_degrees": 23.198590513648185,
+      "right_turn_degrees": 7.125016348901757,
+      "risk_score": 2.4723598545942034,
+      "classification": "UNREVIEWED",
+      "review_note": "",
+      "risk_rank": 25
+    },
+    {
+      "segment_index": 14,
+      "start_xyz": [
+        3850.0,
+        3100.0,
+        8855.0
+      ],
+      "end_xyz": [
+        3750.0,
+        3000.0,
+        9394.0
+      ],
+      "requested_mid_z": 9124.5,
+      "exact_mid_xyz": [
+        3800.0927643784785,
+        3050.0927643784785,
+        9124.0
+      ],
+      "delta_z": 539.0,
+      "delta_xy_voxels": 141.4213562373095,
+      "xy_speed_per_z": 0.26237728429927554,
+      "left_turn_degrees": 37.8749836510982,
+      "right_turn_degrees": 18.434948822922,
+      "risk_score": 2.5182512594176814,
+      "classification": "UNREVIEWED",
+      "review_note": "",
+      "risk_rank": 24
+    },
+    {
+      "segment_index": 29,
+      "start_xyz": [
+        4100.0,
+        4000.0,
+        16942.0
+      ],
+      "end_xyz": [
+        3600.0,
+        3750.0,
+        17481.0
+      ],
+      "requested_mid_z": 17211.5,
+      "exact_mid_xyz": [
+        3849.5361781076067,
+        3874.768089053803,
+        17212.0
+      ],
+      "delta_z": 539.0,
+      "delta_xy_voxels": 559.0169943749474,
+      "xy_speed_per_z": 1.0371372808440584,
+      "left_turn_degrees": 26.565051177077994,
+      "right_turn_degrees": 0.0,
+      "risk_score": 4.264771335294689,
+      "classification": "UNREVIEWED",
+      "review_note": "",
+      "risk_rank": 14
+    }
+  ],
+  "bytes_fetched": 0,
+  "missing_source_chunks": 6,
+  "failed_source_chunks": 0
+}

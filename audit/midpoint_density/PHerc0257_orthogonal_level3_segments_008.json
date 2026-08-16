@@ -1,0 +1,90 @@
+{
+  "format": "umbilicus-midpoint-orthogonal-review-v1",
+  "claim_boundary": "Candidate-following reviewer planes; no automatic correctness verdict.",
+  "scroll": "PHerc0257",
+  "curve": {
+    "path": "manual/PHerc0257_umbilicus.json",
+    "sha256": "4703b2846e7a1d4cc45840d0311fbce310e6ecdef5c2de2944ffbf1653a0337f"
+  },
+  "source_stream": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHerc0257/volumes/20250821151750-9.362um-1.2m-113keV-masked.zarr",
+  "render": {
+    "level": 3,
+    "scale": 8,
+    "radius_full_voxels": 1200,
+    "panel_size": 620,
+    "strict_chunk_fetch": true,
+    "outputs_local": [
+      "audit/ct_review_local/orthogonals/PHerc0257/level3_segments_008/PHerc0257_segment_008_orthogonals.png"
+    ]
+  },
+  "segments": [
+    {
+      "segment_index": 7,
+      "segment_number": 8,
+      "exact_mid_xyz": [
+        4545.714285714285,
+        4433.428571428572,
+        6232.0
+      ],
+      "planes": [
+        {
+          "axis": "y",
+          "held_coordinate": "y(z)",
+          "other_coordinate": "x(z)",
+          "z_level_range": [
+            629,
+            929
+          ],
+          "other_level_range": [
+            418,
+            718
+          ],
+          "candidate_other_level_range": [
+            499.77968460111316,
+            624.9652133580705
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            692
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 2392
+          }
+        },
+        {
+          "axis": "x",
+          "held_coordinate": "x(z)",
+          "other_coordinate": "y(z)",
+          "z_level_range": [
+            629,
+            929
+          ],
+          "other_level_range": [
+            404,
+            704
+          ],
+          "candidate_other_level_range": [
+            491.1525974025974,
+            610.3084415584416
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            692
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 2392
+          }
+        }
+      ]
+    }
+  ],
+  "bytes_fetched": 48234496,
+  "missing_source_chunks": 0,
+  "failed_source_chunks": 0
+}

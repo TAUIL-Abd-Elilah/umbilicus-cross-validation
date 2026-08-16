@@ -1,0 +1,161 @@
+{
+  "schema": "downstream-cross-annotation-axis-q-archived-v1",
+  "created_at_utc": "2026-08-16T11:45:00Z",
+  "archive_note": "Transcribed from the completed read-only console runs. compare_axis_q.py materializes the same algorithm for clean reproduction; the expensive streams were not repeated merely to rewrite this receipt.",
+  "source_heads": {
+    "external": "57e09a3d6f25773a2e0cad9d21eb97296cef50c8",
+    "ours_curve_producing_commit": "3a1d8aa1811f6f1428e76513feeabb50535e56d2",
+    "villa": "94ba215963afb6216e380fe2c86131fa5e724c3b"
+  },
+  "environment": {
+    "python": "3.11",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "torch": "2.13.0+cu126",
+    "requests": "2.34.2"
+  },
+  "claim_boundary": "Exploratory proxy results, not ground truth. q measures radial structure-tensor alignment. Slices within a scroll are correlated; no pooled significance claim is made.",
+  "screen6": {
+    "selection": "Indices 0,5,10,15,20,25 from each public 30-slice preregistration list, fixed before comparison.",
+    "replication": {
+      "n_originally_scorable": 35,
+      "max_abs_q_error": 0.0,
+      "median_abs_q_error": 0.0,
+      "originally_non_scorable": ["PHerc0257:z2888"]
+    },
+    "scrolls": [
+      {
+        "scroll": "PHerc0191",
+        "rows": [
+          {"z": 3496, "public_q": 0.2933196315262394, "ours_q": 0.28857411969868774},
+          {"z": 5976, "public_q": 0.062479465306759706, "ours_q": 0.11252152414064463},
+          {"z": 8456, "public_q": 0.15211473523801416, "ours_q": 0.14812291798101962},
+          {"z": 10936, "public_q": 0.12993004439341313, "ours_q": 0.1778560380148465},
+          {"z": 13416, "public_q": 0.15274065216504293, "ours_q": 0.18542976239050107},
+          {"z": 15896, "public_q": 0.07957238532075797, "ours_q": 0.15834993548785845}
+        ],
+        "summary": {"n": 6, "public_mean": 0.14502615232503788, "ours_mean": 0.178475716285593, "ours_minus_public_mean": 0.033449563960555116, "ours_wins": 4}
+      },
+      {
+        "scroll": "PHerc0257",
+        "rows": [
+          {"z": 2888, "public_q": 0.18534111369035117, "ours_q": 0.18874340687240895},
+          {"z": 5350, "public_q": 0.14803333732120783, "ours_q": 0.14083508975640519},
+          {"z": 7814, "public_q": 0.09578710380696093, "ours_q": 0.12328922731673865},
+          {"z": 10278, "public_q": 0.16527309536210197, "ours_q": 0.11811150778313778},
+          {"z": 12742, "public_q": 0.0303204256166077, "ours_q": 0.05801536918357161},
+          {"z": 15204, "public_q": 0.12699733793399456, "ours_q": 0.13398156545360038}
+        ],
+        "summary": {"n": 6, "public_mean": 0.12529206895520403, "ours_mean": 0.12716269439431044, "ours_minus_public_mean": 0.0018706254391064013, "ours_wins": 4}
+      },
+      {
+        "scroll": "PHerc0358",
+        "rows": [
+          {"z": 1768, "public_q": 0.29325337911714905, "ours_q": 0.34319828733863944},
+          {"z": 3690, "public_q": 0.2935715790766032, "ours_q": 0.30695522153812677},
+          {"z": 5614, "public_q": 0.08309451589240927, "ours_q": 0.1435922235212275},
+          {"z": 7536, "public_q": 0.05445478550706895, "ours_q": -0.006756401587328847},
+          {"z": 9458, "public_q": 0.1152059313452965, "ours_q": 0.04466605141302214},
+          {"z": 11382, "public_q": 0.3085447718401202, "ours_q": 0.27900486349650677}
+        ],
+        "summary": {"n": 6, "public_mean": 0.19135416046310785, "ours_mean": 0.1851100409533656, "ours_minus_public_mean": -0.0062441195097422296, "ours_wins": 3}
+      },
+      {
+        "scroll": "PHerc0800",
+        "rows": [
+          {"z": 4256, "public_q": 0.16325568333222507, "ours_q": 0.122521384127602},
+          {"z": 7102, "public_q": 0.2767142954115779, "ours_q": 0.2638065699067622},
+          {"z": 9946, "public_q": 0.17016021694181177, "ours_q": 0.1629422132581262},
+          {"z": 12792, "public_q": 0.23659077746299723, "ours_q": 0.2413727176517735},
+          {"z": 15638, "public_q": 0.11549363740121293, "ours_q": -0.0414615259986441},
+          {"z": 18484, "public_q": 0.2754783078138671, "ours_q": 0.2840375785753721}
+        ],
+        "summary": {"n": 6, "public_mean": 0.20628215306061534, "ours_mean": 0.17220315625349866, "ours_minus_public_mean": -0.034078996807116686, "ours_wins": 2}
+      },
+      {
+        "scroll": "PHerc0813",
+        "rows": [
+          {"z": 2600, "public_q": 0.2260424758587873, "ours_q": -0.010573967959773084},
+          {"z": 4908, "public_q": 0.16281766979732096, "ours_q": 0.16429368255678173},
+          {"z": 7218, "public_q": 0.07420718472527585, "ours_q": 0.022129431320756718},
+          {"z": 9526, "public_q": 0.11444545967451762, "ours_q": 0.06490795195357693},
+          {"z": 11836, "public_q": 0.19870274959880643, "ours_q": 0.17014277868394903},
+          {"z": 14144, "public_q": 0.24973282601052837, "ours_q": 0.24684343962709654}
+        ],
+        "summary": {"n": 6, "public_mean": 0.1709913942775394, "ours_mean": 0.10962388603039797, "ours_minus_public_mean": -0.06136750824714144, "ours_wins": 1}
+      },
+      {
+        "scroll": "PHerc1203",
+        "rows": [
+          {"z": 2320, "public_q": 0.33191127601228626, "ours_q": 0.33342117221285394},
+          {"z": 4996, "public_q": 0.09001309200895266, "ours_q": 0.08724945851367265},
+          {"z": 7672, "public_q": 0.13254182687709126, "ours_q": 0.051197156287787704},
+          {"z": 10348, "public_q": 0.15941894851003957, "ours_q": 0.1614222684548221},
+          {"z": 13022, "public_q": 0.4599653268852149, "ours_q": 0.4654957331010254},
+          {"z": 15698, "public_q": 0.20480308648428758, "ours_q": 0.026252746916580697}
+        ],
+        "summary": {"n": 6, "public_mean": 0.22977559279631202, "ours_mean": 0.18750642258112374, "ours_minus_public_mean": -0.0422691702151883, "ours_wins": 3}
+      }
+    ],
+    "pooled_descriptive_only": {"n": 36, "ours_minus_public_mean": -0.018106600896587857, "ours_minus_public_median": -0.0028265099393559243, "ours_wins": 17}
+  },
+  "pherc0813_full30": {
+    "selection": "All 30 slices in the public PHerc0813 preregistration list.",
+    "replication": {"n_originally_scorable": 29, "max_abs_q_error": 1.534792265500684e-09, "median_abs_q_error": 0.0, "radius_mismatches": 0, "originally_non_scorable": [15992]},
+    "rows": [
+      {"z": 2600, "public_q": 0.2260424758587873, "ours_q": -0.010573967959773084, "posthoc_eye_q": 0.2260424758587873},
+      {"z": 3062, "public_q": 0.15060229004315598, "ours_q": 0.09310593287092289, "posthoc_eye_q": 0.15060229004315598},
+      {"z": 3524, "public_q": 0.20437776474565705, "ours_q": 0.1543120266949442, "posthoc_eye_q": 0.20437776474565705},
+      {"z": 3984, "public_q": 0.20877498234045966, "ours_q": 0.11016726238346425, "posthoc_eye_q": 0.20877498234045966},
+      {"z": 4446, "public_q": 0.1789285154261269, "ours_q": 0.17754712656830932, "posthoc_eye_q": 0.1789285154261269},
+      {"z": 4908, "public_q": 0.16281766979732096, "ours_q": 0.16429368255678173, "posthoc_eye_q": 0.16281766979732096},
+      {"z": 5370, "public_q": 0.1479547940809781, "ours_q": 0.12271108020934397, "posthoc_eye_q": 0.1479547940809781},
+      {"z": 5832, "public_q": 0.19188312915568403, "ours_q": 0.031501340902171965, "posthoc_eye_q": 0.19188312915568403},
+      {"z": 6294, "public_q": 0.1595423565891954, "ours_q": 0.15716802679850966, "posthoc_eye_q": 0.18283529365354406},
+      {"z": 6756, "public_q": 0.08681344495660685, "ours_q": 0.058503710442136564, "posthoc_eye_q": 0.0168508205656826},
+      {"z": 7218, "public_q": 0.07420718472527585, "ours_q": 0.022129431320756718, "posthoc_eye_q": 0.07420718472527585},
+      {"z": 7680, "public_q": 0.0033633334230913376, "ours_q": 0.11718264450904717, "posthoc_eye_q": 0.0033633334230913376},
+      {"z": 8142, "public_q": 0.26323762671717754, "ours_q": -0.06370324157373165, "posthoc_eye_q": 0.26323762671717754},
+      {"z": 8602, "public_q": 0.02936975083219021, "ours_q": 0.12130949048830884, "posthoc_eye_q": 0.02936975083219021},
+      {"z": 9064, "public_q": 0.03922446038802423, "ours_q": 0.07916094474106682, "posthoc_eye_q": 0.06843103283330555},
+      {"z": 9526, "public_q": 0.11444545967451762, "ours_q": 0.06490795195357693, "posthoc_eye_q": 0.05183858740799567},
+      {"z": 9988, "public_q": 0.034686690479560474, "ours_q": 0.0523570603674889, "posthoc_eye_q": 0.025334517614663293},
+      {"z": 10450, "public_q": 0.08240328147405543, "ours_q": 0.11813768205999217, "posthoc_eye_q": 0.08240328147405543},
+      {"z": 10912, "public_q": 0.23930777626322866, "ours_q": 0.22627600656417282, "posthoc_eye_q": 0.23930777626322866},
+      {"z": 11374, "public_q": 0.2960365775487122, "ours_q": 0.285057401455976, "posthoc_eye_q": 0.2960365775487122},
+      {"z": 11836, "public_q": 0.19870274959880643, "ours_q": 0.17014277868394903, "posthoc_eye_q": 0.19870274959880643},
+      {"z": 12298, "public_q": 0.25368509151654545, "ours_q": 0.24200117871459204, "posthoc_eye_q": 0.25368509151654545},
+      {"z": 12758, "public_q": 0.22507026067038696, "ours_q": 0.20971165030224273, "posthoc_eye_q": 0.22507026067038696},
+      {"z": 13220, "public_q": 0.25368073118567214, "ours_q": 0.21982419887921134, "posthoc_eye_q": 0.25368073118567214},
+      {"z": 13682, "public_q": 0.32436579577140745, "ours_q": 0.30657221969598253, "posthoc_eye_q": 0.32436579577140745},
+      {"z": 14144, "public_q": 0.24973282601052837, "ours_q": 0.24684343962709654, "posthoc_eye_q": 0.24973282601052837},
+      {"z": 14606, "public_q": 0.23200177601405148, "ours_q": 0.23853574562001942, "posthoc_eye_q": 0.23200177601405148},
+      {"z": 15068, "public_q": 0.17628958736120612, "ours_q": 0.2602025217340187, "posthoc_eye_q": 0.17628958736120612},
+      {"z": 15530, "public_q": 0.10185896597295988, "ours_q": 0.1645602606713392, "posthoc_eye_q": 0.10185896597295988},
+      {"z": 15992, "public_q": 0.32058741992194745, "ours_q": 0.3329014054678389, "posthoc_eye_q": 0.32058741992194745}
+    ],
+    "summary": {
+      "n": 30,
+      "public_mean": 0.17433315895144394,
+      "public_median": 0.18540582229090546,
+      "ours_mean": 0.14909489975832518,
+      "ours_median": 0.15574002674672693,
+      "posthoc_eye_mean": 0.17135242028435346,
+      "posthoc_eye_median": 0.18735921140461403,
+      "ours_minus_public_mean": -0.025238259193118694,
+      "ours_minus_public_median": -0.012357841250504625,
+      "ours_wins": 10,
+      "posthoc_eye_minus_public_mean": -0.0029807386670904473,
+      "posthoc_eye_wins": 2,
+      "posthoc_eye_ties": 25
+    }
+  },
+  "pherc0813_known_bad_exact": {
+    "selection": "The two control z values the public README explicitly labels visibly off-centre.",
+    "rows": [
+      {"z": 6616, "public_q": 0.08450694702400288, "ours_q": 0.11390238360612383, "posthoc_eye_q": 0.18564812424088034, "symmetric_radius": 475.0},
+      {"z": 9296, "public_q": 0.05989953179322854, "ours_q": 0.08694553128324298, "posthoc_eye_q": 0.102342494847034, "posthoc_argmax_q_supplemental_circular": 0.13680824281888856, "symmetric_radius": 550.0}
+    ],
+    "warning": "Local proxy improvement does not establish a correct coordinate. The sections are crushed, and the full-curve result favors the public curve on average."
+  }
+}

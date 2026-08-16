@@ -57,6 +57,7 @@ class Pyramid:
     path: str
     shapes: dict[int, tuple[int, int, int]]
     chunks: tuple[int, int, int]
+    fill_values: dict[int, int]
 
     @property
     def max_level(self) -> int:
@@ -70,12 +71,15 @@ class Pyramid:
 def open_pyramid(path: str, max_probe: int = 8) -> Pyramid:
     """Read the .zarray of every present pyramid level of `path`."""
     shapes: dict[int, tuple[int, int, int]] = {}
+    fill_values: dict[int, int] = {}
     chunks: tuple[int, int, int] | None = None
     for lv in range(max_probe):
         try:
             meta = json.loads(_get(f"{BUCKET}/{path}/{lv}/.zarray", attempts=2))
-        except Exception:
-            break
+        except urllib.error.HTTPError as error:
+            if error.code == 404:
+                break
+            raise
         if meta.get("compressor") is not None or meta.get("dtype") != "|u1":
             raise ValueError(
                 f"{path}/{lv}: reader assumes uncompressed uint8, got "
@@ -83,11 +87,28 @@ def open_pyramid(path: str, max_probe: int = 8) -> Pyramid:
             )
         if meta.get("order") != "C":
             raise ValueError(f"{path}/{lv}: reader assumes C order, got {meta.get('order')}")
-        shapes[lv] = tuple(meta["shape"])
-        chunks = tuple(meta["chunks"])
+        if meta.get("fill_value") != 0:
+            raise ValueError(
+                f"{path}/{lv}: missing chunks can only be zero-filled safely, got "
+                f"fill_value={meta.get('fill_value')}"
+            )
+        shape = tuple(int(value) for value in meta["shape"])
+        level_chunks = tuple(int(value) for value in meta["chunks"])
+        if len(shape) != 3 or len(level_chunks) != 3:
+            raise ValueError(f"{path}/{lv}: reader requires three-dimensional chunks")
+        if any(value <= 0 for value in shape + level_chunks):
+            raise ValueError(f"{path}/{lv}: shape and chunks must be positive")
+        if chunks is not None and level_chunks != chunks:
+            raise ValueError(
+                f"{path}/{lv}: reader requires consistent chunk geometry, got "
+                f"{level_chunks} after {chunks}"
+            )
+        shapes[lv] = shape
+        fill_values[lv] = int(meta["fill_value"])
+        chunks = level_chunks
     if not shapes or chunks is None:
         raise FileNotFoundError(f"no pyramid levels found under {path}")
-    return Pyramid(path=path, shapes=shapes, chunks=chunks)
+    return Pyramid(path=path, shapes=shapes, chunks=chunks, fill_values=fill_values)
 
 
 class SliceReader:
@@ -100,8 +121,13 @@ class SliceReader:
         self._lock = threading.Lock()
         self.bytes_fetched = 0
         self.requests = 0
+        self._missing_chunk_keys: set[str] = set()
         if cache_dir:
             os.makedirs(cache_dir, exist_ok=True)
+
+    @property
+    def missing_chunks(self) -> int:
+        return len(self._missing_chunk_keys)
 
     # -- one chunk's worth of one slice ------------------------------------
     def _chunk_slice(self, level: int, cz: int, cy: int, cx: int, lz: int) -> np.ndarray:
@@ -114,12 +140,24 @@ class SliceReader:
             safe = key.replace("/", "_")
             cached = os.path.join(self.cache_dir, f"{safe}_z{lz}.npy")
             if os.path.exists(cached):
-                return np.load(cached)
+                tile = np.load(cached, allow_pickle=False)
+                if tile.shape != (cys, cxs) or tile.dtype != np.uint8:
+                    raise IOError(
+                        f"invalid cached tile {cached}: shape={tile.shape}, dtype={tile.dtype}"
+                    )
+                return tile
         try:
             raw = _get(f"{BUCKET}/{key}", byte_range=(start, start + cys * cxs - 1))
         except urllib.error.HTTPError as e:
             if e.code == 404:
                 # Missing chunk: zarr semantics say it reads as fill_value.
+                if self.pyr.fill_values[level] != 0:
+                    raise IOError(
+                        f"{key}: missing chunk requires unsupported fill_value "
+                        f"{self.pyr.fill_values[level]}"
+                    ) from e
+                with self._lock:
+                    self._missing_chunk_keys.add(key)
                 return np.zeros((cys, cxs), dtype=np.uint8)
             raise
         with self._lock:

@@ -267,6 +267,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--ours-dir", type=Path, default=root / "manual")
     parser.add_argument("--reference-dir", type=Path, required=True)
+    parser.add_argument("--ours-path", type=Path, help="Single-curve override; requires exactly one --scroll.")
+    parser.add_argument("--reference-path", type=Path, help="Single reference override; requires exactly one --scroll.")
     parser.add_argument("--output", type=Path, default=root / "audit" / "comparison_summary.json")
     parser.add_argument("--dense-csv", type=Path)
     parser.add_argument("--scroll", action="append", choices=sorted(SCROLLS))
@@ -283,15 +285,29 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     scrolls = tuple(args.scroll or DEFAULT_SCROLLS)
-    summaries, dense_rows = compare_all(
-        args.ours_dir,
-        args.reference_dir,
-        scrolls,
-        sample_step_z=args.sample_step_z,
-        candidate_count=args.candidate_count,
-        candidate_separation_z=args.candidate_separation_z,
-        reporting_threshold_mm=args.reporting_threshold_mm,
-    )
+    compare_kwargs = {
+        "sample_step_z": args.sample_step_z,
+        "candidate_count": args.candidate_count,
+        "candidate_separation_z": args.candidate_separation_z,
+        "reporting_threshold_mm": args.reporting_threshold_mm,
+    }
+    if args.ours_path is not None or args.reference_path is not None:
+        require(len(scrolls) == 1, "single-curve path overrides require exactly one --scroll")
+        scroll = scrolls[0]
+        summary, dense_rows = compare_one(
+            scroll,
+            args.ours_path or args.ours_dir / f"{scroll}_umbilicus.json",
+            args.reference_path or args.reference_dir / f"{scroll}_umbilicus.json",
+            **compare_kwargs,
+        )
+        summaries = [summary]
+    else:
+        summaries, dense_rows = compare_all(
+            args.ours_dir,
+            args.reference_dir,
+            scrolls,
+            **compare_kwargs,
+        )
     result = {
         "format": FORMAT,
         "claim_boundary": (

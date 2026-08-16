@@ -1,6 +1,7 @@
 # Curve data licence
 
-The six files `PHerc{0191,0257,0358,0800,0813,1203}_umbilicus.json` are licensed
+The six files `PHerc{0191,0257,0358,0800,0813,1203}_umbilicus.json` and the
+separate `audit/corrections/PHerc0358_umbilicus.v2.candidate.json` are licensed
 under the [Creative Commons Attribution 4.0 International licence](https://creativecommons.org/licenses/by/4.0/).
 
 Attribution: **Abd Elilah, “Independent Herculaneum umbilicus annotations” (2026).**

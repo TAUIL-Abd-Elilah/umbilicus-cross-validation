@@ -1,0 +1,18 @@
+{
+  "format": "umbilicus-correction-preregistration-v1",
+  "created_at_utc": "2026-08-16T13:05:00Z",
+  "scroll": "PHerc1203",
+  "source_curve": {
+    "path": "manual/PHerc1203_umbilicus.json",
+    "sha256": "e58d635e5d4830788e6685f19d0ada10e4ff2f8a9f608dbfa47070473ea1bc27"
+  },
+  "status": "withdraw_from_recommended_use_pending_full_reaudit",
+  "confirmed_failure_regions": [
+    {"z": 6198, "verdict": "public strongly favored", "confidence": "high"},
+    {"z": 7508, "verdict": "public favored", "confidence": "high"},
+    {"z": 9560, "verdict": "public strongly favored", "confidence": "high"},
+    {"z": 15812, "verdict": "public strongly favored", "confidence": "high"}
+  ],
+  "locked_rule": "Do not patch only the four maxima. Re-review the complete useful z range against exact CT, retain the original file, and rerun every comparison before creating a replacement candidate.",
+  "claim_boundary": "The current PHerc1203 independent curve is evidence of annotation disagreement and QC failure detection, not a recommended production axis."
+}

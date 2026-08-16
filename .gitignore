@@ -16,3 +16,18 @@
 # unless Vesuvius Challenge gives written redistribution permission.
 /manual/screenshots/*
 !/manual/screenshots/README.md
+
+# Exact-CT reviewer packs are generated locally from source volumes.
+/audit/ct_review_local/
+/audit/ct_review_cache/
+
+# Local Python caches.
+__pycache__/
+*.pyc
+
+# Reproduction commands may write machine-local scratch receipts. The pinned,
+# validated results_*.json receipts remain tracked.
+/audit/downstream/reproduced_*.json
+
+# Superseded before segment-keyed escalation receipts were introduced.
+/audit/midpoint_density/*_level*_escalation.json

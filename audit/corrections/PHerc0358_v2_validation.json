@@ -1,0 +1,21 @@
+{
+  "format": "umbilicus-candidate-validation-v1",
+  "created_at_utc": "2026-08-16T14:20:00Z",
+  "scroll": "PHerc0358",
+  "candidate": {
+    "path": "audit/corrections/PHerc0358_umbilicus.v2.candidate.json",
+    "sha256": "4ff05537741cef16cad3bbf40597f3ae180d42f6ed204d3358824bca35d3856d"
+  },
+  "villa": {
+    "repository": "https://github.com/ScrollPrize/villa",
+    "revision": "94ba215963afb6216e380fe2c86131fa5e724c3b",
+    "loader": "volume-cartographer/scripts/spiral/umbilicus.py:json_umbilicus_z_to_yx"
+  },
+  "result": {
+    "controls_checked": 31,
+    "controls_reproduced": 31,
+    "max_absolute_coordinate_error": 0.0,
+    "passed": true
+  },
+  "claim_boundary": "Schema/loader round-trip only; this does not establish anatomical accuracy or approve the candidate."
+}

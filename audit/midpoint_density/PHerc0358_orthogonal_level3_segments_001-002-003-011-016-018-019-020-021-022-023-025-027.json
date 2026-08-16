@@ -1,0 +1,882 @@
+{
+  "format": "umbilicus-midpoint-orthogonal-review-v1",
+  "claim_boundary": "Candidate-following reviewer planes; no automatic correctness verdict.",
+  "scroll": "PHerc0358",
+  "curve": {
+    "path": "audit/corrections/PHerc0358_umbilicus.v2.candidate.json",
+    "sha256": "4ff05537741cef16cad3bbf40597f3ae180d42f6ed204d3358824bca35d3856d"
+  },
+  "source_stream": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHerc0358/volumes/20250821151737-9.362um-1.2m-113keV-masked.zarr",
+  "render": {
+    "level": 3,
+    "scale": 8,
+    "radius_full_voxels": 1200,
+    "panel_size": 620,
+    "strict_chunk_fetch": true,
+    "outputs_local": [
+      "audit/ct_review_local/orthogonals/PHerc0358/level3_segments_001-002-003-011-016-018-019-020-021-022-023-025-027/PHerc0358_segment_001_orthogonals.png",
+      "audit/ct_review_local/orthogonals/PHerc0358/level3_segments_001-002-003-011-016-018-019-020-021-022-023-025-027/PHerc0358_segment_002_orthogonals.png",
+      "audit/ct_review_local/orthogonals/PHerc0358/level3_segments_001-002-003-011-016-018-019-020-021-022-023-025-027/PHerc0358_segment_003_orthogonals.png",
+      "audit/ct_review_local/orthogonals/PHerc0358/level3_segments_001-002-003-011-016-018-019-020-021-022-023-025-027/PHerc0358_segment_011_orthogonals.png",
+      "audit/ct_review_local/orthogonals/PHerc0358/level3_segments_001-002-003-011-016-018-019-020-021-022-023-025-027/PHerc0358_segment_016_orthogonals.png",
+      "audit/ct_review_local/orthogonals/PHerc0358/level3_segments_001-002-003-011-016-018-019-020-021-022-023-025-027/PHerc0358_segment_018_orthogonals.png",
+      "audit/ct_review_local/orthogonals/PHerc0358/level3_segments_001-002-003-011-016-018-019-020-021-022-023-025-027/PHerc0358_segment_019_orthogonals.png",
+      "audit/ct_review_local/orthogonals/PHerc0358/level3_segments_001-002-003-011-016-018-019-020-021-022-023-025-027/PHerc0358_segment_020_orthogonals.png",
+      "audit/ct_review_local/orthogonals/PHerc0358/level3_segments_001-002-003-011-016-018-019-020-021-022-023-025-027/PHerc0358_segment_021_orthogonals.png",
+      "audit/ct_review_local/orthogonals/PHerc0358/level3_segments_001-002-003-011-016-018-019-020-021-022-023-025-027/PHerc0358_segment_022_orthogonals.png",
+      "audit/ct_review_local/orthogonals/PHerc0358/level3_segments_001-002-003-011-016-018-019-020-021-022-023-025-027/PHerc0358_segment_023_orthogonals.png",
+      "audit/ct_review_local/orthogonals/PHerc0358/level3_segments_001-002-003-011-016-018-019-020-021-022-023-025-027/PHerc0358_segment_025_orthogonals.png",
+      "audit/ct_review_local/orthogonals/PHerc0358/level3_segments_001-002-003-011-016-018-019-020-021-022-023-025-027/PHerc0358_segment_027_orthogonals.png"
+    ]
+  },
+  "segments": [
+    {
+      "segment_index": 0,
+      "segment_number": 1,
+      "exact_mid_xyz": [
+        3780.0,
+        4200.0,
+        1400.0
+      ],
+      "planes": [
+        {
+          "axis": "y",
+          "held_coordinate": "y(z)",
+          "other_coordinate": "x(z)",
+          "z_level_range": [
+            163,
+            325
+          ],
+          "other_level_range": [
+            322,
+            622
+          ],
+          "candidate_other_level_range": [
+            423.16,
+            489.3
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            407
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 1288
+          }
+        },
+        {
+          "axis": "x",
+          "held_coordinate": "x(z)",
+          "other_coordinate": "y(z)",
+          "z_level_range": [
+            163,
+            325
+          ],
+          "other_level_range": [
+            375,
+            675
+          ],
+          "candidate_other_level_range": [
+            437.8666666666667,
+            549.0
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            407
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 1288
+          }
+        }
+      ]
+    },
+    {
+      "segment_index": 1,
+      "segment_number": 2,
+      "exact_mid_xyz": [
+        3740.0,
+        3750.0,
+        1600.0
+      ],
+      "planes": [
+        {
+          "axis": "y",
+          "held_coordinate": "y(z)",
+          "other_coordinate": "x(z)",
+          "z_level_range": [
+            163,
+            350
+          ],
+          "other_level_range": [
+            318,
+            618
+          ],
+          "candidate_other_level_range": [
+            419.16,
+            489.3
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            458
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 1488
+          }
+        },
+        {
+          "axis": "x",
+          "held_coordinate": "x(z)",
+          "other_coordinate": "y(z)",
+          "z_level_range": [
+            163,
+            350
+          ],
+          "other_level_range": [
+            319,
+            619
+          ],
+          "candidate_other_level_range": [
+            437.8666666666667,
+            549.0
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            458
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 1488
+          }
+        }
+      ]
+    },
+    {
+      "segment_index": 2,
+      "segment_number": 3,
+      "exact_mid_xyz": [
+        3751.2,
+        3608.5333333333333,
+        1848.0
+      ],
+      "planes": [
+        {
+          "axis": "y",
+          "held_coordinate": "y(z)",
+          "other_coordinate": "x(z)",
+          "z_level_range": [
+            163,
+            381
+          ],
+          "other_level_range": [
+            319,
+            619
+          ],
+          "candidate_other_level_range": [
+            415.0,
+            489.3
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            523
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 1736
+          }
+        },
+        {
+          "axis": "x",
+          "held_coordinate": "x(z)",
+          "other_coordinate": "y(z)",
+          "z_level_range": [
+            163,
+            381
+          ],
+          "other_level_range": [
+            301,
+            601
+          ],
+          "candidate_other_level_range": [
+            437.8666666666667,
+            549.0
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            523
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 1736
+          }
+        }
+      ]
+    },
+    {
+      "segment_index": 10,
+      "segment_number": 11,
+      "exact_mid_xyz": [
+        4131.5314285714285,
+        3879.48,
+        5328.0
+      ],
+      "planes": [
+        {
+          "axis": "y",
+          "held_coordinate": "y(z)",
+          "other_coordinate": "x(z)",
+          "z_level_range": [
+            516,
+            816
+          ],
+          "other_level_range": [
+            366,
+            666
+          ],
+          "candidate_other_level_range": [
+            425.0,
+            531.25
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            692
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 2392
+          }
+        },
+        {
+          "axis": "x",
+          "held_coordinate": "x(z)",
+          "other_coordinate": "y(z)",
+          "z_level_range": [
+            516,
+            816
+          ],
+          "other_level_range": [
+            335,
+            635
+          ],
+          "candidate_other_level_range": [
+            418.8,
+            510.0
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            692
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 2392
+          }
+        }
+      ]
+    },
+    {
+      "segment_index": 15,
+      "segment_number": 16,
+      "exact_mid_xyz": [
+        4307.04,
+        4017.52,
+        7752.0
+      ],
+      "planes": [
+        {
+          "axis": "y",
+          "held_coordinate": "y(z)",
+          "other_coordinate": "x(z)",
+          "z_level_range": [
+            819,
+            1119
+          ],
+          "other_level_range": [
+            388,
+            688
+          ],
+          "candidate_other_level_range": [
+            475.26,
+            570.0
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            692
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 2392
+          }
+        },
+        {
+          "axis": "x",
+          "held_coordinate": "x(z)",
+          "other_coordinate": "y(z)",
+          "z_level_range": [
+            819,
+            1119
+          ],
+          "other_level_range": [
+            352,
+            652
+          ],
+          "candidate_other_level_range": [
+            419.4,
+            562.33
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            692
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 2392
+          }
+        }
+      ]
+    },
+    {
+      "segment_index": 17,
+      "segment_number": 18,
+      "exact_mid_xyz": [
+        4399.2,
+        4348.8,
+        8752.0
+      ],
+      "planes": [
+        {
+          "axis": "y",
+          "held_coordinate": "y(z)",
+          "other_coordinate": "x(z)",
+          "z_level_range": [
+            944,
+            1244
+          ],
+          "other_level_range": [
+            353,
+            700
+          ],
+          "candidate_other_level_range": [
+            361.38663967611336,
+            570.0
+          ],
+          "window_expanded_for_candidate": true,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            608
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2768,
+            "vertical_z": 2392
+          }
+        },
+        {
+          "axis": "x",
+          "held_coordinate": "x(z)",
+          "other_coordinate": "y(z)",
+          "z_level_range": [
+            944,
+            1244
+          ],
+          "other_level_range": [
+            394,
+            694
+          ],
+          "candidate_other_level_range": [
+            470.69,
+            562.33
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            692
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 2392
+          }
+        }
+      ]
+    },
+    {
+      "segment_index": 18,
+      "segment_number": 19,
+      "exact_mid_xyz": [
+        4002.4,
+        4051.2,
+        9248.0
+      ],
+      "planes": [
+        {
+          "axis": "y",
+          "held_coordinate": "y(z)",
+          "other_coordinate": "x(z)",
+          "z_level_range": [
+            1006,
+            1306
+          ],
+          "other_level_range": [
+            298,
+            650
+          ],
+          "candidate_other_level_range": [
+            306.1655405405405,
+            569.28
+          ],
+          "window_expanded_for_candidate": true,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            600
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2808,
+            "vertical_z": 2392
+          }
+        },
+        {
+          "axis": "x",
+          "held_coordinate": "x(z)",
+          "other_coordinate": "y(z)",
+          "z_level_range": [
+            1006,
+            1306
+          ],
+          "other_level_range": [
+            356,
+            656
+          ],
+          "candidate_other_level_range": [
+            487.6012145748988,
+            562.33
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            692
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 2392
+          }
+        }
+      ]
+    },
+    {
+      "segment_index": 19,
+      "segment_number": 20,
+      "exact_mid_xyz": [
+        3255.4655870445345,
+        3949.3927125506075,
+        9744.0
+      ],
+      "planes": [
+        {
+          "axis": "y",
+          "held_coordinate": "y(z)",
+          "other_coordinate": "x(z)",
+          "z_level_range": [
+            1068,
+            1368
+          ],
+          "other_level_range": [
+            257,
+            570
+          ],
+          "candidate_other_level_range": [
+            283.6993243243243,
+            560.3
+          ],
+          "window_expanded_for_candidate": true,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            666
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2496,
+            "vertical_z": 2392
+          }
+        },
+        {
+          "axis": "x",
+          "held_coordinate": "x(z)",
+          "other_coordinate": "y(z)",
+          "z_level_range": [
+            1068,
+            1368
+          ],
+          "other_level_range": [
+            344,
+            644
+          ],
+          "candidate_other_level_range": [
+            487.6012145748988,
+            559.2
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            692
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 2392
+          }
+        }
+      ]
+    },
+    {
+      "segment_index": 20,
+      "segment_number": 21,
+      "exact_mid_xyz": [
+        2625.0,
+        4150.0,
+        10216.0
+      ],
+      "planes": [
+        {
+          "axis": "y",
+          "held_coordinate": "y(z)",
+          "other_coordinate": "x(z)",
+          "z_level_range": [
+            1127,
+            1427
+          ],
+          "other_level_range": [
+            178,
+            545
+          ],
+          "candidate_other_level_range": [
+            252.78716216216216,
+            535.1
+          ],
+          "window_expanded_for_candidate": true,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            579
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2928,
+            "vertical_z": 2392
+          }
+        },
+        {
+          "axis": "x",
+          "held_coordinate": "x(z)",
+          "other_coordinate": "y(z)",
+          "z_level_range": [
+            1127,
+            1427
+          ],
+          "other_level_range": [
+            369,
+            669
+          ],
+          "candidate_other_level_range": [
+            487.6012145748988,
+            556.25
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            692
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 2392
+          }
+        }
+      ]
+    },
+    {
+      "segment_index": 21,
+      "segment_number": 22,
+      "exact_mid_xyz": [
+        2376.3513513513512,
+        4373.648648648648,
+        10656.0
+      ],
+      "planes": [
+        {
+          "axis": "y",
+          "held_coordinate": "y(z)",
+          "other_coordinate": "x(z)",
+          "z_level_range": [
+            1182,
+            1482
+          ],
+          "other_level_range": [
+            147,
+            479
+          ],
+          "candidate_other_level_range": [
+            237.58445945945945,
+            469.1
+          ],
+          "window_expanded_for_candidate": true,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            632
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2648,
+            "vertical_z": 2392
+          }
+        },
+        {
+          "axis": "x",
+          "held_coordinate": "x(z)",
+          "other_coordinate": "y(z)",
+          "z_level_range": [
+            1182,
+            1482
+          ],
+          "other_level_range": [
+            397,
+            697
+          ],
+          "candidate_other_level_range": [
+            487.6012145748988,
+            558.4459459459459
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            692
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 2392
+          }
+        }
+      ]
+    },
+    {
+      "segment_index": 22,
+      "segment_number": 23,
+      "exact_mid_xyz": [
+        2175.0,
+        4450.0,
+        11104.0
+      ],
+      "planes": [
+        {
+          "axis": "y",
+          "held_coordinate": "y(z)",
+          "other_coordinate": "x(z)",
+          "z_level_range": [
+            1238,
+            1538
+          ],
+          "other_level_range": [
+            122,
+            422
+          ],
+          "candidate_other_level_range": [
+            237.58445945945945,
+            370.49595141700405
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            692
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 2392
+          }
+        },
+        {
+          "axis": "x",
+          "held_coordinate": "x(z)",
+          "other_coordinate": "y(z)",
+          "z_level_range": [
+            1238,
+            1538
+          ],
+          "other_level_range": [
+            406,
+            706
+          ],
+          "candidate_other_level_range": [
+            497.7226720647773,
+            568.721783295711
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            692
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 2392
+          }
+        }
+      ]
+    },
+    {
+      "segment_index": 24,
+      "segment_number": 25,
+      "exact_mid_xyz": [
+        1925.0,
+        4500.0,
+        11992.0
+      ],
+      "planes": [
+        {
+          "axis": "y",
+          "held_coordinate": "y(z)",
+          "other_coordinate": "x(z)",
+          "z_level_range": [
+            1349,
+            1649
+          ],
+          "other_level_range": [
+            91,
+            391
+          ],
+          "candidate_other_level_range": [
+            219.4220430107527,
+            291.3006756756757
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            692
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 2392
+          }
+        },
+        {
+          "axis": "x",
+          "held_coordinate": "x(z)",
+          "other_coordinate": "y(z)",
+          "z_level_range": [
+            1349,
+            1649
+          ],
+          "other_level_range": [
+            412,
+            712
+          ],
+          "candidate_other_level_range": [
+            500.6720430107527,
+            568.721783295711
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            692
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 2392
+          }
+        }
+      ]
+    },
+    {
+      "segment_index": 26,
+      "segment_number": 27,
+      "exact_mid_xyz": [
+        1899.5495495495495,
+        4273.986486486487,
+        12880.0
+      ],
+      "planes": [
+        {
+          "axis": "y",
+          "held_coordinate": "y(z)",
+          "other_coordinate": "x(z)",
+          "z_level_range": [
+            1460,
+            1713
+          ],
+          "other_level_range": [
+            87,
+            387
+          ],
+          "candidate_other_level_range": [
+            212.5,
+            249.98589164785554
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            595
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 2016
+          }
+        },
+        {
+          "axis": "x",
+          "held_coordinate": "x(z)",
+          "other_coordinate": "y(z)",
+          "z_level_range": [
+            1460,
+            1713
+          ],
+          "other_level_range": [
+            384,
+            684
+          ],
+          "candidate_other_level_range": [
+            487.5242248062016,
+            568.721783295711
+          ],
+          "window_expanded_for_candidate": false,
+          "isotropic_display": true,
+          "display_size_pixels": [
+            620,
+            595
+          ],
+          "full_resolution_extents_voxels": {
+            "horizontal": 2392,
+            "vertical_z": 2016
+          }
+        }
+      ]
+    }
+  ],
+  "bytes_fetched": 236978176,
+  "missing_source_chunks": 3,
+  "failed_source_chunks": 0
+}

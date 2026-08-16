@@ -1,0 +1,383 @@
+{
+  "claim_boundary": "Neutral-tracing fixture arithmetic; not ground truth. The fixture tracer is not shipped and the public report documents pipeline dependence.",
+  "created_at_utc": "2026-08-16T15:39:48.585486+00:00",
+  "expected_heads": {
+    "external": "57e09a3d6f25773a2e0cad9d21eb97296cef50c8",
+    "ours": "3a1d8aa1811f6f1428e76513feeabb50535e56d2"
+  },
+  "parameters": {
+    "bin_deg": 2.0,
+    "dominance": 0.8,
+    "l0_to_l3": 8.0,
+    "min_bins": 5,
+    "min_common_heights": 3,
+    "voxel_um": 9.362
+  },
+  "schema": "downstream-cross-annotation-order-v1",
+  "scrolls": [
+    {
+      "fixture": {
+        "n_heights": 25,
+        "n_tracks": 299,
+        "path": "herculaneum-umbilici/qc/order_fixture_PHerc0191.npz",
+        "sha256": "6f87b8eb13ab7425cb7d23b8f41353ce47c599125b1a0337d9937dad28708dcd",
+        "z_max": 16440,
+        "z_min": 14520
+      },
+      "inputs": {
+        "ours": {
+          "path": "manual/PHerc0191_umbilicus.json",
+          "sha256": "8355fb0d6f092a7f56e7ecb4dc2f0d48506cece79e846d64158ebf92478a8d0d"
+        },
+        "public": {
+          "path": "herculaneum-umbilici/PHerc0191_umbilicus.json",
+          "sha256": "e50ff8cc087f8b65fa5fb597e8effbe857d1883fb21ee64bc2a97d79875bc097"
+        }
+      },
+      "pairwise": [
+        {
+          "axes": [
+            "public",
+            "ours"
+          ],
+          "cross": {
+            "both": 280,
+            "neither": 23,
+            "ours_only": 8,
+            "public_only": 40
+          },
+          "n_pairs": 351,
+          "ours": {
+            "fraction": 0.8205128205128205,
+            "kept": 288
+          },
+          "public": {
+            "fraction": 0.9116809116809117,
+            "kept": 320
+          }
+        },
+        {
+          "auto": {
+            "fraction": 0.825974025974026,
+            "kept": 318
+          },
+          "axes": [
+            "public",
+            "auto"
+          ],
+          "cross": {
+            "auto_only": 7,
+            "both": 311,
+            "neither": 24,
+            "public_only": 43
+          },
+          "n_pairs": 385,
+          "public": {
+            "fraction": 0.9194805194805195,
+            "kept": 354
+          }
+        },
+        {
+          "auto": {
+            "fraction": 0.8169717138103162,
+            "kept": 491
+          },
+          "axes": [
+            "ours",
+            "auto"
+          ],
+          "cross": {
+            "auto_only": 2,
+            "both": 489,
+            "neither": 110,
+            "ours_only": 0
+          },
+          "n_pairs": 601,
+          "ours": {
+            "fraction": 0.8136439267886856,
+            "kept": 489
+          }
+        }
+      ],
+      "public_fixture_reconstruction_max_l3_px": 5.684341886080802e-14,
+      "public_ours_separation_mm": {
+        "max": 18.31124056762642,
+        "median": 15.456110620809625,
+        "min": 9.067059557189145
+      },
+      "scroll": "PHerc0191",
+      "strict_three_axis": {
+        "axes": [
+          "public",
+          "ours",
+          "auto"
+        ],
+        "n_pairs": 273,
+        "public_vs_ours_cross": {
+          "both": 224,
+          "neither": 17,
+          "ours_only": 7,
+          "public_only": 25
+        },
+        "scores": {
+          "auto": {
+            "fraction": 0.8534798534798534,
+            "kept": 233
+          },
+          "ours": {
+            "fraction": 0.8461538461538461,
+            "kept": 231
+          },
+          "public": {
+            "fraction": 0.9120879120879121,
+            "kept": 249
+          }
+        }
+      }
+    },
+    {
+      "fixture": {
+        "n_heights": 25,
+        "n_tracks": 280,
+        "path": "herculaneum-umbilici/qc/order_fixture_PHerc0358.npz",
+        "sha256": "02691a5749ebc145bcecba4530ca4c04bd829737408a4f8ab1f555b8a2e697f3",
+        "z_max": 12176,
+        "z_min": 10688
+      },
+      "inputs": {
+        "ours": {
+          "path": "manual/PHerc0358_umbilicus.json",
+          "sha256": "c5d2d4f3bb5257d88cd1a9956be4426d26dd374e2df88288e9d8c690a7369a18"
+        },
+        "public": {
+          "path": "herculaneum-umbilici/PHerc0358_umbilicus.json",
+          "sha256": "788c0832a6e11ca26354f13ef1702459fbd920ff50ec7ec7dd7cde74b2ad6e93"
+        }
+      },
+      "pairwise": [
+        {
+          "axes": [
+            "public",
+            "ours"
+          ],
+          "cross": {
+            "both": 680,
+            "neither": 76,
+            "ours_only": 0,
+            "public_only": 0
+          },
+          "n_pairs": 756,
+          "ours": {
+            "fraction": 0.8994708994708994,
+            "kept": 680
+          },
+          "public": {
+            "fraction": 0.8994708994708994,
+            "kept": 680
+          }
+        },
+        {
+          "auto": {
+            "fraction": 0.7379912663755459,
+            "kept": 169
+          },
+          "axes": [
+            "public",
+            "auto"
+          ],
+          "cross": {
+            "auto_only": 5,
+            "both": 164,
+            "neither": 18,
+            "public_only": 42
+          },
+          "n_pairs": 229,
+          "public": {
+            "fraction": 0.8995633187772926,
+            "kept": 206
+          }
+        },
+        {
+          "auto": {
+            "fraction": 0.7244444444444444,
+            "kept": 163
+          },
+          "axes": [
+            "ours",
+            "auto"
+          ],
+          "cross": {
+            "auto_only": 4,
+            "both": 159,
+            "neither": 18,
+            "ours_only": 44
+          },
+          "n_pairs": 225,
+          "ours": {
+            "fraction": 0.9022222222222223,
+            "kept": 203
+          }
+        }
+      ],
+      "public_fixture_reconstruction_max_l3_px": 5.684341886080802e-14,
+      "public_ours_separation_mm": {
+        "max": 2.2032948006193296,
+        "median": 0.9301111498401484,
+        "min": 0.26636728507868573
+      },
+      "scroll": "PHerc0358",
+      "strict_three_axis": {
+        "axes": [
+          "public",
+          "ours",
+          "auto"
+        ],
+        "n_pairs": 221,
+        "public_vs_ours_cross": {
+          "both": 199,
+          "neither": 22,
+          "ours_only": 0,
+          "public_only": 0
+        },
+        "scores": {
+          "auto": {
+            "fraction": 0.7330316742081447,
+            "kept": 162
+          },
+          "ours": {
+            "fraction": 0.9004524886877828,
+            "kept": 199
+          },
+          "public": {
+            "fraction": 0.9004524886877828,
+            "kept": 199
+          }
+        }
+      }
+    },
+    {
+      "fixture": {
+        "n_heights": 25,
+        "n_tracks": 318,
+        "path": "herculaneum-umbilici/qc/order_fixture_PHerc1203.npz",
+        "sha256": "c3e4b45f935e6129ac11808f6083b1f59cec8cabf8355db962cca176a3f8b29d",
+        "z_max": 12664,
+        "z_min": 10600
+      },
+      "inputs": {
+        "ours": {
+          "path": "manual/PHerc1203_umbilicus.json",
+          "sha256": "e58d635e5d4830788e6685f19d0ada10e4ff2f8a9f608dbfa47070473ea1bc27"
+        },
+        "public": {
+          "path": "herculaneum-umbilici/PHerc1203_umbilicus.json",
+          "sha256": "3118f16acfb033a470cf657713cbd9598b528e74e0212a341c9914eed17bcf33"
+        }
+      },
+      "pairwise": [
+        {
+          "axes": [
+            "public",
+            "ours"
+          ],
+          "cross": {
+            "both": 520,
+            "neither": 60,
+            "ours_only": 0,
+            "public_only": 0
+          },
+          "n_pairs": 580,
+          "ours": {
+            "fraction": 0.896551724137931,
+            "kept": 520
+          },
+          "public": {
+            "fraction": 0.896551724137931,
+            "kept": 520
+          }
+        },
+        {
+          "auto": {
+            "fraction": 0.7819548872180451,
+            "kept": 208
+          },
+          "axes": [
+            "public",
+            "auto"
+          ],
+          "cross": {
+            "auto_only": 3,
+            "both": 205,
+            "neither": 37,
+            "public_only": 21
+          },
+          "n_pairs": 266,
+          "public": {
+            "fraction": 0.849624060150376,
+            "kept": 226
+          }
+        },
+        {
+          "auto": {
+            "fraction": 0.7888888888888889,
+            "kept": 213
+          },
+          "axes": [
+            "ours",
+            "auto"
+          ],
+          "cross": {
+            "auto_only": 3,
+            "both": 210,
+            "neither": 36,
+            "ours_only": 21
+          },
+          "n_pairs": 270,
+          "ours": {
+            "fraction": 0.8555555555555555,
+            "kept": 231
+          }
+        }
+      ],
+      "public_fixture_reconstruction_max_l3_px": 0.0,
+      "public_ours_separation_mm": {
+        "max": 1.605204716805145,
+        "median": 0.8723092394016071,
+        "min": 0.38630522420682456
+      },
+      "scroll": "PHerc1203",
+      "strict_three_axis": {
+        "axes": [
+          "public",
+          "ours",
+          "auto"
+        ],
+        "n_pairs": 262,
+        "public_vs_ours_cross": {
+          "both": 223,
+          "neither": 39,
+          "ours_only": 0,
+          "public_only": 0
+        },
+        "scores": {
+          "auto": {
+            "fraction": 0.7862595419847328,
+            "kept": 206
+          },
+          "ours": {
+            "fraction": 0.851145038167939,
+            "kept": 223
+          },
+          "public": {
+            "fraction": 0.851145038167939,
+            "kept": 223
+          }
+        }
+      }
+    }
+  ],
+  "source_heads": {
+    "external": "57e09a3d6f25773a2e0cad9d21eb97296cef50c8",
+    "ours": "8c0baa04617d527845583bfaafbdc62c5175fc4b"
+  }
+}

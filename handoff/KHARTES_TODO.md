@@ -1,5 +1,10 @@
 # khartes handoff - 10 scrolls needing a manual umbilicus
 
+> **Superseded 2026-08-16.** This is a historical operator log, not a current
+> work queue. Production stopped at 6/10 after an overlapping public set appeared;
+> PHerc1203 was later withdrawn by the conservative audit. See
+> [`../README.md`](../README.md) for current status.
+
 Two automatic curves ship per scroll as visual guides:
 
   seeds/<scroll>_umbilicus_seed.json        body centroid, 289-382 voxels on the references
@@ -69,7 +74,7 @@ using the machine.
 Launch only in a user-controlled desktop session:
 
 ```powershell
-Set-Location 'D:\Competition\Vesuvius progress prizes\_tools\khartes-exp'
+Set-Location '<khartes-exp-checkout>'
 & '.\.venv\Scripts\python.exe' '.\khartes.py'
 ```
 
@@ -85,14 +90,14 @@ reports a valid 6-level volume at the shape recorded in `scrolls.py`, both guide
 0-control active output fragment. To rebuild one (for example after a discarded attempt):
 
 ```powershell
-Set-Location 'D:\Competition\Vesuvius progress prizes\umbilicus13'
+Set-Location '<this-repository>'
 python .\make_operator_project.py PHerc0257 --force
 ```
 
 Then perform this exact pass, using PHerc0257 as the live example:
 
 1. `File > Open Project...` on
-   `D:\Competition\Vesuvius progress prizes\_operator_projects\PHerc0257-manual.khprj`.
+   `<workspace>/_operator_projects/PHerc0257-manual.khprj`.
    Do not use `File > New Project...` unless a project must be rebuilt from scratch.
 2. Confirm the attached stream is the expected one for the scroll (the table above), and that the
    volume loads. Nothing needs to be pasted or connected by hand.
@@ -116,14 +121,14 @@ Then perform this exact pass, using PHerc0257 as the live example:
    refuses to continue if any second fragment is active. Use `File > Export segment as mesh...`;
    Khartes recognizes an umbilicus and opens its dedicated exporter. Choose the default
    `.json (Villa control_points)` and `X,Y,Z`, exporting the working candidate to
-   `D:\Competition\Vesuvius progress prizes\umbilicus13\manual\candidates\PHerc0257_umbilicus.candidate.json`.
+   `manual/candidates/PHerc0257_umbilicus.candidate.json`.
    This is deliberately not the final release filename. The exporter refuses to overwrite.
 6. Build the reimport QC project from that candidate and open it. It attaches the same public
    stream and loads the candidate as a single inactive fragment, so the check cannot silently
    become an edit:
 
    ```powershell
-   Set-Location 'D:\Competition\Vesuvius progress prizes\umbilicus13'
+   Set-Location '<this-repository>'
    python .\make_operator_project.py PHerc0257 --candidate .\manual\candidates\PHerc0257_umbilicus.candidate.json
    ```
 
@@ -144,7 +149,7 @@ Then perform this exact pass, using PHerc0257 as the live example:
    user must first confirm the reviewer spelling, timestamp, and curve-data licence. Example:
 
    ```powershell
-   Set-Location 'D:\Competition\Vesuvius progress prizes\umbilicus13'
+   Set-Location '<this-repository>'
    python .\approve_manual_curve.py --scroll PHerc0257 `
      --reviewer '<CONFIRMED LEGAL NAME>' --qc-time '<ISO-8601 WITH TIMEZONE>' `
      --ct-url 'https://vesuvius-challenge-open-data.s3.amazonaws.com/PHerc0257/volumes/20250821151750-9.362um-1.2m-113keV-masked.zarr' `

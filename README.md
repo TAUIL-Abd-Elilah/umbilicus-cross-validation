@@ -1,357 +1,154 @@
-# Independent Herculaneum umbilicus cross-validation
+# Independent umbilicus review
 
-Six independently hand-drawn Villa-compatible umbilicus curves, their hash-bound
-quality-control manifests, and reproducible tooling for comparing them with
-[Aleksei Drobkov's ten-scroll release](https://github.com/AlexeyDrobkovStrikesBack/herculaneum-umbilici).
+Six independently hand-drawn umbilicus curves for Herculaneum scrolls, plus a
+reproducible comparison with [Aleksei Drobkov's public set](https://github.com/AlexeyDrobkovStrikesBack/herculaneum-umbilici).
 
-The original goal was to draw ten missing curves. It was paused at 6/10 when the
-independently produced ten-scroll set became public. This repository now treats the
-six curves as a second-annotator dataset: it measures disagreement, identifies
-locations for exact-CT review, and records only evidence-backed findings. Distance
-between curves is **not** evidence that either curve is correct.
+The original ten-scroll drawing pass stopped at 6/10 when Aleksei's complete set
+was published. The six finished curves are still useful as independent second
+annotations: they reveal where two reviewers followed different folds and where
+expert review is most valuable.
 
-An umbilicus is the curve through the centre of a rolled scroll. `fit_spiral`
-requires one per scroll (`volume-cartographer/scripts/spiral/umbilicus.py`,
-`json_umbilicus_z_to_yx`), so a missing umbilicus blocks a spiral fit outright.
+**Current safety status:** PHerc1203 is withdrawn from recommended use after
+AI-assisted exact-CT review found four separated regions where the public curve
+follows the scroll core more consistently. Its original annotation remains only
+as an audit artifact. The adaptive screen covers PHerc0191, PHerc0257, PHerc0800, PHerc0813,
+and the preregistered PHerc0358 v2 candidate: all 149 adjacent-control intervals
+were reviewed, 10 need an added control, and 8 remain unresolved. All six manual
+JSONs remain unchanged historical annotations.
 
-## Current release
+## What is included
 
-| Scroll | Independent controls | Median disagreement | Maximum disagreement |
+- Six Villa-compatible curves in [`manual/`](manual/), licensed CC BY 4.0.
+- Hash-bound QC manifests recording the reviewer, CT stream, fresh-project
+  reimport, curve hash, and local evidence hashes.
+- A pinned same-z comparison in [`audit/`](audit/).
+- Exact-CT disagreement and midpoint-density review tools.
+- Reproducible downstream screens in [`audit/downstream/`](audit/downstream/).
+
+| Scroll | Controls | Median disagreement | Largest disagreement |
 |---|---:|---:|---:|
-| PHerc0191 | 30 | 4.377 mm | 18.311 mm at z=15480 |
-| PHerc0257 | 31 | 2.945 mm | 7.548 mm at z=9552 |
-| PHerc0358 | 31 | 1.758 mm | 10.913 mm at z=9944 |
-| PHerc0800 | 31 | 3.700 mm | 11.350 mm at z=17816 |
-| PHerc0813 | 31 | 4.809 mm | 12.706 mm at z=6616 |
-| PHerc1203 | 40 | 2.184 mm | 12.001 mm at z=6197 |
+| PHerc0191 | 30 | 4.38 mm | 18.31 mm at z=15480 |
+| PHerc0257 | 31 | 2.95 mm | 7.55 mm at z=9552 |
+| PHerc0358 | 31 | 1.76 mm | 10.91 mm at z=9944 |
+| PHerc0800 | 31 | 3.70 mm | 11.35 mm at z=17816 |
+| PHerc0813 | 31 | 4.81 mm | 12.71 mm at z=6616 |
+| PHerc1203 | 40 | 2.18 mm | 12.00 mm at z=6197 |
 
-The curves are in [`manual/`](manual/), licensed CC BY 4.0. Each has a v2
-manifest in [`manual/manifests/`](manual/manifests/) binding its hash, reviewer,
-exact CT stream, control count, fresh-project reimport, and local evidence hashes.
-CT-derived screenshots are intentionally excluded from GitHub.
+These distances identify review locations. They do **not** identify which curve
+is correct.
 
-The pinned metrics are in [`audit/comparison_summary.json`](audit/comparison_summary.json),
-with interpretation and exact commands in [`audit/README.md`](audit/README.md).
-The comparison uses level-0 Villa `x/y/z`, linear interpolation over only the
-shared z range, and the physical voxel size of each source CT.
+## What the CT review shows so far
 
-![Coordinate-only comparison of all six independent curve pairs](audit/comparison_overview.png)
+These are conservative internal, AI-assisted triage findings from exact-volume
+overlays. They are not experienced-user acceptance or anatomical ground truth.
 
-## Reproduce the cross-annotation comparison
+- **PHerc0358 z=5500:** public curve favored; our point makes an isolated
+  excursion to an outer cusp.
+- **PHerc0800 z=4856 and z=17816:** public curve provisionally favored.
+- **PHerc0191 z=15480:** visual CT review favors ours, while the winding-order
+  fixture favors the public curve. Unresolved.
+- **PHerc0257 z=9552:** both candidate folds persist through nearby slices.
+  Unresolved.
+- **PHerc0813 z=6616 and z=9296:** ours improves the local radial score, but the
+  public curve performs better over the full 30-slice screen. Unresolved.
+- **PHerc0358 z=9948:** ours is provisionally favored, but the transfer between
+  folds needs denser expert review.
+
+No public curve has been replaced. All findings remain review candidates.
+
+PHerc0358 has a preregistered z=5500 correction candidate under
+[`audit/corrections/`](audit/corrections/). All 30 of its interpolation intervals
+were continuity-supported in the assisted axial and orthogonal screen. It is
+still a candidate, not the released curve, until an experienced reviewer accepts
+the actual volume overlay.
+
+## Figures
+
+[`audit/comparison_overview.png`](audit/comparison_overview.png) is a triage map:
+it shows where the curves diverge, not whether either is accurate. Accuracy must
+be reviewed by overlaying both candidates on the exact CT volume and checking
+nearby and orthogonal slices. `render_exact_ct_review.py` generates reviewer packs
+with:
+
+1. the same CT crop without markers;
+2. the same crop with red=independent and cyan=public;
+3. equal-scale crops centered on each candidate;
+4. marker-free neighboring slices for continuity.
+
+CT pixels are generated locally and are not stored in this repository.
+
+## Adaptive control-density audit
+
+Villa linearly interpolates between umbilicus controls. A fixed count of about 30
+controls can be sufficient on straight regions and insufficient on sharp bends.
+`audit_midpoint_density.py` renders every adjacent-control midpoint as an
+identical marker-free/marked CT pair and ranks XY bends for review. Suspect
+intervals are escalated to higher-resolution axial views and candidate-following
+XZ/YZ views before a final conservative classification.
+The orthogonal renderer expands each window to contain the full candidate
+trajectory and preserves the physical z-to-xy aspect ratio.
+
+| Curve | Intervals | Keep linear | Add control | Unresolved |
+|---|---:|---:|---:|---:|
+| PHerc0191 | 29 | 25 | 2 | 2 |
+| PHerc0257 | 30 | 29 | 1 | 0 |
+| PHerc0358 v2 candidate | 30 | 30 | 0 | 0 |
+| PHerc0800 | 30 | 20 | 7 | 3 |
+| PHerc0813 | 30 | 27 | 0 | 3 |
+| **Total** | **149** | **131** | **10** | **8** |
+
+The full curve-hash-bound partition, receipt metadata, and claim boundary are in
+[`audit/midpoint_density/`](audit/midpoint_density/). `Keep linear` means no
+interpolation break was visible in the recorded screens; it is not proof of
+anatomical correctness. Added controls still require independent level-0 Khartes
+placement and a fresh rerender. Unresolved intervals must remain untouched.
+
+```bash
+# Fast whole-curve screen.
+python audit_midpoint_density.py --scroll PHerc0813 --level 3
+
+# Re-render flagged intervals at higher resolution before editing.
+python audit_midpoint_density.py --scroll PHerc0813 --level 2 \
+  --segment 1 --segment 10 --segment 11
+
+# Check the same candidate trajectory in XZ and YZ.
+python render_midpoint_orthogonals.py --scroll PHerc0813 --level 3 \
+  --segment 1 --segment 10 --segment 11
+
+python verify_midpoint_screening.py
+```
+
+The rank is triage, not a correctness score. New controls must be placed from the
+exact CT volume; neither another annotator's coordinates nor a spline prediction
+is accepted as ground truth. No public, licensed implementation of the recently
+described "armwise neutral-spine" method was located, so this repository does not
+claim to implement or redistribute it. The dated source-search summary is
+in [`audit/neutral_spine_source_check.md`](audit/neutral_spine_source_check.md).
+
+## Reproduce
 
 ```bash
 git clone https://github.com/AlexeyDrobkovStrikesBack/herculaneum-umbilici external
+
 python compare_independent_curves.py \
   --reference-dir external \
-  --reference-url https://github.com/AlexeyDrobkovStrikesBack/herculaneum-umbilici \
-  --reference-revision 57e09a3d6f25773a2e0cad9d21eb97296cef50c8
+  --reference-revision 57e09a3d6f25773a2e0cad9d21eb97296cef50c8 \
+  --reference-url https://github.com/AlexeyDrobkovStrikesBack/herculaneum-umbilici
+
 python plot_independent_comparison.py --reference-dir external
-python -m unittest -v test_compare_independent_curves.py
+python render_exact_ct_review.py --reference-dir external --scroll PHerc0813 --z 6616
+python -m unittest -v test_slicefetch test_longitudinal \
+  test_audit_midpoint_density test_render_exact_ct_review \
+  test_render_midpoint_orthogonals \
+  test_compare_independent_curves test_correction_artifacts \
+  test_verify_midpoint_screening
 ```
 
-The comparison requires NumPy; the optional figure also needs Matplotlib. No CT
-download is required for the coordinate-only comparison.
+The coordinate comparison requires NumPy. Plotting requires Matplotlib. Exact-CT
+review packs additionally require Pillow and OpenCV and stream small windows from
+the public Vesuvius Challenge volumes.
 
-## What is in here
+## Licences
 
-- `slicefetch.py` — surgical z-slice reader for the open-data scroll volumes.
-- `longitudinal.py` — sections taken *along* z, including curved sections that
-  follow an approximate curve.
-- `coarse_center.py`, `seed_curve.py` — automatic seed curves.
-- `montage.py`, `make_montage.py`, `overlay.py` — labelled picking montages and
-  verification overlays.
-- `make_operator_project.py` — writes a ready-to-draw Khartes project for a
-  scroll (stream attached, both guides imported and switched off, blank output
-  fragment active), and the step-6 reimport QC project from an exported
-  candidate.
-- `evaluate.py` — accuracy harness against a public reference curve.
-- `compare_independent_curves.py` — pinned same-z disagreement metrics and CT-review candidates.
-- `plot_independent_comparison.py` — coordinate-only overview figure; no CT pixels.
-- `umbilicus_estimator.py` — the rejected automatic estimator, kept so the
-  negative result is checkable.
-- `PROTOCOL.md` — the frozen protocol and its amendments, in order.
-
-## The reader is the reusable part
-
-The scroll volumes are stored uncompressed (`compressor: null`, `dtype: |u1`)
-with 128³ C-order chunks. One z-slice of one chunk is therefore a **contiguous
-16 KiB run** inside the chunk object, and an HTTP range request can pull exactly
-that instead of the whole 2 MiB chunk.
-
-In practice a 768×768 window of one slice costs **0.67 MB and ~2 s** against
-`vesuvius-challenge-open-data.s3.amazonaws.com`, versus ~33 MB fetching whole
-chunks. Reading the 32 slices needed for a whole umbilicus costs tens of
-megabytes. This makes slice-level work on the full 13-scroll corpus practical
-from a laptop, with no GPU and no local copy of the data.
-
-```python
-from slicefetch import open_pyramid, SliceReader, scroll_volume_path
-
-pyr = open_pyramid(scroll_volume_path("PHerc0125", "20250821151825-9.362um-1.2m-113keV-masked.zarr"))
-reader = SliceReader(pyr, cache_dir="cache")
-window = reader.read_window(level=2, z=535, y0=370, y1=1138, x0=886, x1=1654)
-```
-
-## Accuracy: how these curves are checked
-
-**Three** pre-existing public curves are the reference — the hand-drawn ones. A
-fourth public curve (PHerc1218) is generated by the same centroid algorithm as our
-seed and is excluded from accuracy; see "A reference that wasn't" below, and
-`PROTOCOL.md` Amendment 04. The metric, frozen before any picking, is the distance
-from each reference control point to the candidate curve interpolated at that z, in
-full-resolution voxels.
-
-The reference curves are hand-drawn and carry their own noise. Scoring each
-interior control point against the chord joining its neighbours:
-
-| scroll | median | p90 | max |
-|---|---|---|---|
-| PHerc0125 | 39.2 | 89.1 | 154.0 |
-| PHerc0211 | 31.6 | 114.4 | 1724.0 |
-| PHerc0826 | 63.4 | 182.9 | 342.9 |
-
-Their author called them "maybe not exactly perfect umbil but certainly good
-enough for a fit". **Parity with that noise floor is the target**; tighter is not
-measurable against this reference.
-
-Separately, subsampling each reference and re-interpolating shows that **24–32
-control points** per scroll is enough to preserve the curve to within its own
-noise, and fewer is not:
-
-| N | PHerc0125 | PHerc0211 | PHerc0826 |
-|---|---|---|---|
-| 8 | 73.9 | 126.9 | 152.0 |
-| 16 | 53.2 | 51.1 | 75.2 |
-| 24 | 40.7 | 33.1 | 19.0 |
-| 32 | 22.6 | 18.4 | 0.0 |
-
-## Seven approaches, measured
-
-| method | median error vs hand-drawn reference (voxels) |
-|---|---|
-| **the bar** — reference's own hand-click noise | **31.6 – 63.4** |
-| lasagna normals, per-slice radial convergence | **151.9 – 409.1** ← best, but inconsistent |
-| lasagna normals + DP continuity prior | 269.4 (worse than no prior) |
-| body-centroid seed | 289.4 – 381.7 |
-| blind visual picking, static montages | 432.0 |
-| blind visual picking, **sequential** | 522.8 |
-| Poincaré index of the sheet field | 800.8 – 1430.4 |
-| structure-tensor radial convergence | drifts 82–334 *from* truth when seeded on it |
-
-Per scroll, seed versus lasagna estimate:
-
-| scroll | seed | estimate | change |
-|---|---|---|---|
-| PHerc0125 | 289.4 | **151.9** | −48% |
-| PHerc0211 | 299.6 | **209.4** | −30% |
-| PHerc0826 | 381.7 | 409.1 | **+7% (worse)** |
-
-**Neither automatic estimation nor machine visual picking reaches the bar.** The best
-method is 3–13× off depending on the scroll, and on one of three references it is worse
-than doing nothing.
-
-The sequential picking test is worth singling out, because it settles the question. Run
-blind on PHerc0826 — the only scroll whose imagery had never been rendered — with each
-batch anchored on the running track, i.e. the property an interactive viewer provides.
-It scored **522.8**, worse than every automatic baseline. Broken down by the confidence
-assigned at pick time:
-
-| confidence | n | median error |
-|---|---|---|
-| high | 2 | 296.1 |
-| medium | 19 | 596.7 |
-| low | 19 | 559.5 |
-| **none** (anchor default, no judgement) | 7 | **310.6** |
-
-**The points where no judgement was exercised scored about twice as well as the points
-where it was.** The picks are anti-informative, and confidence does not correlate with
-accuracy, so they cannot even be filtered. See PROTOCOL.md Amendment 07.
-
-The finished curves must therefore be hand-drawn by a human in an interactive viewer. What
-this repository currently contributes is the data access, two starting curves, a tested
-Khartes control/export workflow, and the first two approved manual outputs. See
-`handoff/KHARTES_TODO.md` for the protected operator path.
-
-Since the human pass is the deliverable, the setup around it is scripted rather than repeated by
-hand. `make_operator_project.py` writes the Khartes project for a scroll directly — the exact
-public stream attached, both automatic guides imported but hidden and inactive, a blank output
-fragment active, and the view parked on the first guide control — and builds the separate reimport
-QC project from an exported candidate. Projects for the original nine-scroll queue were generated
-and each verified by loading it through Khartes' own `ProjectView.open` against the live stream.
-
-### Manual export is candidate-first and fail-closed
-
-Khartes must export only to
-`manual/candidates/<scroll>_umbilicus.candidate.json`, never directly to the final filename.
-Reimport that candidate into a fresh project attached to the exact same public CT stream, review
-the full useful z range and every ambiguous transition, and retain at least start/middle/end QC
-screenshots under `manual/screenshots/<scroll>/`. Only then may `approve_manual_curve.py` create
-`manual/<scroll>_umbilicus.json` and its hash-bound `manual/manifests/<scroll>_qc.json`. It requires
-an identified human reviewer, timezone-bearing QC time, explicit curve-data licence, three or more
-screenshot paths, and `--qc-checked`; it rejects untouched automatic inputs and overwrites.
-It also decodes the required start/middle/end images, checks role plus displayed-z filename tokens,
-distinctness/order and minimum dimensions, rejects out-of-volume controls, and requires coverage
-of the central 80% of the useful z bracket.
-
-After all ten individual approvals, run `verify_manual_release.py`. It is read-only by default and
-fails on the first missing/tampered artifact. It recomputes the full provenance/evidence contract,
-requires one coherent curve-data licence, and exercises every control through Villa's actual
-`json_umbilicus_z_to_yx` Spiral loader. Only a complete pass with `--write-manifest` installs the
-no-overwrite `manual/release_manifest.json`.
-
-The workspace-root `build_umbilicus_publication_package.py` and
-`verify_umbilicus_publication_readiness.py` belong to the retired automatic-estimation pipeline.
-They inspect broad reference/held-out material and do not enforce this manual candidate/QC
-contract. **Do not use either tool for the manual release.** The only promotion path is the
-per-curve approver, the ten-curve verifier above, and the human publication checklist.
-
-Details below, because the *reasons* they fail say something about the data.
-
-**1. Automatic estimation from sheet orientation.** The umbilicus should be where
-sheet normals converge, so `S(u) = Σ w(p)·⟨n(p), r(p;u)⟩²` over an annulus ought
-to peak there. On PHerc0125, seeded *exactly on* the reference point, the estimate
-drifted away by a median of 108 voxels (max 334); with a search window tight enough
-to suppress that, most of the remaining stability is the constraint rather than the
-estimate. Offset seeds produced errors up to 538 voxels.
-
-**2. Visual picking from static z-slice montages.** A blind single pass on
-PHerc0211 (16 points, 4096-voxel windows at 10.7 voxels/pixel, reference not
-displayed) scored **median 432, p90 1113, max 1499** — 13.7× the reference's own
-noise.
-
-**Why both fail.** Re-rendering four slices at 4 voxels/pixel *centred on the true
-umbilicus* shows that at z=11833 and z=12941 the umbilicus sits in ordinary,
-gently curving lamellae — no eye, no cavity, no landmark. The eye-catching
-features on those slices are folds and damage elsewhere, which is exactly what the
-blind picks were drawn to.
-
-On a crushed scroll the umbilicus is a **topological** property of how the windings
-connect, not a local appearance feature of any one slice. That is why the existing
-references were drawn in khartes: an interactive viewer lets an annotator start
-where the centre *is* obvious and carry it through z by continuity — the reference
-moves a median of only 89 voxels between control points ~188 z apart. A method that
-treats each slice independently has nothing to lock onto.
-
-**3. The lasagna route, and why continuity didn't rescue it.** Both maintainers
-suggested automating from the trained lasagna normal field rather than raw CT, and
-the published predictions do exist for these scrolls (`nx`, `ny`, `cos`,
-`grad_mag`). Feeding those normals into the same radial-convergence score genuinely
-helps — 299.6 → **209.3**.
-
-Adding a dynamic-programming tracker with a continuity prior (`track.py`), on the
-reasoning that confident slices should pin ambiguous ones, made it **worse** (269.4).
-The assumption was wrong: the lasagna evidence is not sharp on some slices and wrong
-on others, it is uniformly mediocre, so there are no confident slices to propagate
-from and smoothing drags the better ones toward the worse. A caveat on that sweep —
-every `lambda >= 0.25` returned an identical path, so the penalty scale is
-mis-parameterised and the sweep really only compares "no prior" against "prior
-dominates"; a well-scaled middle is not ruled out.
-
-## What automation does contribute
-
-The scroll *body* is reliable even where the umbilicus is not. The centroid of the
-largest connected component of the cross-section, at pyramid level 5, sits this far
-from the true umbilicus:
-
-| scroll | median | p90 | max |
-|---|---|---|---|
-| PHerc0125 | 298.9 | 628.7 | 713.5 |
-| PHerc0211 | 291.9 | 1045.9 | 1267.7 |
-| PHerc0826 | 356.1 | 771.3 | 1060.6 |
-
-That is far too coarse to publish as an umbilicus, and it is **not** presented as
-one. It is useful as a *seed*: it puts 32 control points at the right z, in the
-right file, within a few hundred voxels, so the manual pass in khartes becomes
-correction rather than creation.
-
-### A reference that wasn't
-
-The seed scored **46.5 voxels** against the public PHerc1218 curve — six times
-better than against any human curve, which looked like strong independent
-validation from a different author and pipeline.
-
-It is not. The producing script's own docstring says it "takes the papyrus centroid
-of each slice as the umbilicus position, smooths the z->(y,x) series with a running
-median" — the same algorithm as the seed here. The 46.5 figure measures two
-implementations of one method agreeing with each other, and says nothing about
-distance to the true umbilicus.
-
-PHerc1218 is therefore excluded from the accuracy table above and kept only as an
-implementation cross-check, which it passes. **The seed has no measured accuracy
-better than 289 voxels from any source.**
-
-Smoothing the seed in z was tried and **made it worse** (310 / 437 / 477 versus
-292 / 292 / 356), so it is off by default. The centroid's jitter tracks real motion
-of the body rather than being additive noise.
-
-Seeds for all 13 scrolls are in `seeds/`, each carrying a `note` field marking it
-as a seed.
-
-### Seed quality control
-
-The centroid fails wherever the "body" is not the scroll — near the scan ends the
-cross-section breaks into fragments and a detached lump can win the
-largest-component test, dragging the centroid thousands of voxels sideways. The
-reference curves bound what real motion looks like (median lateral step 48–170
-voxels between control points), so an isolated step far outside that is the mask
-jumping, not the umbilicus moving.
-
-`qc_seeds.py` flags those points with `score: 0` and lists them in `seeds/qc.json`:
-**38 of 411 points across the 13 scrolls**. They should be placed from scratch
-rather than nudged. The distribution is uneven and worth knowing before starting:
-
-| scroll | flagged |
-|---|---|
-| PHerc0268 | 11 / 32 |
-| PHerc0257, PHerc0358, PHerc1447 | 4 |
-| PHerc0826, PHerc1218 | 3 |
-| PHerc0125, PHerc0191, PHerc0800 | 2 |
-| PHerc0211, PHerc0813, PHerc1545 | 1 |
-| PHerc1203 | 0 |
-
-PHerc0268 is the outlier — a third of its seed is unusable, so it needs the most
-manual attention.
-
-## Reproducing
-
-```bash
-python make_seeds.py                       # seed curves for all 13 scrolls
-python make_montage.py PHerc0800 --n 16    # a labelled picking montage
-python qc_seeds.py                          # flag implausible centroid jumps
-python make_operator_project.py PHerc0191  # ready-to-draw Khartes project
-```
-
-Do not run reference scoring or imagery tools on the protected validation target. PHerc1203 and
-PHerc0191 are complete; the manual queue continues with the remaining eight scrolls on the repaired Khartes
-branch documented in the handoff.
-
-Only `numpy`, `scipy`, `Pillow` and either `opencv-python` or `scikit-image` are
-needed. No GPU, no local data copy.
-
-## Credit
-
-- The PHerc0125 / PHerc0211 / PHerc0826 reference curves, and the khartes
-  workflow this follows, are **Sean Johnson's** (`@Bruniss`), posted in the
-  Vesuvius Challenge `#general` on 2026-08-08.
-- The PHerc1218 curve is from **`IyanDopico/vesuvius-sheet-tools`**.
-- The `umbilicus.json` schema is Villa's.
-- Scroll volumes are Vesuvius Challenge open data.
-
-## Licence
-
-The intended software licence is MIT, but the public release still needs an actual licence file
-with the submitter's confirmed legal-name spelling. The ten new human-produced curves also need an
-explicit data licence selected by their author.
-
-The live data-server terms at `https://dl.ash2txt.org/LICENSE.txt` prohibit redistribution of the
-source scans without written approval. Do not publish CT chunks, slices, caches, or CT-derived QC
-screenshots with the curve JSONs. Screenshot hashes/metadata may be published; the images remain
-local or use an organizer-approved channel unless written redistribution permission is retained.
-
-The files in `reference/` are local validation copies of Sean Johnson's work, remain his, and are
-not covered by this project's licence. Do not bundle them into a public release without explicit
-redistribution/licence permission. The safe default is to publish the ten new curves and a 13-row
-index that credits the three prior curves as external work, using durable public links rather than
-expiring signed Discord CDN URLs. The strongest fallback, if durable licensed links are unavailable,
-is for the user to redraw those three after the missing-ten queue, yielding a wholly new 13-curve
-set. See `PUBLICATION_CHECKLIST.md`.
+Code: MIT. Six manual curve JSONs and the separate PHerc0358 v2 candidate:
+CC BY 4.0, attributed to Abd Elilah. Source CT data is not redistributed here.

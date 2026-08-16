@@ -1,5 +1,11 @@
 # Manual umbilicus publication checklist
 
+> **Superseded 2026-08-16.** This checklist records the abandoned ten/13-scroll
+> release plan. Production stopped at 6/10 after overlapping work became public;
+> PHerc1203 is now withdrawn and the remaining work is an independent audit. Use
+> [`README.md`](README.md) for current status. The workflow below is retained only
+> as historical provenance.
+
 Status: not publishable yet. PHerc1203 and PHerc0191 are approved locally after blank-fragment
 redraws (2/10); eight human-curated outputs and the aggregate release manifest are
 still missing.

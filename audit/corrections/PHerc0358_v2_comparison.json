@@ -1,0 +1,121 @@
+{
+  "claim_boundary": "Same-z lateral disagreement between independent polylines. Distance alone does not identify the correct annotation; every proposed correction requires exact-CT review.",
+  "coordinate_convention": "Villa control_points x/y/z at level 0; linear interpolation in z",
+  "format": "independent-umbilicus-comparison-v1",
+  "ours_revision": "preregistered-PHerc0358-z5500-v2",
+  "reference_revision": "57e09a3d6f25773a2e0cad9d21eb97296cef50c8",
+  "reference_url": "https://github.com/AlexeyDrobkovStrikesBack/herculaneum-umbilici",
+  "scroll_count": 1,
+  "scrolls": [
+    {
+      "ct_review_candidates": [
+        {
+          "distance_mm": 10.913065363946595,
+          "distance_voxels": 1165.6767105262331,
+          "ours_xy": [
+            2891.093117408907,
+            3989.8785425101214
+          ],
+          "reference_xy": [
+            4010.0,
+            3663.0
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 9944
+        },
+        {
+          "distance_mm": 6.929024852702147,
+          "distance_voxels": 740.1222871931368,
+          "ours_xy": [
+            3804.0,
+            3360.0
+          ],
+          "reference_xy": [
+            4445.0,
+            3730.0
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 6600
+        },
+        {
+          "distance_mm": 6.260183715335313,
+          "distance_voxels": 668.6801661328043,
+          "ours_xy": [
+            3981.0,
+            3610.0
+          ],
+          "reference_xy": [
+            4648.815217391304,
+            3644.0
+          ],
+          "status": "requires_exact_ct_review",
+          "z": 7350
+        }
+      ],
+      "distance": {
+        "max_mm": 10.913065363946595,
+        "max_voxels": 1165.6767105262331,
+        "max_z": 9944,
+        "mean_mm": 2.7947314206953555,
+        "mean_voxels": 298.518630708754,
+        "median_mm": 1.4428368159457226,
+        "median_voxels": 154.11630163915,
+        "p90_mm": 6.310191380628397,
+        "p90_voxels": 674.0217240577224,
+        "p95_mm": 6.806235200166252,
+        "p95_voxels": 727.0065370824879
+      },
+      "ours": {
+        "control_count": 31,
+        "file": "PHerc0358_umbilicus.v2.candidate.json",
+        "sha256": "4ff05537741cef16cad3bbf40597f3ae180d42f6ed204d3358824bca35d3856d",
+        "z_range": [
+          1300.0,
+          13700.0
+        ]
+      },
+      "reference": {
+        "control_count": 31,
+        "file": "PHerc0358_umbilicus.json",
+        "sha256": "788c0832a6e11ca26354f13ef1702459fbd920ff50ec7ec7dd7cde74b2ad6e93",
+        "z_range": [
+          1768.0,
+          12920.0
+        ]
+      },
+      "reporting_threshold": {
+        "bands": [
+          {
+            "peak_distance_mm": 10.913065363946595,
+            "peak_z": 9944,
+            "z_end": 10613,
+            "z_start": 6218
+          },
+          {
+            "peak_distance_mm": 3.622629698856523,
+            "peak_z": 12920,
+            "z_end": 12920,
+            "z_start": 12744
+          },
+          {
+            "peak_distance_mm": 2.2032948006193296,
+            "peak_z": 11800,
+            "z_end": 11893,
+            "z_start": 11721
+          }
+        ],
+        "fraction_at_or_above": 0.42553573029678116,
+        "mm": 1.81,
+        "purpose": "candidate reporting only; not an accuracy or correctness threshold"
+      },
+      "sample_count": 11153,
+      "sample_step_z": 1,
+      "scroll": "PHerc0358",
+      "shared_z_range": [
+        1768,
+        12920
+      ],
+      "voxel_size_um": 9.362
+    }
+  ]
+}

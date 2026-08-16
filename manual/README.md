@@ -22,8 +22,18 @@ licence, and loads every curve through Villa's real Spiral consumer. Only its co
 create `release_manifest.json` with `--write-manifest`. CT-derived screenshots are local QC evidence unless Vesuvius Challenge gives
 written redistribution permission; do not broadly archive this tree.
 
-Six independently drawn curves are approved: PHerc0191, PHerc0257, PHerc0358,
-PHerc0800, PHerc0813, and PHerc1203. The original ten-scroll production queue was
-paused after an independently produced complete set became public. These six are
-released as a second-annotator cross-validation dataset, not as automatic
-replacements or ground truth. See `../audit/README.md`.
+Six independently drawn curves passed the original export/reimport and evidence
+checks: PHerc0191, PHerc0257, PHerc0358, PHerc0800, PHerc0813, and PHerc1203. The
+original ten-scroll production queue was paused after an independently produced
+complete set became public. These files are retained as a second-annotator
+cross-validation dataset, not as automatic replacements or ground truth. See
+`../audit/README.md`.
+
+**Post-release safety update (2026-08-16):** PHerc1203 is withdrawn from
+recommended use. Exact-CT review found four separated regimes where the public
+curve follows the scroll core more consistently. The JSON is retained only to
+keep the independent annotation and its audit trail reproducible. The enhanced
+adaptive screen is complete for PHerc0191, PHerc0257, PHerc0800, PHerc0813, and
+the separate preregistered PHerc0358 v2 candidate. It identified 10 intervals
+requiring manual control placement and 8 unresolved intervals. None of those
+findings has been silently applied to these historical JSONs.

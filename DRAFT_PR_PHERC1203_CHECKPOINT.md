@@ -1,5 +1,10 @@
 # Draft PR: PHerc1203 manual umbilicus checkpoint
 
+> **Superseded 2026-08-16.** This is a historical checkpoint, not a current PR
+> proposal. The drawing queue stopped at 6/10 after an overlapping public set
+> appeared, and later AI-assisted exact-CT review withdrew PHerc1203 from
+> recommended use. See [`README.md`](README.md) and [`audit/README.md`](audit/README.md).
+
 Status: **draft only; do not publish or request review yet**. This is a 1/10
 progress checkpoint for the future external curve release, not the complete
 ten-scroll release and not an upstream Villa feature PR.

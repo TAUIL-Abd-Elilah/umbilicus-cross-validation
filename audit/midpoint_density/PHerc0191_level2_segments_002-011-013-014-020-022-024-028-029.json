@@ -1,0 +1,300 @@
+{
+  "format": "umbilicus-midpoint-density-audit-v1",
+  "claim_boundary": "Risk ranks prioritize human review only. A midpoint is acceptable only after exact-CT classification; this manifest contains no automatic correctness verdict.",
+  "scroll": "PHerc0191",
+  "curve": {
+    "path": "manual/PHerc0191_umbilicus.json",
+    "sha256": "8355fb0d6f092a7f56e7ecb4dc2f0d48506cece79e846d64158ebf92478a8d0d",
+    "control_count": 30
+  },
+  "source_stream": "https://vesuvius-challenge-open-data.s3.amazonaws.com/PHerc0191/volumes/20250821151635-9.362um-1.2m-113keV-masked.zarr",
+  "render": {
+    "level": 2,
+    "scale": 4,
+    "radius_full_voxels": 1600,
+    "panel_size": 620,
+    "clahe_clip_limit": 2.0,
+    "pages_local": [
+      "audit/ct_review_local/midpoints/PHerc0191/level2_segments_002-011-013-014-020-022-024-028-029/PHerc0191_midpoints_page_01.png",
+      "audit/ct_review_local/midpoints/PHerc0191/level2_segments_002-011-013-014-020-022-024-028-029/PHerc0191_midpoints_page_02.png",
+      "audit/ct_review_local/midpoints/PHerc0191/level2_segments_002-011-013-014-020-022-024-028-029/PHerc0191_midpoints_page_03.png"
+    ]
+  },
+  "review_contract": {
+    "allowed_classifications": [
+      "PASS",
+      "ADD_CONTROL",
+      "AMBIGUOUS"
+    ],
+    "add_control_rule": "Place a new independent Khartes control at the reviewed CT core; never copy another curve.",
+    "completion": "Every segment must be classified; all ADD_CONTROL segments must be re-rendered after editing."
+  },
+  "selected_segment_numbers": [
+    2,
+    11,
+    13,
+    14,
+    20,
+    22,
+    24,
+    28,
+    29
+  ],
+  "segments": [
+    {
+      "segment_index": 1,
+      "start_xyz": [
+        3794.0,
+        5320.0,
+        2994.0
+      ],
+      "end_xyz": [
+        4280.0,
+        5260.0,
+        3552.0
+      ],
+      "requested_mid_z": 3273.0,
+      "exact_mid_xyz": [
+        4036.1290322580644,
+        5290.10752688172,
+        3272.0
+      ],
+      "delta_z": 558.0,
+      "delta_xy_voxels": 489.6896976657769,
+      "xy_speed_per_z": 0.8775801033436862,
+      "left_turn_degrees": 163.53937508723257,
+      "right_turn_degrees": 67.01666333589247,
+      "risk_score": 6.029766189998154,
+      "classification": "UNREVIEWED",
+      "review_note": "",
+      "risk_rank": 1
+    },
+    {
+      "segment_index": 10,
+      "start_xyz": [
+        4950.0,
+        4180.0,
+        8015.0
+      ],
+      "end_xyz": [
+        4747.0,
+        3790.0,
+        8294.0
+      ],
+      "requested_mid_z": 8154.5,
+      "exact_mid_xyz": [
+        4847.408602150537,
+        3982.9032258064517,
+        8156.0
+      ],
+      "delta_z": 279.0,
+      "delta_xy_voxels": 439.6691938264495,
+      "xy_speed_per_z": 1.5758752466897832,
+      "left_turn_degrees": 7.813658164795897,
+      "right_turn_degrees": 18.538689494414808,
+      "risk_score": 2.1649761988815417,
+      "classification": "UNREVIEWED",
+      "review_note": "",
+      "risk_rank": 29
+    },
+    {
+      "segment_index": 12,
+      "start_xyz": [
+        4550.0,
+        3600.0,
+        8573.0
+      ],
+      "end_xyz": [
+        3750.0,
+        3725.0,
+        9131.0
+      ],
+      "requested_mid_z": 8852.0,
+      "exact_mid_xyz": [
+        4150.0,
+        3662.5,
+        8852.0
+      ],
+      "delta_z": 558.0,
+      "delta_xy_voxels": 809.7067370350824,
+      "xy_speed_per_z": 1.4510873423567785,
+      "left_turn_degrees": 52.844414381268166,
+      "right_turn_degrees": 9.554289672401802,
+      "risk_score": 4.481888974347166,
+      "classification": "UNREVIEWED",
+      "review_note": "",
+      "risk_rank": 12
+    },
+    {
+      "segment_index": 13,
+      "start_xyz": [
+        3750.0,
+        3725.0,
+        9131.0
+      ],
+      "end_xyz": [
+        3525.0,
+        3800.0,
+        9689.0
+      ],
+      "requested_mid_z": 9410.0,
+      "exact_mid_xyz": [
+        3638.3064516129034,
+        3762.2311827956987,
+        9408.0
+      ],
+      "delta_z": 558.0,
+      "delta_xy_voxels": 237.17082451262846,
+      "xy_speed_per_z": 0.42503731991510474,
+      "left_turn_degrees": 9.554289672401802,
+      "right_turn_degrees": 60.25511870305777,
+      "risk_score": 3.014911501434728,
+      "classification": "UNREVIEWED",
+      "review_note": "",
+      "risk_rank": 22
+    },
+    {
+      "segment_index": 19,
+      "start_xyz": [
+        3950.0,
+        4650.0,
+        12479.0
+      ],
+      "end_xyz": [
+        4075.0,
+        4650.0,
+        13037.0
+      ],
+      "requested_mid_z": 12758.0,
+      "exact_mid_xyz": [
+        4012.9480286738353,
+        4650.0,
+        12760.0
+      ],
+      "delta_z": 558.0,
+      "delta_xy_voxels": 125.0,
+      "xy_speed_per_z": 0.22401433691756273,
+      "left_turn_degrees": 158.1985905136482,
+      "right_turn_degrees": 85.91438322002513,
+      "risk_score": 4.8717594835761755,
+      "classification": "UNREVIEWED",
+      "review_note": "",
+      "risk_rank": 10
+    },
+    {
+      "segment_index": 21,
+      "start_xyz": [
+        4100.0,
+        5000.0,
+        13594.0
+      ],
+      "end_xyz": [
+        4200.0,
+        4550.0,
+        14152.0
+      ],
+      "requested_mid_z": 13873.0,
+      "exact_mid_xyz": [
+        4149.8207885304655,
+        4775.806451612903,
+        13872.0
+      ],
+      "delta_z": 558.0,
+      "delta_xy_voxels": 460.9772228646444,
+      "xy_speed_per_z": 0.8261240553129827,
+      "left_turn_degrees": 163.38557551087362,
+      "right_turn_degrees": 14.036243467926484,
+      "risk_score": 5.944521256537306,
+      "classification": "UNREVIEWED",
+      "review_note": "",
+      "risk_rank": 2
+    },
+    {
+      "segment_index": 23,
+      "start_xyz": [
+        4400.0,
+        4150.0,
+        14710.0
+      ],
+      "end_xyz": [
+        4875.0,
+        3975.0,
+        15268.0
+      ],
+      "requested_mid_z": 14989.0,
+      "exact_mid_xyz": [
+        4636.648745519713,
+        4062.8136200716845,
+        14988.0
+      ],
+      "delta_z": 558.0,
+      "delta_xy_voxels": 506.2114182829147,
+      "xy_speed_per_z": 0.9071889216539689,
+      "left_turn_degrees": 43.210089391753925,
+      "right_turn_degrees": 24.775140568831937,
+      "risk_score": 3.4028670176197813,
+      "classification": "UNREVIEWED",
+      "review_note": "",
+      "risk_rank": 20
+    },
+    {
+      "segment_index": 27,
+      "start_xyz": [
+        4425.0,
+        4050.0,
+        16942.0
+      ],
+      "end_xyz": [
+        4700.0,
+        4000.0,
+        17500.0
+      ],
+      "requested_mid_z": 17221.0,
+      "exact_mid_xyz": [
+        4562.007168458781,
+        4025.0896057347672,
+        17220.0
+      ],
+      "delta_z": 558.0,
+      "delta_xy_voxels": 279.5084971874737,
+      "xy_speed_per_z": 0.500911285282211,
+      "left_turn_degrees": 36.86989764584401,
+      "right_turn_degrees": 174.35945056784323,
+      "risk_score": 5.671220691909641,
+      "classification": "UNREVIEWED",
+      "review_note": "",
+      "risk_rank": 6
+    },
+    {
+      "segment_index": 28,
+      "start_xyz": [
+        4700.0,
+        4000.0,
+        17500.0
+      ],
+      "end_xyz": [
+        4350.0,
+        4100.0,
+        18001.0
+      ],
+      "requested_mid_z": 17750.5,
+      "exact_mid_xyz": [
+        4523.952095808383,
+        4050.2994011976048,
+        17752.0
+      ],
+      "delta_z": 501.0,
+      "delta_xy_voxels": 364.0054944640259,
+      "xy_speed_per_z": 0.7265578731816884,
+      "left_turn_degrees": 174.35945056784323,
+      "right_turn_degrees": 0.0,
+      "risk_score": 5.809876625826863,
+      "classification": "UNREVIEWED",
+      "review_note": "",
+      "risk_rank": 3
+    }
+  ],
+  "bytes_fetched": 0,
+  "missing_source_chunks": 8,
+  "failed_source_chunks": 0
+}

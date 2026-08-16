@@ -1,5 +1,11 @@
 # Umbilicus-13 protocol
 
+> **Superseded 2026-08-16.** This document is the original automatic/manual
+> research plan, not the current release claim. Its self-consistency numbers are
+> repeatability heuristics, not anatomical accuracy or ground truth, and the
+> proposed 13-scroll set was not completed. Current conservative findings and
+> withdrawals are in [`README.md`](README.md) and [`audit/README.md`](audit/README.md).
+
 Frozen 2026-08-12, before any picking imagery was generated. Amendments are appended,
 never rewritten.
 

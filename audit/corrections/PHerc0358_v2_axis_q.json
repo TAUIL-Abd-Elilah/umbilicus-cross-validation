@@ -1,0 +1,315 @@
+{
+  "claim_boundary": "Exploratory proxy comparison. q measures radial structure-tensor alignment, not true umbilicus error; slices within a scroll are correlated.",
+  "created_at_utc": "2026-08-16T15:40:56.069613+00:00",
+  "environment": {
+    "numpy": "2.4.6",
+    "python": "3.11.9"
+  },
+  "expected_heads": {
+    "external": "57e09a3d6f25773a2e0cad9d21eb97296cef50c8",
+    "ours": "3a1d8aa1811f6f1428e76513feeabb50535e56d2",
+    "villa": "94ba215963afb6216e380fe2c86131fa5e724c3b"
+  },
+  "parameters": {
+    "level": 1,
+    "r0_fraction": 0.25,
+    "radius_sweep": [
+      2000,
+      400,
+      25
+    ],
+    "ring_fraction": 0.95,
+    "sampling": {
+      "PHerc0358": [
+        1768,
+        3690,
+        5614,
+        7536,
+        9458,
+        11382
+      ]
+    },
+    "sigma_d": 1.5,
+    "sigma_t": 6.0,
+    "sub": 2
+  },
+  "protocol": "screen6",
+  "schema": "downstream-cross-annotation-axis-q-v1",
+  "scrolls": [
+    {
+      "inputs": {
+        "ours": {
+          "path": "audit/corrections/PHerc0358_umbilicus.v2.candidate.json",
+          "sha256": "4ff05537741cef16cad3bbf40597f3ae180d42f6ed204d3358824bca35d3856d"
+        },
+        "public": {
+          "path": "herculaneum-umbilici/PHerc0358_umbilicus.json",
+          "sha256": "788c0832a6e11ca26354f13ef1702459fbd920ff50ec7ec7dd7cde74b2ad6e93"
+        }
+      },
+      "replication": {
+        "max_abs_error": 0.0,
+        "median_abs_error": 0.0,
+        "n": 6
+      },
+      "rows": [
+        {
+          "centres_yx_level1": {
+            "ours": [
+              1774.9333338737488,
+              1899.5999991893768
+            ],
+            "public": [
+              1707.5,
+              1929.0
+            ]
+          },
+          "diagnostics": {
+            "ours": {
+              "n_pixels": 335404,
+              "ring_fraction": 1.0,
+              "valid_sector_fraction": 1.0
+            },
+            "public": {
+              "n_pixels": 335400,
+              "ring_fraction": 0.9972222222222222,
+              "valid_sector_fraction": 1.0
+            }
+          },
+          "elapsed_seconds": 18.55001711845398,
+          "index": 0,
+          "original_radius": 675.0,
+          "public_q_original_protocol": 0.29325337911714905,
+          "public_q_shipped": 0.29325337911714905,
+          "q": {
+            "ours": 0.34319828733863944,
+            "public": 0.29325337911714905
+          },
+          "replication_abs_error": 0.0,
+          "symmetric_radius": 675.0,
+          "z_l0": 1768,
+          "z_level": 884
+        },
+        {
+          "centres_yx_level1": {
+            "ours": [
+              2040.0,
+              1700.0
+            ],
+            "public": [
+              2111.0,
+              1688.627659469843
+            ]
+          },
+          "diagnostics": {
+            "ours": {
+              "n_pixels": 243423,
+              "ring_fraction": 1.0,
+              "valid_sector_fraction": 1.0
+            },
+            "public": {
+              "n_pixels": 243301,
+              "ring_fraction": 0.9805555555555555,
+              "valid_sector_fraction": 1.0
+            }
+          },
+          "elapsed_seconds": 6.504762172698975,
+          "index": 1,
+          "original_radius": 575.0,
+          "public_q_original_protocol": 0.2935715790766032,
+          "public_q_shipped": 0.2935715790766032,
+          "q": {
+            "ours": 0.30695522153812677,
+            "public": 0.2935715790766032
+          },
+          "replication_abs_error": 0.0,
+          "symmetric_radius": 575.0,
+          "z_l0": 3690,
+          "z_level": 1845
+        },
+        {
+          "centres_yx_level1": {
+            "ours": [
+              1891.0059995651245,
+              2091.0319999456406
+            ],
+            "public": [
+              1822.9565210044384,
+              2139.491847805679
+            ]
+          },
+          "diagnostics": {
+            "ours": {
+              "n_pixels": 287648,
+              "ring_fraction": 1.0,
+              "valid_sector_fraction": 1.0
+            },
+            "public": {
+              "n_pixels": 287640,
+              "ring_fraction": 1.0,
+              "valid_sector_fraction": 1.0
+            }
+          },
+          "elapsed_seconds": 20.55555510520935,
+          "index": 2,
+          "original_radius": 600.0,
+          "public_q_original_protocol": 0.08170405634998182,
+          "public_q_shipped": 0.08170405634998182,
+          "q": {
+            "ours": 0.058534021916912024,
+            "public": 0.08309451589240927
+          },
+          "replication_abs_error": 0.0,
+          "symmetric_radius": 625.0,
+          "z_l0": 5614,
+          "z_level": 2807
+        },
+        {
+          "centres_yx_level1": {
+            "ours": [
+              1872.6799998283386,
+              2043.3599996566772
+            ],
+            "public": [
+              1822.0,
+              2337.043478012085
+            ]
+          },
+          "diagnostics": {
+            "ours": {
+              "n_pixels": 149190,
+              "ring_fraction": 1.0,
+              "valid_sector_fraction": 1.0
+            },
+            "public": {
+              "n_pixels": 149186,
+              "ring_fraction": 1.0,
+              "valid_sector_fraction": 1.0
+            }
+          },
+          "elapsed_seconds": 6.707944393157959,
+          "index": 3,
+          "original_radius": 450.0,
+          "public_q_original_protocol": 0.05445478550706895,
+          "public_q_shipped": 0.05445478550706895,
+          "q": {
+            "ours": -0.006756401587328847,
+            "public": 0.05445478550706895
+          },
+          "replication_abs_error": 0.0,
+          "symmetric_radius": 450.0,
+          "z_l0": 7536,
+          "z_level": 3768
+        },
+        {
+          "centres_yx_level1": {
+            "ours": [
+              1962.5999945402145,
+              1875.199989080429
+            ],
+            "public": [
+              1892.8722849488258,
+              2131.836958527565
+            ]
+          },
+          "diagnostics": {
+            "ours": {
+              "n_pixels": 222624,
+              "ring_fraction": 1.0,
+              "valid_sector_fraction": 1.0
+            },
+            "public": {
+              "n_pixels": 222594,
+              "ring_fraction": 0.9888888888888889,
+              "valid_sector_fraction": 1.0
+            }
+          },
+          "elapsed_seconds": 7.23771333694458,
+          "index": 4,
+          "original_radius": 550.0,
+          "public_q_original_protocol": 0.1152059313452965,
+          "public_q_shipped": 0.1152059313452965,
+          "q": {
+            "ours": 0.04466605141302214,
+            "public": 0.1152059313452965
+          },
+          "replication_abs_error": 0.0,
+          "symmetric_radius": 550.0,
+          "z_l0": 9458,
+          "z_level": 4729
+        },
+        {
+          "centres_yx_level1": {
+            "ours": [
+              2225.0,
+              1015.5405403375626
+            ],
+            "public": [
+              2198.0611706003547,
+              1031.8031905591488
+            ]
+          },
+          "diagnostics": {
+            "ours": {
+              "n_pixels": 117827,
+              "ring_fraction": 1.0,
+              "valid_sector_fraction": 1.0
+            },
+            "public": {
+              "n_pixels": 117799,
+              "ring_fraction": 1.0,
+              "valid_sector_fraction": 1.0
+            }
+          },
+          "elapsed_seconds": 6.740185976028442,
+          "index": 5,
+          "original_radius": 450.0,
+          "public_q_original_protocol": 0.3127342406096953,
+          "public_q_shipped": 0.3127342406096953,
+          "q": {
+            "ours": 0.27900486349650677,
+            "public": 0.3085447718401202
+          },
+          "replication_abs_error": 0.0,
+          "symmetric_radius": 400.0,
+          "z_l0": 11382,
+          "z_level": 5691
+        }
+      ],
+      "scroll": "PHerc0358",
+      "summary": {
+        "axes": {
+          "ours": {
+            "max": 0.34319828733863944,
+            "mean": 0.17093367401931306,
+            "median": 0.1687694427067094,
+            "min": -0.006756401587328847
+          },
+          "public": {
+            "max": 0.3085447718401202,
+            "mean": 0.19135416046310785,
+            "median": 0.20422965523122277,
+            "min": 0.05445478550706895
+          }
+        },
+        "comparisons": {
+          "ours_minus_public": {
+            "mean": -0.020420486443794808,
+            "median": -0.02705020115955533,
+            "n": 6,
+            "ties": 0,
+            "wins": 2
+          }
+        },
+        "n_valid": 6
+      },
+      "volume_root": "vesuvius-challenge-open-data/PHerc0358/volumes/20250821151737-9.362um-1.2m-113keV-masked.zarr"
+    }
+  ],
+  "source_heads": {
+    "external": "57e09a3d6f25773a2e0cad9d21eb97296cef50c8",
+    "ours": "8c0baa04617d527845583bfaafbdc62c5175fc4b",
+    "villa": "94ba215963afb6216e380fe2c86131fa5e724c3b"
+  },
+  "wall_seconds": 66.51919746398926
+}

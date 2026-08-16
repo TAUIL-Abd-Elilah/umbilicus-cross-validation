@@ -17,6 +17,7 @@ acceptable because one plane replaces dozens of per-slice panels.
 from __future__ import annotations
 
 import threading
+import urllib.error
 from concurrent.futures import ThreadPoolExecutor
 
 import numpy as np
@@ -27,15 +28,34 @@ from slicefetch import BUCKET, _get
 class ChunkCache:
     """Whole-chunk fetcher with an in-memory LRU-ish store, shared across planes."""
 
-    def __init__(self, pyramid, level: int, workers: int = 16, capacity: int = 512):
+    def __init__(
+        self,
+        pyramid,
+        level: int,
+        workers: int = 16,
+        capacity: int = 512,
+        *,
+        strict: bool = False,
+    ):
         self.pyr = pyramid
         self.level = level
         self.workers = workers
         self.capacity = capacity
+        self.strict = strict
         self._store: dict[tuple[int, int, int], np.ndarray] = {}
         self._order: list[tuple[int, int, int]] = []
         self._lock = threading.Lock()
         self.bytes_fetched = 0
+        self._missing_chunk_keys: set[tuple[int, int, int]] = set()
+        self._failed_chunk_keys: set[tuple[int, int, int]] = set()
+
+    @property
+    def missing_chunks(self) -> int:
+        return len(self._missing_chunk_keys)
+
+    @property
+    def failed_chunks(self) -> int:
+        return len(self._failed_chunk_keys)
 
     def get(self, cz: int, cy: int, cx: int) -> np.ndarray:
         key = (cz, cy, cx)
@@ -45,13 +65,30 @@ class ChunkCache:
             return hit
         czs, cys, cxs = self.pyr.chunks
         url = f"{BUCKET}/{self.pyr.path}/{self.level}/{cz}/{cy}/{cx}"
+        fetched_bytes = 0
         try:
             raw = _get(url)
             arr = np.frombuffer(raw, dtype=np.uint8).reshape(czs, cys, cxs)
-        except Exception:
+            fetched_bytes = len(raw)
+        except urllib.error.HTTPError as error:
+            if error.code == 404 and self.pyr.fill_values[self.level] == 0:
+                arr = np.zeros((czs, cys, cxs), dtype=np.uint8)
+                with self._lock:
+                    self._missing_chunk_keys.add(key)
+            elif self.strict:
+                raise IOError(f"failed to fetch source chunk {url}") from error
+            else:
+                arr = np.zeros((czs, cys, cxs), dtype=np.uint8)
+                with self._lock:
+                    self._failed_chunk_keys.add(key)
+        except Exception as error:
+            if self.strict:
+                raise IOError(f"failed to fetch source chunk {url}") from error
             arr = np.zeros((czs, cys, cxs), dtype=np.uint8)
+            with self._lock:
+                self._failed_chunk_keys.add(key)
         with self._lock:
-            self.bytes_fetched += arr.size
+            self.bytes_fetched += fetched_bytes
             self._store[key] = arr
             self._order.append(key)
             while len(self._order) > self.capacity:

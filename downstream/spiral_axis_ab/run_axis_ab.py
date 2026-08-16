@@ -398,8 +398,11 @@ def run_one(
 
     spiral_dir = villa / "volume-cartographer" / "scripts" / "spiral"
     fit_script = spiral_dir / "fit_spiral.py"
+    cli_adapter = Path(__file__).with_name("fit_cli_adapter.py").resolve()
     if not fit_script.is_file():
         raise ExperimentError(f"missing merged fitter: {fit_script}")
+    if not cli_adapter.is_file():
+        raise ExperimentError(f"missing CLI path-resolution adapter: {cli_adapter}")
     dataset = work / "datasets" / arm
     output_root = work / "outputs" / phase / arm
     cache = work / "cache" / phase / arm
@@ -410,6 +413,7 @@ def run_one(
 
     command = [
         str(python),
+        str(cli_adapter),
         str(fit_script),
         "--dataset",
         str(dataset),
@@ -437,6 +441,7 @@ def run_one(
         "started_utc": started,
         "command": command,
         "villa_commit": VILLA_COMMIT,
+        "cli_adapter_sha256": sha256(cli_adapter),
         "axis_sha256": sha256(dataset / "umbilicus.json"),
         "config": config,
         "config_sha256": canonical_hash(config),
@@ -505,6 +510,9 @@ def run_pair(args: argparse.Namespace) -> int:
         "scientific_evidence": args.phase == "full" and args.steps == 30000,
         "config": config,
         "config_sha256": canonical_hash(config),
+        "cli_adapter_sha256": sha256(
+            Path(__file__).with_name("fit_cli_adapter.py").resolve()
+        ),
         "input_manifest_sha256": sha256(work / "input_manifest.json"),
         "environment": environment_info,
         "arm_order": ["baseline", "manual"],
@@ -562,7 +570,9 @@ def build_parser() -> argparse.ArgumentParser:
     run_parser.add_argument("--work", type=Path, required=True)
     run_parser.add_argument("--villa-dir", type=Path, required=True)
     run_parser.add_argument("--python", type=Path, required=True)
-    run_parser.add_argument("--phase", choices=("smoke", "full"), required=True)
+    run_parser.add_argument(
+        "--phase", choices=("smoke", "smoke-resolved", "full"), required=True
+    )
     run_parser.add_argument("--steps", type=int, required=True)
     run_parser.set_defaults(func=run_pair)
     return parser

@@ -76,6 +76,13 @@ The harness records hashes, exact commands, environment information, logs, and
 run receipts. It refuses unpinned source commits, PyTorch 2.13+, changed inputs,
 or a dataset pair that differs anywhere besides `umbilicus.json`.
 
+`fit_cli_adapter.py` addresses one current-main headless-CLI mismatch without
+changing Villa: the CLI invents paths for absent optional assets, while the
+fitter treats the simultaneous nonexistent track/shell paths as a request to
+load a shell. The adapter substitutes Villa's own existence-probing service
+resolver; all configuration, fitting, metrics, and export still execute from
+the pinned, unmodified `fit_spiral.py`.
+
 The frozen overrides explicitly select asset-free `grad_mag` mode and zero the
 new dense/min-spacing/shell terms on current Villa main. This preserves the
 published PCL-only experiment semantics instead of accidentally requesting the

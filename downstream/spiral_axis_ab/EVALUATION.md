@@ -61,3 +61,16 @@ commits in `analysis/report.json`. The evaluator refuses revisions other than
 `spiralcheck@d1b50e2` and `sheetcheck@7d53893`, refuses dirty dependency
 worktrees, fingerprints every fitted-mesh byte, and will not overwrite a
 non-empty evaluation package.
+
+Initialize the review record without reading the private key, complete all
+seven rows, and only then use the fail-closed unblinder:
+
+```powershell
+python unblind_axis_ab.py init --evaluation <evaluation-output> --review review.json
+python unblind_axis_ab.py unblind --evaluation <evaluation-output> `
+  --review review.json --out <evaluation-output>/analysis/unblinded_review.json
+```
+
+The second command rejects placeholders, missing planes, an unbound manifest,
+an opened-key attestation, or a changed key. It reports preferences by arm but
+does not select a winner.

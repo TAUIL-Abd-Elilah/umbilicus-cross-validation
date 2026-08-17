@@ -13,6 +13,11 @@ the intrinsic comparison changed direction when the evaluation axis changed.
 The operational decision is therefore **no replacement**; anatomical
 superiority remains inconclusive.
 
+The PHerc1218 treatment came from the separately pinned external candidate set;
+it is not one of the six manual curves released at this repository's root. This
+experiment therefore limits a downstream replacement claim, not the validity of
+the six-curve exact-CT audit.
+
 ## Frozen evidence
 
 Both arms ran 30,000 optimizer steps with seed 1 on full-resolution

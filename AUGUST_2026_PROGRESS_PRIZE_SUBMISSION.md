@@ -5,24 +5,29 @@
 - **Contribution:** Fail-closed exact-CT audit for Villa umbilicus curves
 - **Submitter:** TAUIL Abd Elilah
 - **Submission type:** Individual
-- **Public release:** v0.2.0, published 2026-08-16
-- **Release commit:** `8a94faed9eebbeb48e9c624d65cb33818415b2c4`
+- **Form status:** submitted; confirmation screenshot supplied 2026-08-17
+- **Submitted release:** v0.2.0, published 2026-08-16
+- **Submitted release commit:** `8a94faed9eebbeb48e9c624d65cb33818415b2c4`
+- **Corrective downstream addendum:** v0.2.1, published 2026-08-17
 - **Official deadline:** 2026-08-31, 11:59pm Pacific
 - **Submission form:**
   <https://docs.google.com/forms/d/e/1FAIpQLSev2vJobu521iB6OuyehDktzYTEo131F4iUGwt3Qxa9a1fk6A/viewform>
 - **Official rules:** <https://scrollprize.org/prizes#progress-prizes>
 
-The Google Form intentionally requests a **short** description; it should not
-duplicate this complete technical dossier. Include this document's public URL in
-the contribution-links field so reviewers can reach every detail:
+The submitted Google Form intentionally used a **short** description rather
+than duplicating this complete technical dossier. Its public dossier link gives
+reviewers the later v0.2.1 corrective addendum as well as the frozen v0.2.0
+submission:
 
 <https://github.com/TAUIL-Abd-Elilah/umbilicus-cross-validation/blob/main/AUGUST_2026_PROGRESS_PRIZE_SUBMISSION.md>
 
-The submitter must personally read and accept the terms and conditions.
+The supplied confirmation screenshot records that the submitter selected the
+terms agreement and submitted the form.
 
-## Copy-ready form answers
+## Submitted v0.2.0 form answers
 
-The August form currently contains four text questions and one terms checkbox.
+These answers are preserved as the submitted snapshot. Do not file a duplicate
+form merely to point at v0.2.1.
 
 ### 1. Your full name
 
@@ -89,6 +94,27 @@ left unresolved. The release also contains a pinned same-z comparison with an
 independent public annotation set, reproducible downstream proxy checks, a
 preregistered PHerc0358 correction candidate, and an explicit withdrawal of
 PHerc1203 from recommended use.
+
+## Post-submission PHerc1218 A/B limitation (v0.2.1)
+
+After the form submission, a preregistered production Spiral A/B tested an
+external PHerc1218 candidate axis against the stitched-pack baseline. Both arms
+used the same three patches, input constraints, full-resolution `z=[5220,6020)`,
+seed 1, and 30,000 optimizer steps.
+
+The candidate arm failed the frozen run-health admission thresholds: 91.562% of
+relative-PCL points passed against a 94% minimum, and 85.567% of same-winding
+points passed against a 91% minimum. A blind exact-CT review recorded 0 candidate
+preferences, 3 baseline preferences, and 4 ties. The intrinsic comparison
+reversed direction between the two candidate-axis frames, so it could not select
+a robust anatomical winner.
+
+The bounded decision is therefore **no PHerc1218 baseline replacement from this
+test**. The result does not establish that the baseline is anatomically true.
+It tests neither the six released manual curves nor the midpoint-density audit,
+so those deliverables remain intact with their original limitations. Full
+protocol, source pins, code, artifact hashes, and machine-readable metrics are
+in [`downstream/spiral_axis_ab/`](downstream/spiral_axis_ab/).
 
 ## Problem addressed
 
@@ -329,11 +355,12 @@ https://github.com/TAUIL-Abd-Elilah/umbilicus-cross-validation/releases/tag/v0.2
 ## Final submission checklist
 
 - [x] Match the form's full name: `TAUIL Abd Elilah`.
-- [ ] Open the official August 2026 form while signed into the desired account.
-- [ ] Copy the four answers above without changing the numerical claims.
-- [ ] Open every submitted URL in a private/incognito browser window.
-- [ ] Read the official terms and personally select the agreement checkbox.
-- [ ] Submit before 2026-08-31 at 11:59pm Pacific.
-- [ ] Save the form confirmation and edit-response link.
+- [x] Open the official August 2026 form while signed into the desired account.
+- [x] Copy the four answers above without changing the numerical claims.
+- [x] Read the official terms and personally select the agreement checkbox.
+- [x] Submit before 2026-08-31 at 11:59pm Pacific.
+- [x] Retain the supplied form-confirmation screenshot.
+- [ ] Retain the edit-response link, if Google supplied one.
+- [ ] Recheck every submitted URL in a private/incognito browser window.
 - [ ] Keep the repository and release public through judging.
 - [ ] Respond to reviewer questions and record community feedback as issues.

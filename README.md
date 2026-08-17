@@ -19,6 +19,22 @@ and the preregistered PHerc0358 v2 candidate: all 149 adjacent-control intervals
 were reviewed, 10 need an added control, and 8 remain unresolved. All six manual
 JSONs remain unchanged historical annotations.
 
+## Downstream PHerc1218 limitation
+
+A preregistered production Spiral A/B tested an external PHerc1218 candidate
+axis against the stitched-pack baseline while holding the three patches, input
+constraints, full-resolution z window, seed, and 30,000-step optimizer config
+fixed. The candidate arm failed the frozen run-health admission thresholds, and
+the blind exact-CT review recorded 0 candidate preferences, 3 baseline
+preferences, and 4 ties. Intrinsic geometry changed direction when the
+evaluation axis changed, so it did not establish an anatomical winner.
+
+The operational result is **do not replace the pack baseline from this test**.
+It does not prove that the baseline is anatomical truth. This single-scroll test
+does not evaluate any of the six released manual curves and does not invalidate
+the exact-CT interval audit. The full protocol, code, machine-readable result,
+and claim boundary are in [`downstream/spiral_axis_ab/`](downstream/spiral_axis_ab/).
+
 ## What is included
 
 - Six Villa-compatible curves in [`manual/`](manual/), licensed CC BY 4.0.

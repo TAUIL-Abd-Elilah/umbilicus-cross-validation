@@ -5,6 +5,11 @@ production Spiral fitter, constraints, window, random seed, and optimization
 held fixed, does changing only the PHerc1218 umbilicus materially change the
 fitted surface?
 
+**Result:** the manual-axis arm was not an admissible improvement and should
+not replace the pack baseline in this workflow. See [`RESULT.md`](RESULT.md)
+and the machine-readable [`result.json`](result.json). This does not establish
+that the baseline is anatomical truth.
+
 It is deliberately not another umbilicus-comparison plot. The treatment is fed
 through the real fitter and the resulting surfaces are reviewed on the volume.
 

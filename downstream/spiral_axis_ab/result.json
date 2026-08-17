@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "experiment": "PHerc1218 production Spiral axis A/B",
+  "completed_at": "2026-08-17T01:28:33.0064782+01:00",
+  "classification": "manual_axis_not_admissible_no_replacement_anatomical_superiority_inconclusive",
+  "decision": {
+    "replace_baseline_with_manual": false,
+    "manual_axis_improvement_demonstrated": false,
+    "baseline_anatomical_superiority_demonstrated": false,
+    "summary": "Retain the pack baseline for this workflow. The manual arm failed admission and received no blind CT preferences; the independent intrinsic direction was axis-frame dependent."
+  },
+  "pins": {
+    "experiment_repository_commit": "873800d7ec10890a591292219bd87adaa1564c78",
+    "villa_commit": "465cab06084e5587f7aea989440d495318bfb1eb",
+    "constraint_pack_commit": "7116a75521e4f5791a4d077311efb5558bf3e20e",
+    "manual_axis_commit": "57e09a3d6f25773a2e0cad9d21eb97296cef50c8",
+    "spiralcheck_commit": "d1b50e2957409a870225fb9f5dcc5e25f7a0f9da",
+    "sheetcheck_commit": "7d53893abcc6cc7c0542e483c7266d75ea930885",
+    "fit_cli_adapter_sha256": "aff0eb813d9dce833d7a3390bb47ade62d7b90e140a26262820f2e214192b53a",
+    "evaluate_axis_ab_sha256": "9f9b801e8895b8255f5576ccf3d5a93cabbbc7901226593d68c40d18da1f9e9c",
+    "unblind_axis_ab_sha256": "ef223296f24f43885f5456a5ef5ff1a883e736ae469808abafb0ad9943202086"
+  },
+  "inputs": {
+    "window_full_resolution_z": [5220, 6020],
+    "optimizer_random_seed": 1,
+    "optimizer_num_training_steps": 30000,
+    "intersecting_patch_ids": [
+      "seed-z2464-pherc1218",
+      "seed-z2688-pherc1218",
+      "seed-z2912-pherc1218"
+    ],
+    "baseline_axis_sha256": "dffa0eb86e2981e5cd3d4ad6e43546bf1bada801e64fc2c21e6b2d3347f1457e",
+    "manual_axis_sha256": "8f4993b72fbb5475b052cf49c1e628569a64b40e1a710a71f71f4ff670d3d240",
+    "non_axis_manifest_sha256": "57e52ab7476498107f299c015af89c1d7e931cd2880a6a8280c6428254229825",
+    "only_treatment_difference_verified": true
+  },
+  "production": {
+    "status": "passed",
+    "scientific_evidence": true,
+    "config_sha256": "0a4838fd83ffe4b76490a2290ac918d81fae35742e725a462c80c37e11e21eaa",
+    "device": "NVIDIA GeForce RTX 3090",
+    "python": "3.14.6",
+    "torch": "2.12.1+cu126",
+    "baseline": {
+      "status": "passed",
+      "elapsed_seconds": 3477.0182575999997,
+      "return_code": 0,
+      "intersecting_patch_count": 3,
+      "satisfaction_result_sha256": "f9cd196141824bbea1aa948930b99a29ef33de90d4899f9f40cd98d4a90eafa5",
+      "mesh_tree_sha256": "cc3e74a85ba5fa9fc8be87c2677ea2f70afc80f42197ff6d6361485312192045",
+      "mesh_tree_file_count": 1256,
+      "mesh_tree_total_bytes": 100708893
+    },
+    "manual": {
+      "status": "passed",
+      "elapsed_seconds": 3621.0661112999996,
+      "return_code": 0,
+      "intersecting_patch_count": 3,
+      "satisfaction_result_sha256": "5ddbfc2fa797407e80e085da39c0d99983e2aeacda7f4c047bf9fbadfdbea6ac",
+      "mesh_tree_sha256": "fb176baa971c1fec0c33c6a54da07170c794a3acdd39ae2c8b7fe87a7320eb48",
+      "mesh_tree_file_count": 1344,
+      "mesh_tree_total_bytes": 116181197
+    }
+  },
+  "run_health_admission": {
+    "interpretation": "Circular run-health admission only; not held-out truth.",
+    "thresholds": {
+      "relative_fraction_min": 0.94,
+      "same_winding_fraction_min": 0.91,
+      "intersecting_patch_count": 3,
+      "radial_gap_l1_inclusive": [9.6, 10.6]
+    },
+    "baseline": {
+      "passed": true,
+      "relative_fraction": 0.94921875,
+      "same_winding_fraction": 0.9123711340206185,
+      "intersecting_patch_count": 3,
+      "radial_gaps_l1": {
+        "5420": 9.925006939269224,
+        "5620": 9.97582896523977,
+        "5820": 10.306111375811497
+      }
+    },
+    "manual": {
+      "passed": false,
+      "relative_fraction": 0.915625,
+      "same_winding_fraction": 0.8556701030927835,
+      "intersecting_patch_count": 3,
+      "radial_gaps_l1": {
+        "5420": 10.341900532567706,
+        "5620": 10.32716467222491,
+        "5820": 9.893755631461545
+      },
+      "failed_checks": [
+        "relative_points_at_least_94pct",
+        "same_winding_points_at_least_91pct"
+      ]
+    }
+  },
+  "blind_exact_ct_review": {
+    "planes_l0": [5264, 5408, 5536, 5664, 5792, 5872, 5952],
+    "ct_level": 1,
+    "assignment_after_locked_review": {
+      "A": "baseline",
+      "B": "manual"
+    },
+    "preferences": {
+      "baseline": 3,
+      "manual": 0,
+      "tie": 4,
+      "unusable": 0
+    },
+    "baseline_preferred_planes": [5408, 5792, 5872],
+    "tie_planes": [5264, 5536, 5664, 5952],
+    "interpretation": "Relative gross continuity/fold-bundle review only; not a quantitative anatomical truth score."
+  },
+  "label_free_intrinsic_geometry": {
+    "interpretation": "Defect detection only. Direction flips across candidate-axis frames, so no robust anatomical winner is selected.",
+    "own_axis": {
+      "baseline": {
+        "bins_checked": 72315,
+        "violations": 6,
+        "violated_bin_fraction": 0.0000829703381041278,
+        "collapsed": 11,
+        "collapsed_bin_fraction": 0.00015211228652423425,
+        "inflated": 51,
+        "median_pitch_l0": 20.041481210960228
+      },
+      "manual": {
+        "bins_checked": 77457,
+        "violations": 13,
+        "violated_bin_fraction": 0.0001678350568702635,
+        "collapsed": 18,
+        "collapsed_bin_fraction": 0.00023238700182036485,
+        "inflated": 53,
+        "median_pitch_l0": 20.385990919337132
+      }
+    },
+    "both_axis_frames": {
+      "baseline_axis": {
+        "baseline_violated_bin_fraction": 0.0000829703381041278,
+        "manual_violated_bin_fraction": 0.008670313816794983
+      },
+      "manual_axis": {
+        "baseline_violated_bin_fraction": 0.006575070557950563,
+        "manual_violated_bin_fraction": 0.0001678350568702635
+      },
+      "direction_flips": true
+    },
+    "axis_free_validity": {
+      "baseline_valid_vertex_fraction": 0.7132628753436547,
+      "manual_valid_vertex_fraction": 0.7136592023726679,
+      "baseline_valid_quad_fraction": 0.7075471675109575,
+      "manual_valid_quad_fraction": 0.7080304509324172
+    }
+  },
+  "execution_notes": [
+    "An earlier interrupted full attempt was excluded. production-v1 was prepared afresh and reverified against identical source hashes.",
+    "The baseline process was suspended in memory once after progress step 6646 at the user's request and resumed at step 6672. It was not restarted or restored from a checkpoint; the receipt wall time includes the pause.",
+    "The manual process ran uninterrupted.",
+    "The exact-CT evaluator outlived its shell command timeout and completed under the same surviving process; no partial result was consumed.",
+    "An official flattening was not run."
+  ],
+  "verification": {
+    "focused_python_tests_passed": 16,
+    "prepared_inputs_reverified_after_completion": true
+  },
+  "artifact_sha256": {
+    "input_manifest.json": "c69a98ace12c3ae60904bc9d14d8e891c9aa0e64135f31731ae286e332b63d29",
+    "pair_config.json": "9b7308c7c3c0445633ffe3928dc0b693396f260ff1565b934b8e1c1fff61bbc5",
+    "pair_receipt.json": "88c7b5543a487b2ee2d7dbd3d52bc9172c6c8e6468ac8385ae440e5dfbd0aa3d",
+    "baseline_receipt.json": "4877437eae1b88f09bb5b9b583689a9421c0444b5c6f574d108d8aa542503a4e",
+    "manual_receipt.json": "436bdc3bf7bc559e196ec12b072a5394869ad59f15ab50e2175a9c2de430e529",
+    "evaluation_report.json": "1ffac059e183338e0c4d398f7dc6b3cb904f4879f305b38054a5e7bedde73bdd",
+    "blind_manifest.json": "712257f5f54830feac21ca4f660f35e36e228e1b4bcc551023e82979f10518ce",
+    "locked_blind_review.json": "35533ac3b55b781e74a6068afa57ab247d430336a2822cc6aae3c5f74c25294d",
+    "unblinded_review.json": "9273a97f48c7f78902337e5f66cfcf280197cad252586396d7d2d2d6cea95193",
+    "private_key_sha256": "4e68818cfe6d4b6e1038cb224e21f53fbf964cdb8cf5480a1a96e05a1ba37db3"
+  }
+}
